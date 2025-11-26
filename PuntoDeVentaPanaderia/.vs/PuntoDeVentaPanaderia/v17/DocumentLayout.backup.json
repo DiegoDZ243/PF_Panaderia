@@ -1,0 +1,142 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|c:\\users\\diego\\onedrive\\documentos\\topicos proyectos\\puntodeventapanaderia\\puntodeventapanaderia\\backend\\clsdaopanaderia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|solutionrelative:puntodeventapanaderia\\backend\\clsdaopanaderia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\puntodeventapanaderia\\pojos\\clsempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|solutionrelative:puntodeventapanaderia\\pojos\\clsempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\puntodeventapanaderia\\pojos\\clspanes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|solutionrelative:puntodeventapanaderia\\pojos\\clspanes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\puntodeventapanaderia\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|solutionrelative:puntodeventapanaderia\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\puntodeventapanaderia\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|solutionrelative:puntodeventapanaderia\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|c:\\users\\diego\\onedrive\\documentos\\topicos proyectos\\puntodeventapanaderia\\puntodeventapanaderia\\pojos\\clsreporteventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|solutionrelative:puntodeventapanaderia\\pojos\\clsreporteventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\puntodeventapanaderia\\pojos\\clsdetalleorden.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|solutionrelative:puntodeventapanaderia\\pojos\\clsdetalleorden.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "clsReporteVenta.cs",
+              "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Pojos\\clsReporteVenta.cs",
+              "RelativeDocumentMoniker": "PuntoDeVentaPanaderia\\Pojos\\clsReporteVenta.cs",
+              "ToolTip": "C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Pojos\\clsReporteVenta.cs",
+              "RelativeToolTip": "PuntoDeVentaPanaderia\\Pojos\\clsReporteVenta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T02:43:32.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Form1.cs",
+              "RelativeDocumentMoniker": "PuntoDeVentaPanaderia\\Form1.cs",
+              "ToolTip": "C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Form1.cs",
+              "RelativeToolTip": "PuntoDeVentaPanaderia\\Form1.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwCAAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T19:22:16.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "clsDaoPanaderia.cs",
+              "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Backend\\clsDaoPanaderia.cs",
+              "RelativeDocumentMoniker": "PuntoDeVentaPanaderia\\Backend\\clsDaoPanaderia.cs",
+              "ToolTip": "C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Backend\\clsDaoPanaderia.cs",
+              "RelativeToolTip": "PuntoDeVentaPanaderia\\Backend\\clsDaoPanaderia.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKUBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T19:09:05.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "clsEmpleados.cs",
+              "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Pojos\\clsEmpleados.cs",
+              "RelativeDocumentMoniker": "PuntoDeVentaPanaderia\\Pojos\\clsEmpleados.cs",
+              "ToolTip": "C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Pojos\\clsEmpleados.cs",
+              "RelativeToolTip": "PuntoDeVentaPanaderia\\Pojos\\clsEmpleados.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T18:49:54.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "clsPanes.cs",
+              "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Pojos\\clsPanes.cs",
+              "RelativeDocumentMoniker": "PuntoDeVentaPanaderia\\Pojos\\clsPanes.cs",
+              "ToolTip": "C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Pojos\\clsPanes.cs",
+              "RelativeToolTip": "PuntoDeVentaPanaderia\\Pojos\\clsPanes.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T18:33:01.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Form1.cs",
+              "RelativeDocumentMoniker": "PuntoDeVentaPanaderia\\Form1.cs",
+              "ToolTip": "C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "PuntoDeVentaPanaderia\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T18:31:34.842Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "clsDetalleOrden.cs",
+              "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Pojos\\clsDetalleOrden.cs",
+              "RelativeDocumentMoniker": "PuntoDeVentaPanaderia\\Pojos\\clsDetalleOrden.cs",
+              "ToolTip": "C:\\Users\\diego\\OneDrive\\Documentos\\Topicos Proyectos\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Pojos\\clsDetalleOrden.cs",
+              "RelativeToolTip": "PuntoDeVentaPanaderia\\Pojos\\clsDetalleOrden.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAkwA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T19:07:25.654Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
