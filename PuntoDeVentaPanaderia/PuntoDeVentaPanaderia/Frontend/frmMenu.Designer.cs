@@ -1,7 +1,7 @@
 ﻿
-namespace PuntoDeVentaPanaderia
+namespace PuntoDeVentaPanaderia.Frontend
 {
-    partial class frmLogin
+    partial class frmMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,30 +29,20 @@ namespace PuntoDeVentaPanaderia
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(108, 44);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(296, 270);
-            this.panel1.TabIndex = 0;
-            // 
-            // frmLogin
+            // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
-            this.Name = "frmLogin";
-            this.Text = "frmLogin";
+            this.Name = "frmMenu";
+            this.Text = "frmMenu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
     }
 }
