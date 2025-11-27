@@ -40,3 +40,45 @@ C:\Users\diego\OneDrive\Documentos\Topicos Proyectos\PuntoDeVentaPanaderia\Punto
 C:\Users\diego\OneDrive\Documentos\Topicos Proyectos\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.exe
 C:\Users\diego\OneDrive\Documentos\Topicos Proyectos\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.pdb
 C:\Users\diego\OneDrive\Documentos\Topicos Proyectos\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.exe.config
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\PuntoDeVentaPanaderia.exe.config
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\PuntoDeVentaPanaderia.exe
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\PuntoDeVentaPanaderia.pdb
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\Google.Protobuf.dll
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\MySql.Data.dll
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.Buffers.dll
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.IO.Pipelines.dll
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.Memory.dll
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\ZstdSharp.dll
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\Google.Protobuf.pdb
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\Google.Protobuf.xml
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\MySql.Data.xml
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.Buffers.xml
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.IO.Pipelines.xml
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.Memory.xml
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.csproj.AssemblyReference.cache
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.exe.config
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Form1.resources
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Properties.Resources.resources
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.csproj.GenerateResource.cache
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.csproj.CoreCompileInputs.cache
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeV.54308F56.Up2Date
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.exe
+C:\Users\hhgok\OneDrive\Escritorio\ITSUR\5to semestre\Base de datos\RepositorioPanes\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.pdb
