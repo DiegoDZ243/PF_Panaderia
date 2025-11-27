@@ -1,0 +1,12 @@
+# Ignorar directorios de Visual Studio y sus archivos de caché
+**/.vs/
+*.vspscc
+*.vssscc
+*.suo
+*.user
+*.userprefs
+*.vsidx
+
+# Ignorar archivos y directorios de compilación
+**/[Bb]in/
+**/[Oo]bj/
