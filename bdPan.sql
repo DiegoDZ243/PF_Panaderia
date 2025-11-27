@@ -40,7 +40,7 @@ create table detalleOrden(
 	idPan 			int				not null, 
     idOrden			int 			not null, 
 	unidades		int				not null, 
-    precio			decimal(10,2)	not null,
+    precio			decimal(10,2)	null	,
     foreign key (idPan)		references panes(idPan),
     foreign key (idOrden)	references ordenes(idOrden)
 ); 
@@ -191,6 +191,16 @@ begin
 end $$
 delimiter ; 
 
+delimiter $$
+create trigger trAsignarPrecioActual before insert on detalleOrden
+for each row
+begin
+	declare pPrecioActual decimal(10,2); 
+    select precio from panes where idPan=new.idPan into pPrecioActual; 
+	set new.precio=pPrecioActual;
+end $$
+delimiter ; 
+
 INSERT INTO panes (nombre, descripcion, precio, stock, imagenPan, categoria)
 VALUES
 ('Pan Blanco', 'Pan suave clásico', 15.50, 20, 'a', 'Trigo'),
@@ -214,7 +224,7 @@ rollback;
 
 
 select * from detalleOrden; 
-
+select * from panes; 
 call spReporteDeVentaMeses('2025-11-10','2025-12-10'); 
 select fnCrearOrden(1) into @id;
 insert into ordenes(idOrden,fechaOrden,idEmpleado) values(9,'2025-11-10',1); 
