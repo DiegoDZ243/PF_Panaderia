@@ -60,12 +60,11 @@ namespace PuntoDeVentaPanaderia.Backend
             MySqlConnection cn = new MySqlConnection();
             cn.ConnectionString= "server=localhost;database=ventasPan;uid=panes;pwd=root;";
             cn.Open();
-            string query = "insert into panes(idPan,nombre,descripcion,precio,stock,imagenPan,categoria)" +
-                " values(@idPan,@nombre,@descripcion,@precio,@stock,@imagenPan,@categoria);";
+            string query = "insert into panes(nombre,descripcion,precio,stock,imagenPan,categoria)" +
+                " values(@nombre,@descripcion,@precio,@stock,@imagenPan,@categoria);";
             MySqlCommand cmd = new MySqlCommand(query,cn); 
             try
             {
-                cmd.Parameters.AddWithValue("idPan", pan.idPan);
                 cmd.Parameters.AddWithValue("nombre", pan.nombre);
                 cmd.Parameters.AddWithValue("descripcion", pan.descripcion);
                 cmd.Parameters.AddWithValue("precio", pan.precio);
@@ -97,7 +96,7 @@ namespace PuntoDeVentaPanaderia.Backend
             MySqlConnection cn = new MySqlConnection();
             cn.ConnectionString = "server=localhost;database=ventasPan;uid=panes;pwd=root;";
             cn.Open();
-            string query = "update panes set discontinuado=true where idPan=@panId;"; 
+            string query = "update panes set descontinuado=true where idPan=@panId;"; 
             MySqlCommand cmd=new MySqlCommand(query,cn);
             try
             {
@@ -130,7 +129,7 @@ namespace PuntoDeVentaPanaderia.Backend
                 " stock=@stock_nuevo" +
                 " imagenPan=@imagenPan_nueva" +
                 " categoria=@categoria_nueva" +
-                " where idPan=@idPan;";
+                " where idPan=@idPanActual;";
 
             MySqlCommand cmd=new MySqlCommand(query,cn);
             try
@@ -140,7 +139,8 @@ namespace PuntoDeVentaPanaderia.Backend
                 cmd.Parameters.AddWithValue("precio_nuevo", pan.precio);
                 cmd.Parameters.AddWithValue("stock_nuevo", pan.stock);
                 cmd.Parameters.AddWithValue("imagenPan_nueva", pan.direccionImg);
-                cmd.Parameters.AddWithValue("categoria_nueva", pan.categoria); 
+                cmd.Parameters.AddWithValue("categoria_nueva", pan.categoria);
+                cmd.Parameters.AddWithValue("idPanActual", pan.idPan);
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -331,6 +331,25 @@ namespace PuntoDeVentaPanaderia.Backend
 
         #endregion
 
+        #region CATEGORIAS
+
+        /// <summary>
+        /// Retorna una lista estática de las categorías de pan definidas en el ENUM de la tabla panes.
+        /// </summary>
+        public List<string> ObtenerCategorias()
+        {
+            //Enum estatico, luego actualizar a consulta a base de datos si es necesario, ojo
+            List<string> categorias = new List<string>
+        {
+            "Trigo",
+            "Centeno",
+            "Integral",
+            "Avena"
+        };
+            return categorias;
+        }
+
+        #endregion
         public bool registrarOrden(List<clsDetalleOrden> productos, int idEmpleado)
         {
             MySqlConnection cn = new MySqlConnection();
