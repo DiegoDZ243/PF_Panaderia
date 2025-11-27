@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PuntoDeVentaPanaderia
+namespace PuntoDeVentaPanaderia.Frontend
 {
-    public partial class frmLogin : Form
+    public partial class frmMenu : Form
     {
-        public frmLogin()
+        public frmMenu()
         {
             InitializeComponent();
+        }
+
+        private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
