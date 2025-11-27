@@ -83,3 +83,4 @@ C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanad
 C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.exe
 C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.pdb
 C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmMenu.resources
+C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmAgregarEmpleado.resources

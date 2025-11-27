@@ -21,5 +21,25 @@ namespace PuntoDeVentaPanaderia.Frontend
         {
             Application.Exit();
         }
+
+        private void btnVerEmpleados_Click(object sender, EventArgs e)
+        {
+            
+            frmEmpleados frmEmp = new frmEmpleados();
+            
+            frmEmp.Show();
+            frmEmp.Focus();
+
+        }
+
+        private void btnAgregarEmpleado_Click(object sender, EventArgs e)
+        {
+            
+            frmAgregarEmpleado frmAEmp = new frmAgregarEmpleado();
+           
+            frmAEmp.Show();
+            frmAEmp.Focus();
+            
+        }
     }
 }
