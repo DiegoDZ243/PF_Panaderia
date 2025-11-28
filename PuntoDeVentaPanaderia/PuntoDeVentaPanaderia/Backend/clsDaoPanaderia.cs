@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -55,16 +55,22 @@ namespace PuntoDeVentaPanaderia.Backend
 
         }
 
-        public bool registrarPan(clsPanes pan)
+        public bool registrarPan(clsPanes pan, int idEmpleado)
         {
             MySqlConnection cn = new MySqlConnection();
             cn.ConnectionString= "server=localhost;database=ventasPan;uid=panes;pwd=root;";
             cn.Open();
-            string query = "insert into panes(nombre,descripcion,precio,stock,imagenPan,categoria)" +
-                " values(@nombre,@descripcion,@precio,@stock,@imagenPan,@categoria);";
+            string query = "insert into panes(idPan,nombre,descripcion,precio,stock,imagenPan,categoria)" +
+                " values(@idPan,@nombre,@descripcion,@precio,@stock,@imagenPan,@categoria);";
+            string query2 = "call spEmpleado_Auditoria(@idEmpleado);"; 
+            MySqlTransaction tran = cn.BeginTransaction();
+
             MySqlCommand cmd = new MySqlCommand(query,cn); 
+            MySqlCommand cmd2= new MySqlCommand(query2,cn);
+
             try
             {
+                cmd.Parameters.AddWithValue("idPan", pan.idPan);
                 cmd.Parameters.AddWithValue("nombre", pan.nombre);
                 cmd.Parameters.AddWithValue("descripcion", pan.descripcion);
                 cmd.Parameters.AddWithValue("precio", pan.precio);
@@ -73,16 +79,23 @@ namespace PuntoDeVentaPanaderia.Backend
                 cmd.Parameters.AddWithValue("categoria", pan.categoria); 
                 cmd.ExecuteNonQuery();
 
+                cmd2.Parameters.AddWithValue("idEmpleado",idEmpleado); 
+                cmd2.ExecuteNonQuery();
+
+                tran.Commit();
                 return true; 
 
             }
             catch (Exception ex)
             {
+                tran.Rollback();
                 throw ex; 
 
             }
             finally
             {
+                tran.Dispose();
+                cmd2.Dispose(); 
                 cmd.Dispose();
                 cn.Close();
                 cn.Dispose(); 
@@ -90,48 +103,63 @@ namespace PuntoDeVentaPanaderia.Backend
 
         }
 
-        public bool descontinuarPan(int panId)
+        public bool descontinuarPan(int panId,int idEmpleado)
         {
 
             MySqlConnection cn = new MySqlConnection();
             cn.ConnectionString = "server=localhost;database=ventasPan;uid=panes;pwd=root;";
             cn.Open();
-            string query = "update panes set descontinuado=true where idPan=@panId;"; 
+            string query = "update panes set descontinuado=true where idPan=@panId;";
+            string query2 = "call spEmpleado_Auditoria(@idEmpleado);";
+            MySqlTransaction tran = cn.BeginTransaction();
             MySqlCommand cmd=new MySqlCommand(query,cn);
+            MySqlCommand cmd2 = new MySqlCommand(query2, cn);
             try
             {
                 cmd.Parameters.AddWithValue("panId", panId); 
                 cmd.ExecuteNonQuery ();
 
+                cmd2.Parameters.AddWithValue("idEmpleado",idEmpleado);
+                cmd2.ExecuteNonQuery();
+
+                tran.Commit(); 
                 return true; 
             }
             catch (Exception ex)
             {
+                tran.Rollback();
                 throw ex; 
             }
             finally
             {
+                tran.Dispose();
                 cn.Close(); 
                 cn.Dispose();
                 cmd.Dispose();
+                cmd2.Dispose ();
             }
         }
 
-        public bool actualizarPan(clsPanes pan)
+        public bool actualizarPan(clsPanes pan, int idEmpleado)
         {
             MySqlConnection cn = new MySqlConnection();
             cn.ConnectionString = "server=localhost;database=ventasPan;uid=panes;pwd=root;";
             cn.Open();
             string query = "update panes " +
-                "set nombre=@nombre_nuevo" +
-                " descripcion=@descripcion_nueva" +
-                " precio=@precio_nuevo" +
-                " stock=@stock_nuevo" +
-                " imagenPan=@imagenPan_nueva" +
+                "set nombre=@nombre_nuevo," +
+                " descripcion=@descripcion_nueva," +
+                " precio=@precio_nuevo," +
+                " stock=@stock_nuevo," +
+                " imagenPan=@imagenPan_nueva," +
                 " categoria=@categoria_nueva" +
-                " where idPan=@idPanActual;";
+                " where idPan=@idPan;";
+
+            string query2 = "call spEmpleado_Auditoria(@idEmpleado);"; 
+            MySqlTransaction tran = cn.BeginTransaction();
 
             MySqlCommand cmd=new MySqlCommand(query,cn);
+
+            MySqlCommand cmd2 = new MySqlCommand(query2, cn);
             try
             {
                 cmd.Parameters.AddWithValue("nombre_nuevo", pan.nombre);
@@ -140,16 +168,23 @@ namespace PuntoDeVentaPanaderia.Backend
                 cmd.Parameters.AddWithValue("stock_nuevo", pan.stock);
                 cmd.Parameters.AddWithValue("imagenPan_nueva", pan.direccionImg);
                 cmd.Parameters.AddWithValue("categoria_nueva", pan.categoria);
-                cmd.Parameters.AddWithValue("idPanActual", pan.idPan);
+                cmd.Parameters.AddWithValue("idPan", pan.idPan); 
                 cmd.ExecuteNonQuery();
+
+                cmd2.Parameters.AddWithValue("idEmpleado", idEmpleado);
+                cmd2.ExecuteNonQuery(); 
+                tran.Commit();
                 return true;
             }
             catch(Exception ex)
             {
+                tran.Rollback(); 
                 throw ex; 
             }
             finally
             {
+                tran.Dispose();
+                cmd2.Dispose(); 
                 cmd.Dispose ();
                 cn.Close();
                 cn.Dispose();
@@ -331,25 +366,6 @@ namespace PuntoDeVentaPanaderia.Backend
 
         #endregion
 
-        #region CATEGORIAS
-
-        /// <summary>
-        /// Retorna una lista estática de las categorías de pan definidas en el ENUM de la tabla panes.
-        /// </summary>
-        public List<string> ObtenerCategorias()
-        {
-            //Enum estatico, luego actualizar a consulta a base de datos si es necesario, ojo
-            List<string> categorias = new List<string>
-        {
-            "Trigo",
-            "Centeno",
-            "Integral",
-            "Avena"
-        };
-            return categorias;
-        }
-
-        #endregion
         public bool registrarOrden(List<clsDetalleOrden> productos, int idEmpleado)
         {
             MySqlConnection cn = new MySqlConnection();
@@ -429,13 +445,54 @@ namespace PuntoDeVentaPanaderia.Backend
             {
                 throw new Exception("Ocurrió un error al recuperar las ventas del sistema"); 
             }
-            finally
+            finally //Git
             {
                 cmd.Dispose();
                 cn.Close();
                 cn.Dispose(); 
             }
+        }
 
+
+        public List<clsAuditoria> obtenerAuditorias()
+        {
+            MySqlConnection cn = new MySqlConnection();
+            cn.ConnectionString = "server=localhost;database=ventasPan;uid=panes;pwd=root;";
+            cn.Open();
+            string query = "select * from vwAuditorias;";
+            MySqlCommand cmd = new MySqlCommand(query,cn);
+
+            try
+            {
+                MySqlDataReader reader = cmd.ExecuteReader();
+                List<clsAuditoria> auditorias=new List<clsAuditoria>();
+
+                while (reader.Read())
+                {
+                    clsAuditoria auditoria = new clsAuditoria();
+                    auditoria.nombre=reader.GetString(0);
+                    auditoria.cambio=reader.GetString(1);
+                    auditoria.usuario = reader.GetString(2);
+                    auditoria.precioAnterior = reader.GetDecimal(3); 
+                    auditoria.precioNuevo = reader.GetDecimal(4);
+                    auditoria.fecha=reader.GetDateTime(5);
+                    auditorias.Add(auditoria);
+
+                }
+                return auditorias;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error al recuperar las" +
+                    " auditorias. Intentelo nuevamente más tarde");
+            }
+            finally
+            {
+                cmd.Dispose(); 
+                cn.Close();
+                cn.Dispose();
+            }
         }
     }
 }
