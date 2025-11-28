@@ -136,6 +136,18 @@
     <Compile Include="Frontend\frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\frmReporteVenta1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\frmReporteVenta1.Designer.cs">
+      <DependentUpon>frmReporteVenta1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frontend\frmVender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\frmVender.Designer.cs">
+      <DependentUpon>frmVender.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pojos\clsAuditoria.cs" />
     <Compile Include="Pojos\clsDetalleOrden.cs" />
     <Compile Include="Pojos\clsEmpleados.cs" />
@@ -153,15 +165,18 @@
     <EmbeddedResource Include="Frontend\frmAgregarEmpleado.resx">
       <DependentUpon>frmAgregarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frontend\frmEmpleados.resx">
-      <DependentUpon>frmEmpleados.cs</DependentUpon>
-    </EmbeddedResource>
     <!-- End of merged resources -->
     <EmbeddedResource Include="Frontend\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\frmReporteVenta1.resx">
+      <DependentUpon>frmReporteVenta1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\frmVender.resx">
+      <DependentUpon>frmVender.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

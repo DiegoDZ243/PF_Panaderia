@@ -81,7 +81,7 @@ namespace PuntoDeVentaPanaderia
         }
 
         #endregion
-
+        
         public frmLogin()
         {
             InitializeComponent();
@@ -97,8 +97,9 @@ namespace PuntoDeVentaPanaderia
 
                 if (empleado != null)
                 {
-                    MessageBox.Show("¡Bienvenido! Inicio de sesión exitoso.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    frmMenu frmm = new frmMenu();
+                    
+                    MessageBox.Show("¡Bienvenido" + empleado.nombre +"! Inicio de sesión exitoso.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmMenu frmm = new frmMenu(empleado);
 
                     frmm.Show();
                     frmm.Focus();

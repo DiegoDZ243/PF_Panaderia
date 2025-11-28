@@ -79,7 +79,7 @@ namespace PuntoDeVentaPanaderia
             this.lblPass.ForeColor = System.Drawing.Color.DimGray;
             this.lblPass.Location = new System.Drawing.Point(32, 160);
             this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(109, 23);
+            this.lblPass.Size = new System.Drawing.Size(120, 23);
             this.lblPass.TabIndex = 3;
             this.lblPass.Text = "CONTRASEÑA";
             // 
@@ -90,7 +90,7 @@ namespace PuntoDeVentaPanaderia
             this.lblUres.ForeColor = System.Drawing.Color.DimGray;
             this.lblUres.Location = new System.Drawing.Point(32, 60);
             this.lblUres.Name = "lblUres";
-            this.lblUres.Size = new System.Drawing.Size(81, 23);
+            this.lblUres.Size = new System.Drawing.Size(83, 23);
             this.lblUres.TabIndex = 2;
             this.lblUres.Text = "USUARIO";
             // 
@@ -104,6 +104,7 @@ namespace PuntoDeVentaPanaderia
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(260, 32);
             this.txtContrasena.TabIndex = 1;
+            this.txtContrasena.Text = "hola";
             this.txtContrasena.UseSystemPasswordChar = true;
             this.txtContrasena.Leave += new System.EventHandler(this.txtContrasena_Leave);
             // 
@@ -117,6 +118,7 @@ namespace PuntoDeVentaPanaderia
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(260, 32);
             this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.Text = "DiegoDiaz";
             this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
             // 
             // errPass

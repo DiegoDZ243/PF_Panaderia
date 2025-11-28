@@ -61,7 +61,7 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
             this.lblTitulo.Location = new System.Drawing.Point(20, 10);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(273, 54);
+            this.lblTitulo.Size = new System.Drawing.Size(269, 54);
             this.lblTitulo.TabIndex = 6;
             this.lblTitulo.Text = "Menú Principal";
             // 
@@ -141,6 +141,7 @@
             this.btnDetallesVentas.TabIndex = 4;
             this.btnDetallesVentas.Text = "DETALLES VENTAS";
             this.btnDetallesVentas.UseVisualStyleBackColor = false;
+            this.btnDetallesVentas.Click += new System.EventHandler(this.btnDetallesVentas_Click);
             // 
             // btnCompararVentas
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PuntoDeVentaPanaderia.Pojos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace PuntoDeVentaPanaderia.Frontend
 {
     public partial class frmMenu : Form
     {
-        public frmMenu()
+        clsEmpleados empleadoActual; 
+        public frmMenu(clsEmpleados empleado)
         {
             InitializeComponent();
+            empleadoActual= empleado;
+
         }
 
         private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
@@ -24,9 +28,9 @@ namespace PuntoDeVentaPanaderia.Frontend
 
         private void btnVerEmpleados_Click(object sender, EventArgs e)
         {
-            
+
             frmEmpleados frmEmp = new frmEmpleados();
-            
+
             frmEmp.Show();
             frmEmp.Focus();
 
@@ -35,10 +39,20 @@ namespace PuntoDeVentaPanaderia.Frontend
         private void btnAgregarEmpleado_Click(object sender, EventArgs e)
         {
             
-            frmAgregarEmpleado frmAEmp = new frmAgregarEmpleado();
-           
-            frmAEmp.Show();
+            frmAgregarEmpleado frmAEmp = new frmAgregarEmpleado(empleadoActual);
+            this.Hide(); 
+            frmAEmp.ShowDialog();
             frmAEmp.Focus();
+            this.Show(); 
+        }
+
+        private void btnDetallesVentas_Click(object sender, EventArgs e)
+        {
+            frmReporteVenta1 reporteVenta = new frmReporteVenta1();
+            this.Hide();
+            reporteVenta.ShowDialog();
+            reporteVenta.Focus();
+            this.Show();
             
         }
     }

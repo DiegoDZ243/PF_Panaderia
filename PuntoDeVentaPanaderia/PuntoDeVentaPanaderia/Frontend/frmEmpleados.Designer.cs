@@ -1,5 +1,4 @@
-﻿
-namespace PuntoDeVentaPanaderia.Frontend
+﻿namespace PuntoDeVentaPanaderia.Frontend
 {
     partial class frmEmpleados
     {

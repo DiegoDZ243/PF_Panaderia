@@ -14,8 +14,11 @@ namespace PuntoDeVentaPanaderia.Frontend
 {
     public partial class frmAgregarEmpleado : Form
     {
-        public frmAgregarEmpleado()
+        private clsEmpleados empleadoActual; 
+        private frmMenu menu; 
+        public frmAgregarEmpleado(clsEmpleados empleado)
         {
+            empleadoActual = empleado;
             InitializeComponent();
         }
 
@@ -204,10 +207,11 @@ namespace PuntoDeVentaPanaderia.Frontend
                 {
                     MessageBox.Show("Empleado registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarCampos();
-                    
-                    frmMenu frmM = new frmMenu();
-                    frmM.Focus();
+                    this.Hide(); 
+                    menu.ShowDialog();
+                    menu.Focus();
                     this.Close();
+                    this.Dispose(); 
 
                 }
             }

@@ -15,11 +15,13 @@ namespace PuntoDeVentaPanaderia.Frontend
 {
     public partial class frmAgregarPan : Form
     {
+        private clsEmpleados empleadoActual; 
 
         private string rutaImagenSeleccionada = "";
 
-        public frmAgregarPan()
+        public frmAgregarPan(clsEmpleados empleado)
         {
+            empleadoActual= empleado;
             InitializeComponent();
         }
 
@@ -31,13 +33,11 @@ namespace PuntoDeVentaPanaderia.Frontend
             try
             {
                 // Pedir lista
-                List<string> categorias = dao.ObtenerCategorias();
+                List<string> categorias = new List<string> { "Trigo", "Centeno", "Integral", "Avena" };
 
                 cmbCategoria.Items.Clear();
-                foreach (string categoria in categorias)
-                {
-                    cmbCategoria.Items.Add(categoria);
-                }
+                cmbCategoria.DataSource=categorias;
+                
 
                 // Establecer una opción por defecto
                 if (cmbCategoria.Items.Count > 0)
@@ -73,10 +73,10 @@ namespace PuntoDeVentaPanaderia.Frontend
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (!ValidarEntradas()) //Faltan validar las entradas
-            {
-                return; // Detiene la ejecución si la validación falla
-            }
+            //if (!ValidarEntradas()) //Faltan validar las entradas
+            //{
+            //    return; // Detiene la ejecución si la validación falla
+            //}
 
             // Obtener valores validados
             decimal precio = decimal.Parse(txtPrecio.Text);
@@ -99,7 +99,7 @@ namespace PuntoDeVentaPanaderia.Frontend
             clsDaoPanaderia dao = new clsDaoPanaderia();
             try
             {
-                if (dao.registrarPan(nuevoPan))
+                if (dao.registrarPan(nuevoPan,empleadoActual.idEmpleado))
                 {
                     MessageBox.Show("Producto registrado exitosamente.", "Éxito",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
