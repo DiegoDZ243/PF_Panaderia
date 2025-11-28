@@ -1,12 +1,34 @@
-# Ignorar directorios de Visual Studio y sus archivos de caché
-**/.vs/
-*.vspscc
-*.vssscc
-*.suo
+# Visual Studio
+.vs/
 *.user
-*.userprefs
-*.vsidx
+*.suo
 
-# Ignorar archivos y directorios de compilación
-**/[Bb]in/
-**/[Oo]bj/
+# Build results
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+# Debug / Release folders
+Debug/
+Release/
+
+# Cache files
+*.cache
+*.pdb
+*.exe
+
+# Visual Studio Code
+.vscode/
+
+# NuGet Packages
+*.nupkg
+packages/
+*.snupkg
+
+# Logs
+*.log
+
+# Temporary files
+~*
+*.tmp
