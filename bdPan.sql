@@ -1,6 +1,6 @@
-drop database if exists ventasPan; 
-create database ventasPan; 
-use ventasPan; 
+drop database if exists ventas; 
+create database ventas; 
+use ventas; 
 
 create table panes(
 	idPan			int 			primary key 	auto_increment,
@@ -10,7 +10,7 @@ create table panes(
     stock			int				not null,
     imagenPan		varchar(255)	not null,
     categoria		enum('Trigo','Centeno','Integral','Avena')	not null,
-    descontinuado	bool			default false
+    descontinuado	bool			not null 		default false
 ); 
 
 create table empleados(
@@ -20,13 +20,8 @@ create table empleados(
     usuario			varchar(50)		not null		unique, 
 	contraseña		varchar(64)		not null, 
     telefono		varchar(13)		not null,
-    activo			boolean			default		true
-); 
-
-create table admins(
-	idAdmin			int		primary key		auto_increment,
-    idEmpleado		int		not null		unique,
-    foreign key (idEmpleado)	references empleados(idEmpleado)
+    activo			boolean			default		true,
+    administrador	boolean			default		true
 ); 
 
 create table ordenes(
@@ -40,22 +35,25 @@ create table detalleOrden(
 	idPan 			int				not null, 
     idOrden			int 			not null, 
 	unidades		int				not null, 
-    precio			decimal(10,2)	not null,
+    precio			decimal(10,2)	null	,
+    primary key(idPan,idOrden),
     foreign key (idPan)		references panes(idPan),
     foreign key (idOrden)	references ordenes(idOrden)
 ); 
 
-create table auditoria(
+create table auditorias(
 	idAuditoria		int				primary key 	auto_increment,
-    tipoDeCambio	varchar(20)		not null,
+    tipoDeCambio	varchar(50)		not null,
 	precioAnterior	decimal(10,2)	not null, 
 	precioNuevo		decimal(10,2)	not null, 
-    idEmpleado		int 			not null, 
+    idEmpleado		int 			null, 
     idPan			int				not null, 
+    fecha			datetime 		not null 		default 	current_timestamp,
     foreign key (idEmpleado)		references empleados(idEmpleado), 
-    foreign key (idPan)			references panes(idPan)
+    foreign key (idPan)				references panes(idPan)
 ); 
 
+describe auditorias;
 -- Stored Procedures
 -- Muestra la información sobre los empleados 
 delimiter $$
@@ -142,6 +140,22 @@ begin
 			order by Precio desc; 
 end $$
 delimiter ; 
+
+-- Actualiza la tabla de auditorias, tomando la clave primaria de la entrada más reciente de
+-- auditorias, para guardar el id del empleado que realizó la operación.
+delimiter $$
+create procedure spEmpleado_Auditoria(
+	in pIdEmpleado	int)
+begin
+	
+	
+    update auditorias 
+		set idEmpleado=pIdEmpleado
+        where idAuditoria=@lastin; 
+end $$
+delimiter ; 
+
+
 -- Función que da de alta una nueva orden y retorna su id
 delimiter $$
 create function fnCrearOrden(pIdEmpleado int)
@@ -191,34 +205,79 @@ begin
 end $$
 delimiter ; 
 
+-- Asigna el precio del pan en la orden. Se almacena el precio al que estaba el pan en ese momento
+-- , es decir, este precio no cambiará si se actualiza en la tabla de "panes".
+delimiter $$
+create trigger trAsignarPrecioActual before insert on detalleOrden
+for each row
+begin
+	declare pPrecioActual decimal(10,2); 
+    select precio from panes where idPan=new.idPan into pPrecioActual; 
+	set new.precio=pPrecioActual;
+end $$
+delimiter ; 
+
+
+-- Trigger para Auditoria -> Registrar cualquier inserción en la tabla de panes
+delimiter $$
+create trigger trRegistrarInsertar after insert on panes
+for each row
+begin
+	-- Los datos del empleado será recuperados del backend del programa
+	insert into auditorias(tipoDeCambio,precioAnterior,precioNuevo,idPan)
+    values('DAR DE ALTA',0,new.precio,new.idPan);
+    set @lastIn=LAST_INSERT_ID();
+end $$
+delimiter ; 
+
+-- Trigger para Auditoria -> Registrar cualquier actualización en la tabla de panes
+delimiter $$
+create trigger trRegistrarActualizar after update on panes
+for each row
+begin
+	declare texto varchar(50); 
+	-- Los datos del empleado será recuperados del backend del programa
+    -- colocar if
+    IF new.descontinuado=old.descontinuado AND new.precio!=old.precio then
+		insert into auditorias(tipoDeCambio,precioAnterior,precioNuevo,idPan)
+		values('ACTUALIZAR PRECIO',old.precio,new.precio,new.idPan);
+        set @lastIn=LAST_INSERT_ID();
+	ELSEIF new.descontinuado!=old.descontinuado AND new.precio=old.precio then
+		IF new.descontinuado=true then
+			set texto='ACTIVAR'; 
+		ELSE 
+			set texto='DESCONTINUAR';
+        END IF; 
+        insert into auditorias(tipoDeCambio,precioAnterior,precioNuevo,idPan)
+		values(texto,old.precio,new.precio,new.idPan);
+        set @lastIn=LAST_INSERT_ID();
+    END IF; 
+end $$
+delimiter ; 
+
+
+
+-- VIEWS
+
+drop view if exists vwAuditorias; 
+create view vwAuditorias as
+select p.nombre `Producto` ,a.tipoDeCambio `Cambio`, concat(e.nombre,' ',e.apellidos) `Realizado por:`,
+ a.precioAnterior `Precio Anterior`, a.precioNuevo `Precio nuevo`, 
+date_format(a.fecha,'%d/%m/%y') `Fecha`from 
+panes p join auditorias a on a.idPan=p.idPan
+join empleados e on e.idEmpleado=a.idEmpleado;  
+
 INSERT INTO panes (nombre, descripcion, precio, stock, imagenPan, categoria)
 VALUES
 ('Pan Blanco', 'Pan suave clásico', 15.50, 20, 'a', 'Trigo'),
 ('Pan Integral', 'Pan saludable de fibra', 18.00, 30, '0x00', 'Integral'),
 ('Pan Centeno', 'Pan más oscuro y denso', 22.00, 15, '0x00', 'Centeno');
 
+
 insert into empleados(nombre,apellidos,usuario,contraseña,telefono)
 values ('Diego','Diaz','DiegoDiaz',sha2('hola',256),445); 
 
-select idEmpleado from empleados where idEmpleado=1 and contraseña=sha2('No sé',256); 
-
-begin; 
-select fnCrearOrden(1) into @id;
-select @id;  
-select * from ordenes; 
-insert into detalleOrden (idPan,idOrden,unidades) values(1,@id,10); 
-select * from detalleOrden; 
-select * from panes; 
-select * from empleados;
-rollback; 
-
-
-select * from detalleOrden; 
-
-call spReporteDeVentaMeses('2025-11-10','2025-12-10'); 
-select fnCrearOrden(1) into @id;
-insert into ordenes(idOrden,fechaOrden,idEmpleado) values(9,'2025-11-10',1); 
-insert into detalleOrden (idPan,idOrden,unidades) values(1,9,1); 
-select * from mysql.user; 
+select idEmpleado from empleados where idEmpleado=1 and contraseña=sha2('hola',256); 
+ 
 create user 'panes'@'localhost' identified by 'root'; 
 grant all privileges on ventaspan.* to 'panes'@'localhost'; 
