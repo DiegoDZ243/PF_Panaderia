@@ -103,6 +103,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pojos\clsAuditoria.cs" />
     <Compile Include="Pojos\clsDetalleOrden.cs" />
     <Compile Include="Pojos\clsEmpleados.cs" />
     <Compile Include="Pojos\clsPanes.cs" />

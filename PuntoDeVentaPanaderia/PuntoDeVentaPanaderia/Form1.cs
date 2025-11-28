@@ -16,7 +16,7 @@ namespace PuntoDeVentaPanaderia
 {
     public partial class Form1 : Form
     {
-        List<clsDetalleOrden> panes= new List<clsDetalleOrden>();
+        List<clsPanes> panes= new List<clsPanes>();
         int idEmpleado=1; 
         public Form1()
         {
@@ -24,8 +24,9 @@ namespace PuntoDeVentaPanaderia
             InitializeComponent();
             clsDaoPanaderia dao = new clsDaoPanaderia();
             gridPrueba.Rows.Clear();
-            gridPrueba.DataSource = dao.mostrarReporteVentas(new DateTime(2025,11,10), new DateTime(2025, 12, 10));
-            //seleccionaImg(); 
+            panes= dao.obtenerPanes();
+            gridPrueba.DataSource = dao.obtenerAuditorias(); 
+            seleccionaImg(); 
             
         }
 
@@ -44,7 +45,11 @@ namespace PuntoDeVentaPanaderia
                 {
                     string rutaOrigen = openFileDialog.FileName;
                     string rutaDestino = "panesImg/" + Path.GetFileName(rutaOrigen);
-                    File.Copy(rutaOrigen, rutaDestino);
+                    if (!File.Exists(rutaDestino))
+                    {
+                        File.Copy(rutaOrigen, rutaDestino);
+                    }
+                    
                 }
             }
         }
@@ -79,23 +84,31 @@ namespace PuntoDeVentaPanaderia
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            clsDetalleOrden detalle=new clsDetalleOrden();
-            detalle.idPan=int.Parse(txtProductoId.Text);
-            detalle.unidades= int.Parse(txtCantidad.Text);
-            panes.Add(detalle); 
+            //clsDetalleOrden detalle=new clsDetalleOrden();
+            //detalle.idPan=int.Parse(txtProductoId.Text);
+            //detalle.unidades= int.Parse(txtCantidad.Text);
+            //panes.Add(detalle); 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            clsDaoPanaderia dao= new clsDaoPanaderia();
-            if (dao.registrarOrden(panes,idEmpleado))
-            {
-                MessageBox.Show("Se registro la orden"); 
-            }
-            else
-            {
-                MessageBox.Show("No se registro"); 
-            }
+            //clsDaoPanaderia dao= new clsDaoPanaderia();
+            //if (dao.registrarOrden(panes,idEmpleado))
+            //{
+            //    MessageBox.Show("Se registro la orden"); 
+            //}
+            //else
+            //{
+            //    MessageBox.Show("No se registro"); 
+            //}
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            clsDaoPanaderia dao =new clsDaoPanaderia();
+            clsPanes pan = panes[Int32.Parse(txtIdProducto.Text.Trim()) - 1];
+            pan.precio=Decimal.Parse(txtActualizaPrecio.Text.Trim());
+            dao.actualizarPan(pan, 1); 
         }
     }
 }
