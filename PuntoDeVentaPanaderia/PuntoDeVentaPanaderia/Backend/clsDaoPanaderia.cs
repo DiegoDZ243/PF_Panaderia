@@ -60,17 +60,21 @@ namespace PuntoDeVentaPanaderia.Backend
             MySqlConnection cn = new MySqlConnection();
             cn.ConnectionString= "server=localhost;database=ventasPan;uid=panes;pwd=root;";
             cn.Open();
+<<<<<<< HEAD
             string query = "insert into panes(idPan,nombre,descripcion,precio,stock,imagenPan,categoria)" +
                 " values(@idPan,@nombre,@descripcion,@precio,@stock,@imagenPan,@categoria);";
             string query2 = "call spEmpleado_Auditoria(@idEmpleado);"; 
             MySqlTransaction tran = cn.BeginTransaction();
 
+=======
+            string query = "insert into panes(nombre,descripcion,precio,stock,imagenPan,categoria)" +
+                " values(@nombre,@descripcion,@precio,@stock,@imagenPan,@categoria);";
+>>>>>>> CambioPrueba
             MySqlCommand cmd = new MySqlCommand(query,cn); 
             MySqlCommand cmd2= new MySqlCommand(query2,cn);
 
             try
             {
-                cmd.Parameters.AddWithValue("idPan", pan.idPan);
                 cmd.Parameters.AddWithValue("nombre", pan.nombre);
                 cmd.Parameters.AddWithValue("descripcion", pan.descripcion);
                 cmd.Parameters.AddWithValue("precio", pan.precio);
@@ -109,9 +113,13 @@ namespace PuntoDeVentaPanaderia.Backend
             MySqlConnection cn = new MySqlConnection();
             cn.ConnectionString = "server=localhost;database=ventasPan;uid=panes;pwd=root;";
             cn.Open();
+<<<<<<< HEAD
             string query = "update panes set descontinuado=true where idPan=@panId;";
             string query2 = "call spEmpleado_Auditoria(@idEmpleado);";
             MySqlTransaction tran = cn.BeginTransaction();
+=======
+            string query = "update panes set descontinuado=true where idPan=@panId;"; 
+>>>>>>> CambioPrueba
             MySqlCommand cmd=new MySqlCommand(query,cn);
             MySqlCommand cmd2 = new MySqlCommand(query2, cn);
             try
@@ -152,7 +160,7 @@ namespace PuntoDeVentaPanaderia.Backend
                 " stock=@stock_nuevo," +
                 " imagenPan=@imagenPan_nueva," +
                 " categoria=@categoria_nueva" +
-                " where idPan=@idPan;";
+                " where idPan=@idPanActual;";
 
             string query2 = "call spEmpleado_Auditoria(@idEmpleado);"; 
             MySqlTransaction tran = cn.BeginTransaction();
@@ -168,7 +176,11 @@ namespace PuntoDeVentaPanaderia.Backend
                 cmd.Parameters.AddWithValue("stock_nuevo", pan.stock);
                 cmd.Parameters.AddWithValue("imagenPan_nueva", pan.direccionImg);
                 cmd.Parameters.AddWithValue("categoria_nueva", pan.categoria);
+<<<<<<< HEAD
                 cmd.Parameters.AddWithValue("idPan", pan.idPan); 
+=======
+                cmd.Parameters.AddWithValue("idPanActual", pan.idPan);
+>>>>>>> CambioPrueba
                 cmd.ExecuteNonQuery();
 
                 cmd2.Parameters.AddWithValue("idEmpleado", idEmpleado);
@@ -366,6 +378,25 @@ namespace PuntoDeVentaPanaderia.Backend
 
         #endregion
 
+        #region CATEGORIAS
+
+        /// <summary>
+        /// Retorna una lista estática de las categorías de pan definidas en el ENUM de la tabla panes.
+        /// </summary>
+        public List<string> ObtenerCategorias()
+        {
+            //Enum estatico, luego actualizar a consulta a base de datos si es necesario, ojo
+            List<string> categorias = new List<string>
+        {
+            "Trigo",
+            "Centeno",
+            "Integral",
+            "Avena"
+        };
+            return categorias;
+        }
+
+        #endregion
         public bool registrarOrden(List<clsDetalleOrden> productos, int idEmpleado)
         {
             MySqlConnection cn = new MySqlConnection();
