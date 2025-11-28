@@ -84,3 +84,14 @@ C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanad
 C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.pdb
 C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmMenu.resources
 C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmAgregarEmpleado.resources
+C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.csproj.AssemblyReference.cache
+C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.exe.config
+C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Form1.resources
+C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmAgregarPan.resources
+C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmAgregarEmpleado.resources
+C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.frmLogin.resources
+C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmMenu.resources
+C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Properties.Resources.resources
+C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.csproj.GenerateResource.cache
+C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.exe
+C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.pdb
