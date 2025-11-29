@@ -1,6 +1,6 @@
-drop database if exists ventas; 
-create database ventas; 
-use ventas; 
+drop database if exists ventasPan; 
+create database ventasPan; 
+use ventasPan; 
 
 create table panes(
 	idPan			int 			primary key 	auto_increment,
@@ -21,7 +21,7 @@ create table empleados(
 	contraseña		varchar(64)		not null, 
     telefono		varchar(13)		not null,
     activo			boolean			default		true,
-    administrador	boolean			default		true
+    administrador	boolean			default		false
 ); 
 
 create table ordenes(
@@ -59,7 +59,7 @@ describe auditorias;
 delimiter $$
 create procedure spMostrarEmpleados()
 begin
-	select idEmpleado, nombre, apellidos, usuario, telefono from empleados where activo=true; 
+	select idEmpleado, nombre, apellidos, usuario, telefono, administrador from empleados where activo=true; 
 end $$
 delimiter ; 
 
@@ -72,21 +72,6 @@ begin
 end $$
 delimiter ; 
 
--- Actualizar datos de empleado
-delimiter $$
-create procedure spRegistrarEmpleado(
-	in pNombre			varchar(50)		,
-    in pApellidos		varchar(50),
-    in pUsuario			varchar(50), 
-	in pContraseña		varchar(64), 
-    in pTelefono		varchar(13)
-)
-begin 
-	insert into empleados (nombre, apellidos, usuario, contraseña, telefono)
-	values(pNombre,pApellidos,pUsuario,pContraseña,pTelefono); 
-end $$
-delimiter ; 
-
 -- Actualiza los datos del empleado
 delimiter $$
 create procedure spActualizarEmpleado(
@@ -94,22 +79,53 @@ create procedure spActualizarEmpleado(
     in pNombre			varchar(50),
     in pApellidos		varchar(50),
     in pUsuario			varchar(50), 
-    in pTelefono		varchar(13)
+    in pTelefono		varchar(13), 
+    in pAdministrador	bool
 )
 begin 
 	update empleados 
 		set nombre=pNombre, 
 			apellidos=pApellidos,
 			usuario=pUsuario,
-			telefono=pTelefono
+			telefono=pTelefono,
+            administrador=pAdministrador
         where idEmpleado=pIdEmpleado; 
 end $$
 delimiter ;
 
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS spRegistrarEmpleado$$
+
+CREATE PROCEDURE spRegistrarEmpleado(
+    IN pNombre          VARCHAR(50),
+    IN pApellidos       VARCHAR(50),
+    IN pUsuario         VARCHAR(50), 
+    IN pContraseña      VARCHAR(64), 
+    IN pTelefono        VARCHAR(13),
+    IN pAdmin           BOOLEAN        
+)
+BEGIN 
+    INSERT INTO empleados (nombre, apellidos, usuario, contraseña, telefono, administrador)
+    VALUES (pNombre, pApellidos, pUsuario, pContraseña, pTelefono, pAdmin); 
+END $$
+
+DELIMITER ;                                                                                                                                                                            y este es el producer para validar si es admin                                                                                                                     DELIMITER $$
+
+delimiter $$
+CREATE PROCEDURE spEsAdmin(IN pIdEmpleado INT)
+BEGIN
+    SELECT administrador 
+    FROM empleados 
+    WHERE idEmpleado = pIdEmpleado;
+END $$
+
+DELIMITER ;
+
 delimiter $$
 create procedure spLoginEmpleado(pUsuario varchar (50), pContraseña	varchar(64))
 begin
-	select idEmpleado, nombre from empleados where usuario=pUsuario and contraseña=pContraseña; 
+	select idEmpleado, nombre, administrador from empleados where usuario=pUsuario and contraseña=pContraseña; 
 end $$
 delimiter ; 
 
@@ -277,7 +293,34 @@ VALUES
 insert into empleados(nombre,apellidos,usuario,contraseña,telefono)
 values ('Diego','Diaz','DiegoDiaz',sha2('hola',256),445); 
 
+INSERT INTO ordenes (fechaOrden, idEmpleado)
+VALUES
+('2025-01-10 10:15:00', 1),
+('2025-01-10 12:30:00', 1),
+('2025-01-11 09:45:00', 1),
+('2025-01-11 17:20:00', 1);
+
+INSERT INTO detalleOrden (idPan, idOrden, unidades, precio)
+VALUES
+(1, 1, 5, 12.50),
+(2, 1, 2, 8.00),
+(3, 2, 6, 10.00),
+(1, 2, 3, 12.50),
+(1, 3, 10, 5.00),
+(2, 3, 1, 8.00),
+(3, 4, 4, 10.00),
+(1, 4, 2, 15.00);
+
+
+
 select idEmpleado from empleados where idEmpleado=1 and contraseña=sha2('hola',256); 
+ 
+call spLoginEmpleado("DiegoDiaz",sha2('hola',256)); 
+update empleados set administrador=false where idEmpleado=1; 
+call spEsAdmin(1); 
+call spMostrarEmpleados; 
+select * from detalleOrden; 
  
 create user 'panes'@'localhost' identified by 'root'; 
 grant all privileges on ventaspan.* to 'panes'@'localhost'; 
+

@@ -13,7 +13,7 @@ namespace PuntoDeVentaPanaderia.Frontend
 {
     public partial class frmMenu : Form
     {
-        clsEmpleados empleadoActual; 
+        private clsEmpleados empleadoActual; 
         public frmMenu(clsEmpleados empleado)
         {
             InitializeComponent();
