@@ -49,9 +49,10 @@
             this.panelContenedor.Controls.Add(this.btnRealizarVenta);
             this.panelContenedor.Controls.Add(this.btnDetallesVentas);
             this.panelContenedor.Controls.Add(this.btnCompararVentas);
-            this.panelContenedor.Location = new System.Drawing.Point(62, 23);
+            this.panelContenedor.Location = new System.Drawing.Point(70, 29);
+            this.panelContenedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(715, 400);
+            this.panelContenedor.Size = new System.Drawing.Size(804, 500);
             this.panelContenedor.TabIndex = 0;
             // 
             // lblTitulo
@@ -59,9 +60,9 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(20, 10);
+            this.lblTitulo.Location = new System.Drawing.Point(22, 12);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(269, 54);
+            this.lblTitulo.Size = new System.Drawing.Size(327, 65);
             this.lblTitulo.TabIndex = 6;
             this.lblTitulo.Text = "Menú Principal";
             // 
@@ -73,9 +74,10 @@
             this.btnVerEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerEmpleados.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.btnVerEmpleados.ForeColor = System.Drawing.Color.White;
-            this.btnVerEmpleados.Location = new System.Drawing.Point(29, 90);
+            this.btnVerEmpleados.Location = new System.Drawing.Point(33, 112);
+            this.btnVerEmpleados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVerEmpleados.Name = "btnVerEmpleados";
-            this.btnVerEmpleados.Size = new System.Drawing.Size(200, 120);
+            this.btnVerEmpleados.Size = new System.Drawing.Size(225, 150);
             this.btnVerEmpleados.TabIndex = 0;
             this.btnVerEmpleados.Text = "VER EMPLEADOS";
             this.btnVerEmpleados.UseVisualStyleBackColor = false;
@@ -89,9 +91,10 @@
             this.btnAgregarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarEmpleado.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.btnAgregarEmpleado.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarEmpleado.Location = new System.Drawing.Point(29, 230);
+            this.btnAgregarEmpleado.Location = new System.Drawing.Point(33, 288);
+            this.btnAgregarEmpleado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAgregarEmpleado.Name = "btnAgregarEmpleado";
-            this.btnAgregarEmpleado.Size = new System.Drawing.Size(200, 120);
+            this.btnAgregarEmpleado.Size = new System.Drawing.Size(225, 150);
             this.btnAgregarEmpleado.TabIndex = 1;
             this.btnAgregarEmpleado.Text = "AGREGAR EMPLEADO";
             this.btnAgregarEmpleado.UseVisualStyleBackColor = false;
@@ -105,9 +108,10 @@
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventario.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.btnInventario.ForeColor = System.Drawing.Color.White;
-            this.btnInventario.Location = new System.Drawing.Point(255, 230);
+            this.btnInventario.Location = new System.Drawing.Point(287, 288);
+            this.btnInventario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Size = new System.Drawing.Size(200, 120);
+            this.btnInventario.Size = new System.Drawing.Size(225, 150);
             this.btnInventario.TabIndex = 2;
             this.btnInventario.Text = "INVENTARIO";
             this.btnInventario.UseVisualStyleBackColor = false;
@@ -120,9 +124,10 @@
             this.btnRealizarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRealizarVenta.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btnRealizarVenta.ForeColor = System.Drawing.Color.White;
-            this.btnRealizarVenta.Location = new System.Drawing.Point(255, 90);
+            this.btnRealizarVenta.Location = new System.Drawing.Point(287, 112);
+            this.btnRealizarVenta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRealizarVenta.Name = "btnRealizarVenta";
-            this.btnRealizarVenta.Size = new System.Drawing.Size(200, 120);
+            this.btnRealizarVenta.Size = new System.Drawing.Size(225, 150);
             this.btnRealizarVenta.TabIndex = 3;
             this.btnRealizarVenta.Text = "REALIZAR VENTA";
             this.btnRealizarVenta.UseVisualStyleBackColor = false;
@@ -135,9 +140,10 @@
             this.btnDetallesVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetallesVentas.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.btnDetallesVentas.ForeColor = System.Drawing.Color.White;
-            this.btnDetallesVentas.Location = new System.Drawing.Point(480, 90);
+            this.btnDetallesVentas.Location = new System.Drawing.Point(540, 112);
+            this.btnDetallesVentas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDetallesVentas.Name = "btnDetallesVentas";
-            this.btnDetallesVentas.Size = new System.Drawing.Size(200, 120);
+            this.btnDetallesVentas.Size = new System.Drawing.Size(225, 150);
             this.btnDetallesVentas.TabIndex = 4;
             this.btnDetallesVentas.Text = "DETALLES VENTAS";
             this.btnDetallesVentas.UseVisualStyleBackColor = false;
@@ -151,25 +157,28 @@
             this.btnCompararVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompararVentas.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.btnCompararVentas.ForeColor = System.Drawing.Color.White;
-            this.btnCompararVentas.Location = new System.Drawing.Point(480, 230);
+            this.btnCompararVentas.Location = new System.Drawing.Point(540, 288);
+            this.btnCompararVentas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCompararVentas.Name = "btnCompararVentas";
-            this.btnCompararVentas.Size = new System.Drawing.Size(200, 120);
+            this.btnCompararVentas.Size = new System.Drawing.Size(225, 150);
             this.btnCompararVentas.TabIndex = 5;
             this.btnCompararVentas.Text = "COMPARAR VENTAS";
             this.btnCompararVentas.UseVisualStyleBackColor = false;
             // 
             // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(839, 446);
+            this.ClientSize = new System.Drawing.Size(944, 558);
             this.Controls.Add(this.panelContenedor);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimizeBox = false;
             this.Name = "frmMenu";
             this.Text = "Sistema Panadería - Menú Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.panelContenedor.ResumeLayout(false);
             this.panelContenedor.PerformLayout();
             this.ResumeLayout(false);

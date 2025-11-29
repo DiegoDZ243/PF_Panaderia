@@ -215,6 +215,7 @@ namespace PuntoDeVentaPanaderia.Backend
                     empleado.apellidos = reader.GetString(2);
                     empleado.usuario = reader.GetString(3);
                     empleado.telefono=reader.GetString(4);
+                    empleado.admin = reader.GetBoolean(5); 
                     empleados.Add(empleado);
                 }
                 return empleados;
@@ -258,6 +259,7 @@ namespace PuntoDeVentaPanaderia.Backend
                     reader.Read(); 
                     empleado.idEmpleado=(reader.IsDBNull(0))?-1:reader.GetInt32(0);
                     empleado.nombre = (reader.IsDBNull(1)) ? "" : reader.GetString(1);
+                    empleado.admin = reader.GetBoolean(2);
                     return empleado;
                 }
 
@@ -279,31 +281,33 @@ namespace PuntoDeVentaPanaderia.Backend
 
         public bool registrarEmpleado(clsEmpleados empleado)
         {
-            MySqlConnection cn = new MySqlConnection();
-            cn.ConnectionString = "server=localhost;database=ventasPan;uid=panes;pwd=root;";
-            cn.Open();
+            string connectionString = "server=localhost;database=ventas;uid=root;pwd=root;";
 
-            string query = "call spRegistrarEmpleado(@nombre,@apellidos,@usuario,@contrasena,@telefono);";
-            MySqlCommand cmd = new MySqlCommand(query, cn);
-            try
+            using (MySqlConnection cn = new MySqlConnection(connectionString))
             {
-                cmd.Parameters.AddWithValue("nombre", empleado.nombre);
-                cmd.Parameters.AddWithValue("apellidos", empleado.apellidos);
-                cmd.Parameters.AddWithValue("usuario", empleado.usuario);
-                cmd.Parameters.AddWithValue("contrasena", empleado.contrasena);
-                cmd.Parameters.AddWithValue("telefono", empleado.telefono);
-                cmd.ExecuteNonQuery();
-                return true; 
-            }
-            catch(Exception ex)
-            {
-                throw new Exception("Ocurrió un error al registrar el nuevo empleado"); 
-            }
-            finally
-            {
-                cmd.Dispose();
-                cn.Close(); 
-                cn.Dispose();
+                try
+                {
+                    cn.Open();
+
+                    string query = "call spRegistrarEmpleado(@nombre,@apellidos,@usuario,@contrasena,@telefono,@admin);";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, cn))
+                    {
+                        cmd.Parameters.AddWithValue("@nombre", empleado.nombre);
+                        cmd.Parameters.AddWithValue("@apellidos", empleado.apellidos);
+                        cmd.Parameters.AddWithValue("@usuario", empleado.usuario);
+                        cmd.Parameters.AddWithValue("@contrasena", empleado.contrasena);
+                        cmd.Parameters.AddWithValue("@telefono", empleado.telefono);
+                        cmd.Parameters.AddWithValue("@admin", empleado.admin);
+
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Ocurrió un error al registrar el nuevo empleado: " + ex.Message);
+                }
             }
         }
 
@@ -313,7 +317,7 @@ namespace PuntoDeVentaPanaderia.Backend
             cn.ConnectionString = "server=localhost;database=ventasPan;uid=panes;pwd=root;";
             cn.Open();
 
-            string query = "call spActualizarEmpleado(@idEmpleado,@nombre,@apellidos,@usuario,@telefono);";
+            string query = "call spActualizarEmpleado(@idEmpleado,@nombre,@apellidos,@usuario,@telefono,@admin);";
             MySqlCommand cmd = new MySqlCommand(query, cn);
             try
             {
@@ -322,6 +326,7 @@ namespace PuntoDeVentaPanaderia.Backend
                 cmd.Parameters.AddWithValue("apellidos", empleado.apellidos);
                 cmd.Parameters.AddWithValue("usuario", empleado.usuario);
                 cmd.Parameters.AddWithValue("telefono", empleado.telefono);
+                cmd.Parameters.AddWithValue("admin", empleado.admin);
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -362,6 +367,37 @@ namespace PuntoDeVentaPanaderia.Backend
                 cn.Close();
                 cn.Dispose();
             }
+        }
+
+        public bool EsAdministrador(int idEmpleado)
+        {
+            bool isAdmin = false;
+            string connectionString = "server=localhost;database=ventasPan;uid=panes;pwd=root;";
+            string query = "call spEsAdmin(@idEmpleado);"; 
+            using (MySqlConnection con = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("idEmpleado", idEmpleado);
+                        MySqlDataReader result = cmd.ExecuteReader(); 
+
+                        if (result.HasRows)
+                        {
+                            result.Read();
+                            isAdmin = result.GetBoolean(0);
+                            return isAdmin; 
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex; 
+                }
+            }
+            return isAdmin;
         }
 
         #endregion

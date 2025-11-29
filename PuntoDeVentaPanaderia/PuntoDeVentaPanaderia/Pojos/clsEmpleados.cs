@@ -15,15 +15,18 @@ namespace PuntoDeVentaPanaderia.Pojos
         public string contrasena { get; set;}
         public string telefono { get;set;}
 
+        public bool admin { get; set; }
+
         public clsEmpleados() { }
         public clsEmpleados(int idEmpleado, string nombre, string apellidos, string usuario,
-            string telefono)
+            string telefono, bool admin)
         {
             this.idEmpleado=idEmpleado; 
             this.nombre=nombre;
             this.apellidos=apellidos;
             this.usuario=usuario;
             this.telefono=telefono;
+            this.admin = admin;
         }
     }
 }

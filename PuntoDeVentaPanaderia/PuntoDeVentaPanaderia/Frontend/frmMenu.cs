@@ -1,4 +1,5 @@
-﻿using PuntoDeVentaPanaderia.Pojos;
+﻿using PuntoDeVentaPanaderia.Backend;
+using PuntoDeVentaPanaderia.Pojos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,12 @@ namespace PuntoDeVentaPanaderia.Frontend
 {
     public partial class frmMenu : Form
     {
-        private clsEmpleados empleadoActual; 
+        public bool admin;
+        clsEmpleados empleadoActual;
         public frmMenu(clsEmpleados empleado)
         {
             InitializeComponent();
-            empleadoActual= empleado;
+            empleadoActual = empleado;
 
         }
 
@@ -38,12 +40,12 @@ namespace PuntoDeVentaPanaderia.Frontend
 
         private void btnAgregarEmpleado_Click(object sender, EventArgs e)
         {
-            
+
             frmAgregarEmpleado frmAEmp = new frmAgregarEmpleado(empleadoActual);
-            this.Hide(); 
+            this.Hide();
             frmAEmp.ShowDialog();
             frmAEmp.Focus();
-            this.Show(); 
+            this.Show();
         }
 
         private void btnDetallesVentas_Click(object sender, EventArgs e)
@@ -53,7 +55,20 @@ namespace PuntoDeVentaPanaderia.Frontend
             reporteVenta.ShowDialog();
             reporteVenta.Focus();
             this.Show();
-            
+
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            clsDaoPanaderia dao = new clsDaoPanaderia();
+            if (!dao.EsAdministrador(empleadoActual.idEmpleado))
+            {
+                btnAgregarEmpleado.Visible = false;
+                btnCompararVentas.Visible = false;
+                btnVerEmpleados.Visible = false;
+                btnCompararVentas.Visible = false;
+                btnDetallesVentas.Visible = false;
+            }
         }
     }
 }

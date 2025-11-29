@@ -22,6 +22,12 @@ namespace PuntoDeVentaPanaderia.Frontend
             InitializeComponent();
         }
 
+        public frmAgregarEmpleado()
+        {
+
+        }
+
+
         #region funciones 
 
         private bool ValidarNombreApellido(TextBox txt)
@@ -150,6 +156,17 @@ namespace PuntoDeVentaPanaderia.Frontend
             errTelefono.Clear();
         }
 
+        public bool ObtenerSeleccion()
+        {
+            if (rdbtnSi.Checked)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         #endregion
 
@@ -185,6 +202,7 @@ namespace PuntoDeVentaPanaderia.Frontend
             bool usuarioOk = ValidarUsuario();
             bool passOk = ValidarPassword();
             bool telOk = ValidarTelefono();
+            bool admin = ObtenerSeleccion();
 
             if (!nombreOk || !apellidoOk || !usuarioOk || !passOk || !telOk)
             {
@@ -198,6 +216,7 @@ namespace PuntoDeVentaPanaderia.Frontend
             nuevoEmpleado.usuario = txtUser.Text.Trim();
             nuevoEmpleado.contrasena = txtContrasena.Text.Trim();
             nuevoEmpleado.telefono = txtTelefono.Text.Trim();
+            nuevoEmpleado.admin = admin;
 
             clsDaoPanaderia dao = new clsDaoPanaderia();
 
@@ -205,6 +224,7 @@ namespace PuntoDeVentaPanaderia.Frontend
             {
                 if (dao.registrarEmpleado(nuevoEmpleado))
                 {
+
                     MessageBox.Show("Empleado registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarCampos();
                     this.Hide(); 
@@ -228,6 +248,11 @@ namespace PuntoDeVentaPanaderia.Frontend
                     MessageBox.Show("Error al guardar: " + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void frmAgregarEmpleado_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

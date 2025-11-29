@@ -94,13 +94,17 @@ namespace PuntoDeVentaPanaderia
 
                 clsDaoPanaderia dao = new clsDaoPanaderia();
                 clsEmpleados empleado = dao.autentificarEmpleado(txtUsuario.Text, CalcularSHA256(txtContrasena.Text));
+                
 
                 if (empleado != null)
                 {
                     
                     MessageBox.Show("¡Bienvenido" + empleado.nombre +"! Inicio de sesión exitoso.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmMenu frmm = new frmMenu(empleado);
-
+                    if (dao.EsAdministrador(empleado.idEmpleado))
+                    {
+                        frmm.admin = true;
+                    }
                     frmm.Show();
                     frmm.Focus();
                     this.Hide();
