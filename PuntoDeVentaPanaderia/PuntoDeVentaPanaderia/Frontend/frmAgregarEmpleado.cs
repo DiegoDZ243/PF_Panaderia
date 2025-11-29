@@ -20,6 +20,17 @@ namespace PuntoDeVentaPanaderia.Frontend
         {
             empleadoActual = empleado;
             InitializeComponent();
+            txtNombre.Text = empleado.nombre;
+            txtApellidos.Text = empleado.apellidos;
+            txtUser.Text = empleado.usuario;
+            txtTelefono.Text = empleado.telefono;
+            
+
+            
+            if (empleado.admin)
+                rdbtnSi.Checked = true;
+            else
+                rdbtnNo.Checked = true;
         }
 
         public frmAgregarEmpleado()

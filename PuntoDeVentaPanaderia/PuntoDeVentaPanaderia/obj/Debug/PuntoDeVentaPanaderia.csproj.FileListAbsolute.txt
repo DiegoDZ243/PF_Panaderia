@@ -75,7 +75,6 @@ C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanad
 C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.csproj.AssemblyReference.cache
 C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Form1.resources
-C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.frmLogin.resources
 C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Properties.Resources.resources
 C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.csproj.GenerateResource.cache
 C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.csproj.CoreCompileInputs.cache
@@ -227,3 +226,8 @@ C:\Users\diego\Downloads\Nueva carpeta3\Nueva carpeta\PuntoDeVentaPanaderia\Punt
 C:\Users\diego\Downloads\Nueva carpeta3\Nueva carpeta\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\diego\Downloads\Nueva carpeta3\Nueva carpeta\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\diego\Downloads\Nueva carpeta3\Nueva carpeta\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeV.54308F56.Up2Date
+C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmAgregarPan.resources
+C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmEmpleados.resources
+C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmReporteVenta1.resources
+C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmVender.resources
+C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.frmLogin.resources

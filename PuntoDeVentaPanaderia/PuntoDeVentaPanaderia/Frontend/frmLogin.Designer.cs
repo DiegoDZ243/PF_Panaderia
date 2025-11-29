@@ -51,9 +51,10 @@ namespace PuntoDeVentaPanaderia
             this.panel1.Controls.Add(this.lblUres);
             this.panel1.Controls.Add(this.txtContrasena);
             this.panel1.Controls.Add(this.txtUsuario);
-            this.panel1.Location = new System.Drawing.Point(85, 42);
+            this.panel1.Location = new System.Drawing.Point(96, 52);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(330, 360);
+            this.panel1.Size = new System.Drawing.Size(371, 450);
             this.panel1.TabIndex = 0;
             // 
             // btnIngresar
@@ -64,9 +65,10 @@ namespace PuntoDeVentaPanaderia
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(35, 270);
+            this.btnIngresar.Location = new System.Drawing.Point(39, 338);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(260, 50);
+            this.btnIngresar.Size = new System.Drawing.Size(292, 62);
             this.btnIngresar.TabIndex = 4;
             this.btnIngresar.Text = "INGRESAR";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -77,9 +79,9 @@ namespace PuntoDeVentaPanaderia
             this.lblPass.AutoSize = true;
             this.lblPass.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblPass.ForeColor = System.Drawing.Color.DimGray;
-            this.lblPass.Location = new System.Drawing.Point(32, 160);
+            this.lblPass.Location = new System.Drawing.Point(36, 200);
             this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(120, 23);
+            this.lblPass.Size = new System.Drawing.Size(139, 28);
             this.lblPass.TabIndex = 3;
             this.lblPass.Text = "CONTRASEÑA";
             // 
@@ -88,9 +90,9 @@ namespace PuntoDeVentaPanaderia
             this.lblUres.AutoSize = true;
             this.lblUres.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblUres.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUres.Location = new System.Drawing.Point(32, 60);
+            this.lblUres.Location = new System.Drawing.Point(36, 75);
             this.lblUres.Name = "lblUres";
-            this.lblUres.Size = new System.Drawing.Size(83, 23);
+            this.lblUres.Size = new System.Drawing.Size(97, 28);
             this.lblUres.TabIndex = 2;
             this.lblUres.Text = "USUARIO";
             // 
@@ -100,9 +102,10 @@ namespace PuntoDeVentaPanaderia
             this.txtContrasena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContrasena.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtContrasena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtContrasena.Location = new System.Drawing.Point(35, 186);
+            this.txtContrasena.Location = new System.Drawing.Point(39, 232);
+            this.txtContrasena.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.Size = new System.Drawing.Size(260, 32);
+            this.txtContrasena.Size = new System.Drawing.Size(292, 37);
             this.txtContrasena.TabIndex = 1;
             this.txtContrasena.Text = "hola";
             this.txtContrasena.UseSystemPasswordChar = true;
@@ -114,9 +117,10 @@ namespace PuntoDeVentaPanaderia
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtUsuario.Location = new System.Drawing.Point(35, 86);
+            this.txtUsuario.Location = new System.Drawing.Point(39, 108);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(260, 32);
+            this.txtUsuario.Size = new System.Drawing.Size(292, 37);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.Text = "DiegoDiaz";
             this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
@@ -131,16 +135,18 @@ namespace PuntoDeVentaPanaderia
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(511, 450);
+            this.ClientSize = new System.Drawing.Size(575, 562);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acceso al Sistema";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errPass)).EndInit();
