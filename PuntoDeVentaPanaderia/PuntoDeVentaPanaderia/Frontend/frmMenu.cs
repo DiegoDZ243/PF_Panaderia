@@ -68,7 +68,17 @@ namespace PuntoDeVentaPanaderia.Frontend
                 btnVerEmpleados.Visible = false;
                 btnCompararVentas.Visible = false;
                 btnDetallesVentas.Visible = false;
+                btnAgregarPan.Visible = false;
             }
+        }
+
+        private void btnAgregarPan_Click(object sender, EventArgs e)
+        {
+            frmAgregarPan frmAPan = new frmAgregarPan(empleadoActual);
+            this.Hide();
+            frmAPan.ShowDialog();
+            frmAPan.Focus();
+            this.Show();
         }
     }
 }
