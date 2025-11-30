@@ -1,14 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PuntoDeVentaPanaderia.Pojos;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Asn1.Esf;
+using PuntoDeVentaPanaderia.Pojos;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
-using System.Transactions;
+using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using System.Transactions;
 
 namespace PuntoDeVentaPanaderia.Backend
 {
@@ -60,17 +61,19 @@ namespace PuntoDeVentaPanaderia.Backend
             MySqlConnection cn = new MySqlConnection();
             cn.ConnectionString= "server=localhost;database=ventasPan;uid=panes;pwd=root;";
             cn.Open();
-            string query = "insert into panes(idPan,nombre,descripcion,precio,stock,imagenPan,categoria)" +
-                " values(@idPan,@nombre,@descripcion,@precio,@stock,@imagenPan,@categoria);";
+            string query = "insert into panes(nombre,descripcion,precio,stock,imagenPan,categoria)" +
+                " values(@nombre,@descripcion,@precio,@stock,@imagenPan,@categoria);";
             string query2 = "call spEmpleado_Auditoria(@idEmpleado);"; 
             MySqlTransaction tran = cn.BeginTransaction();
 
             MySqlCommand cmd = new MySqlCommand(query,cn); 
             MySqlCommand cmd2= new MySqlCommand(query2,cn);
 
+            cmd.Transaction = tran;
+            cmd2.Transaction = tran;
+
             try
             {
-                cmd.Parameters.AddWithValue("idPan", pan.idPan);
                 cmd.Parameters.AddWithValue("nombre", pan.nombre);
                 cmd.Parameters.AddWithValue("descripcion", pan.descripcion);
                 cmd.Parameters.AddWithValue("precio", pan.precio);
@@ -193,6 +196,26 @@ namespace PuntoDeVentaPanaderia.Backend
         }
 
         #endregion
+
+        public string GuardarImagenEnProyecto(string rutaOrigen)
+
+        {
+            // Crea la ruta de destino
+            string directorioDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "panesImg"); // va dentro del proyecto
+
+            if (!Directory.Exists(directorioDestino))
+            {
+                Directory.CreateDirectory(directorioDestino); // Pa crearla por si no existe
+            }
+            string nombreArchivo = Path.GetFileName(rutaOrigen);
+            string rutaDestinoCompleta = Path.Combine(directorioDestino, nombreArchivo);
+
+            File.Copy(rutaOrigen, rutaDestinoCompleta, true);
+
+            // Devolvemos la ruta
+            return Path.Combine("panesImg", nombreArchivo);
+
+        }
 
         #region CRUD_EMPLEADOS
         public List<clsEmpleados> obtenerEmpleados()
