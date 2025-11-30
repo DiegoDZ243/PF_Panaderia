@@ -15,17 +15,81 @@ namespace PuntoDeVentaPanaderia.Frontend
 {
     public partial class frmAgregarPan : Form
     {
-        private clsEmpleados empleadoActual; 
-
+        private clsEmpleados empleadoActual;
+        private clsPanes panActual; // Para modo edición
         private string rutaImagenSeleccionada = "";
 
         public frmAgregarPan(clsEmpleados empleado)
         {
             this.empleadoActual = empleado;
             InitializeComponent();
-
+            ConfigurarFormulario(false);
             txtPrecio.KeyPress += new KeyPressEventHandler(txtPrecio_KeyPress);
             txtStock.KeyPress += new KeyPressEventHandler(txtStock_KeyPress);
+        }
+
+        public frmAgregarPan(clsEmpleados empleado, clsPanes panAEditar)
+        {
+            this.empleadoActual = empleado;
+            this.panActual = panAEditar;
+            InitializeComponent();
+
+            ConfigurarFormulario(true);
+            txtPrecio.KeyPress += new KeyPressEventHandler(txtPrecio_KeyPress);
+            txtStock.KeyPress += new KeyPressEventHandler(txtStock_KeyPress);
+            CargarDatosParaEdicion();
+        }
+
+        private void ConfigurarFormulario(bool esEdicion)
+        {
+            if (esEdicion)
+            {
+                lblTitulo.Text = "Modificar Producto Existente";
+                btnAgregar.Text = "Guardar Cambios";
+                btnLimpiar.Text = "Cancelar";
+            }
+            else
+            {
+                lblTitulo.Text = "Agregar Pan";
+                btnAgregar.Text = "Agregar";
+                btnLimpiar.Text = "Limpiar";
+            }
+        }
+
+        private void CargarDatosParaEdicion()
+        {
+            if (panActual == null) return;
+
+            txtNombre.Text = panActual.nombre;
+            txtDescripcion.Text = panActual.descripcion;
+            txtPrecio.Text = panActual.precio.ToString();
+            txtStock.Text = panActual.stock.ToString();
+            cmbCategoria.SelectedIndex = cmbCategoria.FindStringExact(panActual.categoria);
+
+            // Cargar imagen
+            if (!string.IsNullOrEmpty(panActual.direccionImg))
+            {
+                try
+                {
+                    // Obtiene la ruta
+                    string rutaAbsoluta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, panActual.direccionImg);
+
+                    if (File.Exists(rutaAbsoluta))
+                    {
+                        pctImagenPan.Image = Image.FromFile(rutaAbsoluta);
+                        this.rutaImagenSeleccionada = panActual.direccionImg; 
+                    }
+                    else
+                    {
+                        pctImagenPan.Image = Properties.Resources.imagedefault;
+                        this.rutaImagenSeleccionada = "";// Pa que no se pase de listo el usuario, lo forza a seleccionar otra
+                    }
+                }
+                catch
+                {
+                    pctImagenPan.Image = Properties.Resources.imagedefault;
+                }
+            }
         }
 
         private void CargarCategorias()
@@ -41,7 +105,14 @@ namespace PuntoDeVentaPanaderia.Frontend
 
                 if (cmbCategoria.Items.Count > 0)
                 {
-                    cmbCategoria.SelectedIndex = 0; //Valor default
+                    if (panActual == null)
+                    {
+                        cmbCategoria.SelectedIndex = 0; //default
+                    }
+                    else
+                    {
+                        cmbCategoria.SelectedIndex = cmbCategoria.FindStringExact(panActual.categoria);
+                    }
                 }
             }
             catch (Exception ex)
@@ -87,13 +158,16 @@ namespace PuntoDeVentaPanaderia.Frontend
                 return;
             }
 
-            string rutaFinalImagenDB = "";
             clsDaoPanaderia dao = new clsDaoPanaderia();
+            string rutaFinalImagenDB = rutaImagenSeleccionada;
 
+            // Copiar si es nueva, obtener URL si es existente
             try
             {
-                // Copiar imagen y retornar ruta para la BD
-                rutaFinalImagenDB = dao.GuardarImagenEnProyecto(this.rutaImagenSeleccionada);
+                if (panActual == null || !rutaImagenSeleccionada.StartsWith("panesImg", StringComparison.OrdinalIgnoreCase))
+                {
+                    rutaFinalImagenDB = dao.GuardarImagenEnProyecto(this.rutaImagenSeleccionada);
+                }
             }
             catch (Exception ex)
             {
@@ -105,32 +179,47 @@ namespace PuntoDeVentaPanaderia.Frontend
             decimal precio = decimal.Parse(txtPrecio.Text);
             int stock = int.Parse(txtStock.Text);
             string categoria = cmbCategoria.SelectedItem.ToString();
-
             string descripcionPan = txtDescripcion.Text.Trim();
+            if (descripcionPan == string.Empty) { descripcionPan = null; }
 
-            clsPanes nuevoPan = new clsPanes
-            {
-                nombre = txtNombre.Text.Trim(),
-                descripcion = descripcionPan,
-                precio = precio,
-                stock = stock,
-                direccionImg = rutaFinalImagenDB,
-                categoria = categoria
-            };
 
             try
             {
-                // Id empleado para audi
-                if (dao.registrarPan(nuevoPan, empleadoActual.idEmpleado))
+                bool resultado = false;
+
+                if (panActual == null) // MODO ALTA
                 {
-                    MessageBox.Show("Producto registrado exitosamente.", "Éxito",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarControles();
+                    clsPanes nuevoPan = new clsPanes
+                    {
+                        nombre = txtNombre.Text.Trim(),
+                        descripcion = descripcionPan,
+                        precio = precio,
+                        stock = stock,
+                        direccionImg = rutaFinalImagenDB,
+                        categoria = categoria
+                    };
+                    resultado = dao.registrarPan(nuevoPan, empleadoActual.idEmpleado);
+                }
+                else // MODO EDICIÓN
+                {
+                    panActual.nombre = txtNombre.Text.Trim();
+                    panActual.descripcion = descripcionPan;
+                    panActual.precio = precio;
+                    panActual.stock = stock;
+                    panActual.direccionImg = rutaFinalImagenDB;
+                    panActual.categoria = categoria;
+
+                    resultado = dao.actualizarPan(panActual, empleadoActual.idEmpleado);
+                }
+
+                if (resultado)
+                {
+                    MessageBox.Show("Producto guardado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close(); 
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo registrar el producto.", "Error",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se pudo guardar el producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -157,6 +246,14 @@ namespace PuntoDeVentaPanaderia.Frontend
                 MessageBox.Show("Advertencia: No se pudo cargar la imagen por defecto: " + ex.Message);
             }
             cmbCategoria.SelectedIndex = 0;
+            if (panActual != null)
+            {
+                this.Close();
+            }
+            else
+            {
+                ConfigurarFormulario(false);
+            }
         }
 
 
@@ -194,8 +291,17 @@ namespace PuntoDeVentaPanaderia.Frontend
         private void frmAgregarPan_Load(object sender, EventArgs e)
         {
             CargarCategorias();
-            
+
+            if (panActual == null || string.IsNullOrEmpty(rutaImagenSeleccionada))
+            {
+                try
+                {
+                    pctImagenPan.Image = Properties.Resources.imagedefault;
+                }
+                catch (Exception) {  }
+            }
         }
+            
 
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {

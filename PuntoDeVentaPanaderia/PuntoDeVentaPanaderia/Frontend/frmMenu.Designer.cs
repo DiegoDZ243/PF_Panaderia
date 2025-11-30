@@ -36,14 +36,12 @@
             this.btnRealizarVenta = new System.Windows.Forms.Button();
             this.btnDetallesVentas = new System.Windows.Forms.Button();
             this.btnCompararVentas = new System.Windows.Forms.Button();
-            this.btnAgregarPan = new System.Windows.Forms.Button();
             this.panelContenedor.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContenedor
             // 
             this.panelContenedor.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelContenedor.Controls.Add(this.btnAgregarPan);
             this.panelContenedor.Controls.Add(this.lblTitulo);
             this.panelContenedor.Controls.Add(this.btnVerEmpleados);
             this.panelContenedor.Controls.Add(this.btnAgregarEmpleado);
@@ -51,10 +49,10 @@
             this.panelContenedor.Controls.Add(this.btnRealizarVenta);
             this.panelContenedor.Controls.Add(this.btnDetallesVentas);
             this.panelContenedor.Controls.Add(this.btnCompararVentas);
-            this.panelContenedor.Location = new System.Drawing.Point(77, 26);
+            this.panelContenedor.Location = new System.Drawing.Point(112, 26);
             this.panelContenedor.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(697, 325);
+            this.panelContenedor.Size = new System.Drawing.Size(540, 325);
             this.panelContenedor.TabIndex = 0;
             // 
             // lblTitulo
@@ -118,6 +116,7 @@
             this.btnInventario.TabIndex = 2;
             this.btnInventario.Text = "INVENTARIO";
             this.btnInventario.UseVisualStyleBackColor = false;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
             // btnRealizarVenta
             // 
@@ -168,29 +167,12 @@
             this.btnCompararVentas.Text = "COMPARAR VENTAS";
             this.btnCompararVentas.UseVisualStyleBackColor = false;
             // 
-            // btnAgregarPan
-            // 
-            this.btnAgregarPan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
-            this.btnAgregarPan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarPan.FlatAppearance.BorderSize = 0;
-            this.btnAgregarPan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarPan.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.btnAgregarPan.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarPan.Location = new System.Drawing.Point(524, 73);
-            this.btnAgregarPan.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnAgregarPan.Name = "btnAgregarPan";
-            this.btnAgregarPan.Size = new System.Drawing.Size(150, 98);
-            this.btnAgregarPan.TabIndex = 7;
-            this.btnAgregarPan.Text = "AGREGAR PAN";
-            this.btnAgregarPan.UseVisualStyleBackColor = false;
-            this.btnAgregarPan.Click += new System.EventHandler(this.btnAgregarPan_Click);
-            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(865, 363);
+            this.ClientSize = new System.Drawing.Size(768, 363);
             this.Controls.Add(this.panelContenedor);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MinimizeBox = false;
@@ -215,6 +197,5 @@
         private System.Windows.Forms.Button btnRealizarVenta;
         private System.Windows.Forms.Button btnDetallesVentas;
         private System.Windows.Forms.Button btnCompararVentas;
-        private System.Windows.Forms.Button btnAgregarPan;
     }
 }

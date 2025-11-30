@@ -63,6 +63,26 @@ namespace PuntoDeVentaPanaderia.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap borrar {
+            get {
+                object obj = ResourceManager.GetObject("borrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap boton_mas {
+            get {
+                object obj = ResourceManager.GetObject("boton-mas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imagedefault {
             get {
                 object obj = ResourceManager.GetObject("imagedefault", resourceCulture);
@@ -76,6 +96,16 @@ namespace PuntoDeVentaPanaderia.Properties {
         internal static System.Drawing.Bitmap imagedefault1 {
             get {
                 object obj = ResourceManager.GetObject("imagedefault1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lapiz {
+            get {
+                object obj = ResourceManager.GetObject("lapiz", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

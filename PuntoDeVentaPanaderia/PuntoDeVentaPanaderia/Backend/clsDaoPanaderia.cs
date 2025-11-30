@@ -118,6 +118,8 @@ namespace PuntoDeVentaPanaderia.Backend
             MySqlTransaction tran = cn.BeginTransaction();
             MySqlCommand cmd=new MySqlCommand(query,cn);
             MySqlCommand cmd2 = new MySqlCommand(query2, cn);
+            cmd.Transaction = tran;
+            cmd2.Transaction = tran;
             try
             {
                 cmd.Parameters.AddWithValue("panId", panId); 
@@ -164,6 +166,8 @@ namespace PuntoDeVentaPanaderia.Backend
             MySqlCommand cmd=new MySqlCommand(query,cn);
 
             MySqlCommand cmd2 = new MySqlCommand(query2, cn);
+            cmd.Transaction = tran;
+            cmd2.Transaction = tran;
             try
             {
                 cmd.Parameters.AddWithValue("nombre_nuevo", pan.nombre);
