@@ -296,7 +296,6 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmAgregarPan";
             this.Text = "frmAgregarPan";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmAgregarPan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctImagenPan)).EndInit();
             this.panel1.ResumeLayout(false);
