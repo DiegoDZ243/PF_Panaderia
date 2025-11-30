@@ -21,47 +21,56 @@ namespace PuntoDeVentaPanaderia.Frontend
 
         public frmAgregarPan(clsEmpleados empleado)
         {
-            empleadoActual= empleado;
+            this.empleadoActual = empleado;
             InitializeComponent();
+
+            txtPrecio.KeyPress += new KeyPressEventHandler(txtPrecio_KeyPress);
+            txtStock.KeyPress += new KeyPressEventHandler(txtStock_KeyPress);
         }
 
         private void CargarCategorias()
         {
-            // Crea una instancia del DAO
             clsDaoPanaderia dao = new clsDaoPanaderia();
 
             try
             {
-                // Pedir lista
-                List<string> categorias = new List<string> { "Trigo", "Centeno", "Integral", "Avena" };
+                List<string> categorias = dao.ObtenerCategoriasDesdeDB();
 
                 cmbCategoria.Items.Clear();
-                cmbCategoria.DataSource=categorias;
-                
+                cmbCategoria.DataSource = categorias;
 
-                // Establecer una opción por defecto
                 if (cmbCategoria.Items.Count > 0)
                 {
-                    cmbCategoria.SelectedIndex = 0;
+                    cmbCategoria.SelectedIndex = 0; //Valor default
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar categorías: " + ex.Message, "Error de Configuración",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnSeleccionarImagen_Click(object sender, EventArgs e)
         {
-            // 2. Mostrar el diálogo
             if (ofdImage.ShowDialog() == DialogResult.OK)
             {
-                // 3. Obtener la ruta del archivo seleccionado
-                string rutaArchivo = ofdImage.FileName;
+                string rutaArchivoOrigen = ofdImage.FileName;
 
-                //Falta la lógica para copiar la imagen a una carpeta específica si es necesario
-                MessageBox.Show("Ruta de la imagen seleccionada: " + rutaArchivo);
+                try
+                {
+                    pctImagenPan.Image = Image.FromFile(rutaArchivoOrigen); //Previzualización
+
+                    this.rutaImagenSeleccionada = rutaArchivoOrigen;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar la imagen: " + ex.Message, "Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.rutaImagenSeleccionada = "";
+                    pctImagenPan.Image = null;
+                }
             }
 
         }
@@ -73,37 +82,50 @@ namespace PuntoDeVentaPanaderia.Frontend
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            //if (!ValidarEntradas()) //Faltan validar las entradas
-            //{
-            //    return; // Detiene la ejecución si la validación falla
-            //}
+            if (!ValidarEntradas())
+            {
+                return;
+            }
 
-            // Obtener valores validados
+            string rutaFinalImagenDB = "";
+            clsDaoPanaderia dao = new clsDaoPanaderia();
+
+            try
+            {
+                // Copiar imagen y retornar ruta para la BD
+                rutaFinalImagenDB = dao.GuardarImagenEnProyecto(this.rutaImagenSeleccionada);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al copiar la imagen al directorio del proyecto: " + ex.Message,
+                                "Error de Archivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             decimal precio = decimal.Parse(txtPrecio.Text);
             int stock = int.Parse(txtStock.Text);
             string categoria = cmbCategoria.SelectedItem.ToString();
 
-            // 1. Crear el objeto POJO
+            string descripcionPan = txtDescripcion.Text.Trim();
+
             clsPanes nuevoPan = new clsPanes
             {
-                // idPan no se incluye
                 nombre = txtNombre.Text.Trim(),
-                descripcion = txtDescripcion.Text.Trim(),
+                descripcion = descripcionPan,
                 precio = precio,
                 stock = stock,
-                direccionImg = rutaImagenSeleccionada, // Se guarda la ruta
+                direccionImg = rutaFinalImagenDB,
                 categoria = categoria
             };
 
-            // 2. Llamar al DAO para registrar
-            clsDaoPanaderia dao = new clsDaoPanaderia();
             try
             {
-                if (dao.registrarPan(nuevoPan,empleadoActual.idEmpleado))
+                // Id empleado para audi
+                if (dao.registrarPan(nuevoPan, empleadoActual.idEmpleado))
                 {
                     MessageBox.Show("Producto registrado exitosamente.", "Éxito",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarControles(); // Limpia los campos después de guardar
+                    LimpiarControles();
                 }
                 else
                 {
@@ -113,7 +135,6 @@ namespace PuntoDeVentaPanaderia.Frontend
             }
             catch (Exception ex)
             {
-                // Captura errores de la base de datos
                 MessageBox.Show("Error al guardar en la base de datos: " + ex.Message,
                                 "Error de DB", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -126,15 +147,14 @@ namespace PuntoDeVentaPanaderia.Frontend
             txtPrecio.Clear();
             txtStock.Clear();
 
-            // Limpiar variables de soporte
             rutaImagenSeleccionada = "";
 
-            // Limpiar el PictureBox y re-cargar el ComboBox
             pctImagenPan.Image = null;
-            CargarCategorias(); // Llamada para asegurar que el ComboBox se restablezca
-
+            CargarCategorias();
             txtNombre.Focus();
         }
+
+
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
@@ -168,7 +188,66 @@ namespace PuntoDeVentaPanaderia.Frontend
 
         private void frmAgregarPan_Load(object sender, EventArgs e)
         {
+            CargarCategorias();
+        }
 
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+                e.Handled = false;
+            else if (e.KeyChar == (char)Keys.Back)
+                e.Handled = false;
+            else if (e.KeyChar == '.')
+            {
+                if ((sender as TextBox).Text.Contains('.'))
+                    e.Handled = true;
+                else
+                    e.Handled = false;
+            }
+            else
+                e.Handled = true;
+        }
+
+        private void txtStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+                e.Handled = false;
+            else if (e.KeyChar == (char)Keys.Back)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private bool ValidarEntradas()
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtPrecio.Text) ||
+                string.IsNullOrWhiteSpace(txtStock.Text) ||
+                string.IsNullOrEmpty(rutaImagenSeleccionada) || 
+                cmbCategoria.SelectedItem == null)
+            {
+                MessageBox.Show("Los campos Nombre, Precio, Stock, Categoría e Imagen son obligatorios.", "Validación",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!decimal.TryParse(txtPrecio.Text, out decimal precio) || precio <= 0)
+            {
+                MessageBox.Show("El precio debe ser un valor numérico positivo válido.", "Validación",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPrecio.Focus();
+                return false;
+            }
+
+            if (!int.TryParse(txtStock.Text, out int stock) || stock < 0)
+            {
+                MessageBox.Show("El stock debe ser un número entero no negativo.", "Validación",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtStock.Focus();
+                return false;
+            }
+
+            return true;
         }
     }
 }

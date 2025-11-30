@@ -10,6 +10,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
+using System.Text.RegularExpressions;
 
 namespace PuntoDeVentaPanaderia.Backend
 {
@@ -196,6 +197,48 @@ namespace PuntoDeVentaPanaderia.Backend
         }
 
         #endregion
+
+        public List<string> ObtenerCategoriasDesdeDB()
+        {
+            List<string> categorias = new List<string>();
+            MySqlConnection cn = new MySqlConnection();
+            cn.ConnectionString = "server=localhost;database=ventasPan;uid=panes;pwd=root;";
+            cn.Open();
+
+            // Consulta los valores del ENUM
+            string query = "SHOW COLUMNS FROM panes WHERE Field = 'categoria';";
+            MySqlCommand cmd = new MySqlCommand(query, cn);
+
+            try
+            {
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    
+                    string enumDefinition = reader.GetString("Type");
+
+                    // Se usa expresion regular pa sacar los valores
+                    Match match = Regex.Match(enumDefinition, @"enum\((.+)\)");
+
+                    if (match.Success)
+                    {
+                        string rawValues = match.Groups[1].Value.Replace("'", "");
+                        categorias = rawValues.Split(',').ToList(); //Dividir por comas, pa hacerlo lista
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al consultar las categorías ENUM de la base de datos.", ex);
+            }
+            finally
+            {
+                cmd.Dispose();
+                cn.Close();
+                cn.Dispose();
+            }
+            return categorias;
+        }
 
         public string GuardarImagenEnProyecto(string rutaOrigen)
 
