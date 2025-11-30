@@ -148,10 +148,15 @@ namespace PuntoDeVentaPanaderia.Frontend
             txtStock.Clear();
 
             rutaImagenSeleccionada = "";
-
-            pctImagenPan.Image = null;
-            CargarCategorias();
-            txtNombre.Focus();
+            try
+            {
+                pctImagenPan.Image = Properties.Resources.imagedefault;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Advertencia: No se pudo cargar la imagen por defecto: " + ex.Message);
+            }
+            cmbCategoria.SelectedIndex = 0;
         }
 
 
@@ -189,6 +194,7 @@ namespace PuntoDeVentaPanaderia.Frontend
         private void frmAgregarPan_Load(object sender, EventArgs e)
         {
             CargarCategorias();
+            
         }
 
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)

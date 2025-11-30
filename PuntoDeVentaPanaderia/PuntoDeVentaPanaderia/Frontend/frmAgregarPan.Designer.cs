@@ -191,7 +191,7 @@
             // 
             // pctImagenPan
             // 
-            this.pctImagenPan.Image = global::PuntoDeVentaPanaderia.Properties.Resources.imagedefault;
+            this.pctImagenPan.Image = global::PuntoDeVentaPanaderia.Properties.Resources.imagedefault1;
             this.pctImagenPan.Location = new System.Drawing.Point(576, 192);
             this.pctImagenPan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pctImagenPan.Name = "pctImagenPan";
