@@ -86,6 +86,21 @@ namespace PuntoDeVentaPanaderia.Frontend
             this.Hide();
             frmInv.ShowDialog();
             frmInv.Focus();
+            frmInv.Dispose(); 
+            this.Show();
+        }
+
+        /// <summary>
+        /// Permite mostrar el reporte de ventas 2
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCompararVentas_Click(object sender, EventArgs e)
+        {
+            frmFiltrosReporte2 frm = new frmFiltrosReporte2(); 
+            this.Hide();
+            frm.ShowDialog();
+            frm.Focus();
             this.Show();
         }
     }

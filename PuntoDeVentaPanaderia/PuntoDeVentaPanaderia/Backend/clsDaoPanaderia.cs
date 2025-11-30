@@ -257,8 +257,11 @@ namespace PuntoDeVentaPanaderia.Backend
             string nombreArchivo = Path.GetFileName(rutaOrigen);
             string rutaDestinoCompleta = Path.Combine(directorioDestino, nombreArchivo);
 
-            File.Copy(rutaOrigen, rutaDestinoCompleta, true);
-
+            //Pregunta si el archivo existe en la ruta destino antes de copiar
+            if (!File.Exists(Path.Combine("panesImg",nombreArchivo)))
+            {
+                File.Copy(rutaOrigen, rutaDestinoCompleta, true);
+            }
             // Devolvemos la ruta
             return Path.Combine("panesImg", nombreArchivo);
 
@@ -558,8 +561,58 @@ namespace PuntoDeVentaPanaderia.Backend
                 cn.Dispose(); 
             }
         }
+        /// <summary>
+        /// Función que regresa la lista de reportes de ventas para los mes 1 y 2 especificados
+        /// </summary>
+        /// <param name="mes1">Mes 1 a comparar</param>
+        /// <param name="mes2">Mes 2 a comparar</param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public List<clsReporteVentaMes> mostrarReporteVentasMeses(DateTime mes1, DateTime mes2)
+        {
+            MySqlConnection cn = new MySqlConnection();
+            cn.ConnectionString = "server=localhost;database=ventasPan;uid=panes;pwd=root;";
+            cn.Open();
+            string query = "call spReporteDeVentaMeses(@mes1,@mes2);";
+            MySqlCommand cmd = new MySqlCommand(query, cn);
+            try
+            {
+                cmd.Parameters.AddWithValue("mes1", mes1);
+                cmd.Parameters.AddWithValue("mes2", mes2);
+                MySqlDataReader reader = cmd.ExecuteReader();
 
+                List<clsReporteVentaMes> ventas = new List<clsReporteVentaMes>();
 
+                while (reader.Read())
+                {
+                    clsReporteVentaMes venta = new clsReporteVentaMes();
+                    venta.clave = reader.GetInt32(0);
+                    venta.nombre = reader.GetString(1);
+                    venta.precio = reader.GetDecimal(2);
+                    venta.ventasMes1 = reader.GetDecimal(3);
+                    venta.ventasMes2 = reader.GetDecimal(4);
+                    ventas.Add(venta);
+                }
+                return ventas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error al recuperar las ventas del sistema");
+            }
+            finally //Git
+            {
+                cmd.Dispose();
+                cn.Close();
+                cn.Dispose();
+            }
+        }
+        //Todavía falta aplicar este método para mostrar las auditorias
+        /// <summary>
+        /// Función que permite mostrar los movimientos realizados en la tabla de panes por los 
+        /// empleados.
+        /// </summary>
+        /// <returns>Retorna una lista con todos los movimientos realizados en la tabla de panes</returns>
+        /// <exception cref="Exception"></exception>
         public List<clsAuditoria> obtenerAuditorias()
         {
             MySqlConnection cn = new MySqlConnection();
