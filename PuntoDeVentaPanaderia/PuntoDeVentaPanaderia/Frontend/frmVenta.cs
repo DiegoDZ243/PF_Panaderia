@@ -106,7 +106,7 @@ namespace PuntoDeVentaPanaderia.Frontend
 
                 if (exito)
                 {
-                    MessageBox.Show($"Venta {lblNumeroVenta.Text} confirmada con un total de {lblTotal.Text}. Se ha registrado la orden.", "Venta Confirmada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Venta confirmada con un total de {lblTotal.Text}. Se ha registrado la orden.", "Venta Confirmada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
