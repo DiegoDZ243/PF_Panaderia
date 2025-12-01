@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace PuntoDeVentaPanaderia.Backend
 {
@@ -39,6 +40,7 @@ namespace PuntoDeVentaPanaderia.Backend
                     pan.stock = reader.GetInt32(4);
                     pan.direccionImg = reader.GetString(5); 
                     pan.categoria = reader.GetString(6);
+                    pan.descontinuado=reader.GetBoolean(7);
                     panes.Add(pan); 
                 }
                 return panes; 
@@ -247,8 +249,11 @@ namespace PuntoDeVentaPanaderia.Backend
         public string GuardarImagenEnProyecto(string rutaOrigen)
 
         {
+            //El sufijo será la un directorio anterior a de \bin. Se encontrará al mismo nivel que las
+            //carpetas de backend, frontend y pojos (Es el único cambio realizado al dirección)
+            string root = Directory.GetParent(Application.StartupPath).Parent.FullName;
             // Crea la ruta de destino
-            string directorioDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "panesImg"); // va dentro del proyecto
+            string directorioDestino = Path.Combine(root, "panesImg"); // va dentro del proyecto
 
             if (!Directory.Exists(directorioDestino))
             {
@@ -682,7 +687,7 @@ namespace PuntoDeVentaPanaderia.Backend
                     auditoria.usuario = reader.GetString(2);
                     auditoria.precioAnterior = reader.GetDecimal(3); 
                     auditoria.precioNuevo = reader.GetDecimal(4);
-                    auditoria.fecha=reader.GetDateTime(5);
+                    auditoria.fecha=reader.GetString(5);
                     auditorias.Add(auditoria);
 
                 }

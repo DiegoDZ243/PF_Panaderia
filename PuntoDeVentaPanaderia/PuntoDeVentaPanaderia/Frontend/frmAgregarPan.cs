@@ -58,6 +58,7 @@ namespace PuntoDeVentaPanaderia.Frontend
 
         private void CargarDatosParaEdicion()
         {
+            clsDaoPanaderia dao = new clsDaoPanaderia();
             if (panActual == null) return;
 
             txtNombre.Text = panActual.nombre;
@@ -72,7 +73,7 @@ namespace PuntoDeVentaPanaderia.Frontend
                 try
                 {
                     // Obtiene la ruta
-                    string rutaAbsoluta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, panActual.direccionImg);
+                    string rutaAbsoluta = dao.GuardarImagenEnProyecto(panActual.direccionImg);
 
                     if (File.Exists(rutaAbsoluta))
                     {

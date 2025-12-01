@@ -26,13 +26,18 @@ namespace PuntoDeVentaPanaderia.Frontend
             clsDaoPanaderia dao = new clsDaoPanaderia();
             List<clsPanes> panes = dao.obtenerPanes();
 
-            foreach (clsPanes pan in panes)
+            try
             {
-                cuElegirPan control = new cuElegirPan(pan);
-                control.Imagen.Image = Image.FromFile(dao.GuardarImagenEnProyecto(pan.direccionImg));
-                flpPanes.Controls.Add(control); 
+                foreach (clsPanes pan in panes)
+                {
+                    cuElegirPan control = new cuElegirPan(pan);
+                    control.Imagen.Image = Image.FromFile(dao.GuardarImagenEnProyecto(pan.direccionImg));
+                    flpPanes.Controls.Add(control);
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); 
             }
-
             lblTitulo.Location=new Point((this.ClientSize.Width-lblTitulo.Width)/2,lblTitulo.Location.Y);
             btnGenerarReporte.Location = new Point((this.ClientSize.Width - btnGenerarReporte.Width) / 2, btnGenerarReporte.Location.Y);
         }

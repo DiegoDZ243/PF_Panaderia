@@ -282,12 +282,14 @@ select p.nombre `Producto` ,a.tipoDeCambio `Cambio`, concat(e.nombre,' ',e.apell
 date_format(a.fecha,'%d/%m/%y') `Fecha`from 
 panes p join auditorias a on a.idPan=p.idPan
 join empleados e on e.idEmpleado=a.idEmpleado;  
+select * from vwauditorias; 
 
+select * from vwauditorias;
 INSERT INTO panes (nombre, descripcion, precio, stock, imagenPan, categoria)
 VALUES
-('Pan Blanco', 'Pan suave clásico', 15.50, 20, 'a', 'Trigo'),
-('Pan Integral', 'Pan saludable de fibra', 18.00, 30, '0x00', 'Integral'),
-('Pan Centeno', 'Pan más oscuro y denso', 22.00, 15, '0x00', 'Centeno');
+('Pan Blanco', 'Pan suave clásico', 15.50, 20, 'Assorted_bread.jpg', 'Trigo'),
+('Pan Integral', 'Pan saludable de fibra', 18.00, 30, 'panIntegral.png', 'Integral'),
+('Pan Centeno', 'Pan más oscuro y denso', 22.00, 15, 'panCenteno.png', 'Centeno');
 
 
 insert into empleados(nombre,apellidos,usuario,contraseña,telefono)
@@ -295,8 +297,8 @@ values ('Diego','Diaz','DiegoDiaz',sha2('hola',256),445);
 
 INSERT INTO ordenes (fechaOrden, idEmpleado)
 VALUES
-('2025-01-10 10:15:00', 1),
-('2025-01-10 12:30:00', 1),
+('2025-02-10 10:15:00', 1),
+('2025-02-10 12:30:00', 1),
 ('2025-01-11 09:45:00', 1),
 ('2025-01-11 17:20:00', 1);
 
@@ -314,13 +316,14 @@ VALUES
 
 
 select idEmpleado from empleados where idEmpleado=1 and contraseña=sha2('hola',256); 
- 
+update auditorias set idEmpleado=1 where idAuditoria between 1 and 3; 
 call spLoginEmpleado("DiegoDiaz",sha2('hola',256)); 
-update empleados set administrador=false where idEmpleado=1; 
+update empleados set administrador=true where idEmpleado=1; 
 call spEsAdmin(1); 
 call spMostrarEmpleados; 
 select * from detalleOrden; 
- 
+ select * from panes; 
+select * from auditorias; 
 create user 'panes'@'localhost' identified by 'root'; 
 grant all privileges on ventaspan.* to 'panes'@'localhost'; 
 

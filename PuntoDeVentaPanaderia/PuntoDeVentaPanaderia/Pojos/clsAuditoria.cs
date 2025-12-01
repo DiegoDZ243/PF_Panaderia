@@ -14,7 +14,7 @@ namespace PuntoDeVentaPanaderia.Pojos
         public string usuario { get; set; }
         public decimal precioAnterior { get; set; }
         public decimal precioNuevo { get; set; }
-        public DateTime fecha { get; set; }
+        public string fecha { get; set; }
 
         public clsAuditoria() { }
 

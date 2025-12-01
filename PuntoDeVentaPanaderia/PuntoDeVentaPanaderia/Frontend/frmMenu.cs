@@ -112,5 +112,15 @@ namespace PuntoDeVentaPanaderia.Frontend
             frmVender.Focus();
             this.Show();
         }
+
+        private void btnAuditorias_Click(object sender, EventArgs e)
+        {
+            frmAuditorias frm = new frmAuditorias();
+            this.Hide();
+            frm.ShowDialog(); 
+            frm.Focus();
+            frm.Dispose(); 
+            this.Show();
+        }
     }
 }

@@ -17,7 +17,8 @@ namespace PuntoDeVentaPanaderia.Pojos
         public int stock {  get; set; }
         public string direccionImg { get; set; }
         public string categoria { get; set; }
-
+        
+        public bool descontinuado { get; set; }
         public clsPanes() { }
 
         //Constructor creado solo con el proposito de usar el método Contains()

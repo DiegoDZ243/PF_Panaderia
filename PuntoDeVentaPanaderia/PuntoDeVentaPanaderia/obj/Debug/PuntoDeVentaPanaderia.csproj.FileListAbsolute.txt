@@ -237,3 +237,6 @@ C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPana
 C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmFiltrosReporte2.resources
 C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmTablaReporte2.resources
 C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmGraficaReporte.resources
+C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.ControlesUsuario.cuPanItem.resources
+C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmVenta.resources
+C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmAuditorias.resources
