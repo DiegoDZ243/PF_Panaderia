@@ -118,12 +118,13 @@ namespace PuntoDeVentaPanaderia.Frontend
 
             gridReporte.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             gridReporte.GridColor = ColorTranslator.FromHtml("#A8BBD1");
-            pcbImagen.Location = new Point(gridReporte.Location.X + gridReporte.Width - pcbImagen.Width, pcbImagen.Location.Y + 50);
-            pcbImagen2.Location = new Point(gridReporte.Location.X, pcbImagen2.Location.Y+50);
-            lblTitulo.Location = new Point((this.ClientSize.Width - lblTitulo.Width) / 2, lblTitulo.Location.Y+50);
-            pcbReporte.Location = new Point(10, gridReporte.Location.Y);
-            pcbReporte.Size=new Size(340, gridReporte.Height); 
 
+            lblTitulo.Location = new Point((this.ClientSize.Width - lblTitulo.Width) / 2, lblTitulo.Location.Y+50);
+            
+            pcbReporte.Size=new Size(this.ClientSize.Width/8, this.ClientSize.Width / 8);
+            pcbReporte.Location = new Point(this.ClientSize.Width / 24, gridReporte.Location.Y);
+            pcbReporte2.Size = new Size(this.ClientSize.Width / 8, this.ClientSize.Width / 8);
+            pcbReporte2.Location = new Point(10*this.ClientSize.Width / 12, gridReporte.Location.Y);
         }
 
         private void btnGrafica_Click(object sender, EventArgs e)

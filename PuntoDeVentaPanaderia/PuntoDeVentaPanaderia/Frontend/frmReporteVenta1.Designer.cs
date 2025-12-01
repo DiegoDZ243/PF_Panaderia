@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.gridReporte = new System.Windows.Forms.DataGridView();
             this.idPan = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,8 +41,10 @@
             this.dtpFin = new System.Windows.Forms.DateTimePicker();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pcbReporte = new System.Windows.Forms.PictureBox();
+            this.pcbReporte2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridReporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbReporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbReporte2)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpInicio
@@ -66,28 +68,28 @@
             this.gridReporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gridReporte.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridReporte.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridReporte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridReporte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridReporte.ColumnHeadersHeight = 29;
             this.gridReporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idPan,
             this.nombre,
             this.unidades,
             this.monto});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Symbol", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridReporte.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridReporte.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridReporte.Location = new System.Drawing.Point(39, 134);
             this.gridReporte.Name = "gridReporte";
             this.gridReporte.ReadOnly = true;
@@ -177,13 +179,23 @@
             // 
             // pcbReporte
             // 
-            this.pcbReporte.Image = global::PuntoDeVentaPanaderia.Properties.Resources.reporte2;
+            this.pcbReporte.Image = global::PuntoDeVentaPanaderia.Properties.Resources.reporte3;
             this.pcbReporte.Location = new System.Drawing.Point(761, 28);
             this.pcbReporte.Name = "pcbReporte";
             this.pcbReporte.Size = new System.Drawing.Size(90, 90);
             this.pcbReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbReporte.TabIndex = 14;
             this.pcbReporte.TabStop = false;
+            // 
+            // pcbReporte2
+            // 
+            this.pcbReporte2.Image = global::PuntoDeVentaPanaderia.Properties.Resources.reporte3;
+            this.pcbReporte2.Location = new System.Drawing.Point(39, 12);
+            this.pcbReporte2.Name = "pcbReporte2";
+            this.pcbReporte2.Size = new System.Drawing.Size(90, 90);
+            this.pcbReporte2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbReporte2.TabIndex = 15;
+            this.pcbReporte2.TabStop = false;
             // 
             // frmReporteVenta1
             // 
@@ -193,6 +205,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(883, 761);
+            this.Controls.Add(this.pcbReporte2);
             this.Controls.Add(this.pcbReporte);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblFin);
@@ -207,6 +220,7 @@
             this.Load += new System.EventHandler(this.frmReporteVenta1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridReporte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbReporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbReporte2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,5 +239,6 @@
         private System.Windows.Forms.DateTimePicker dtpFin;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.PictureBox pcbReporte;
+        private System.Windows.Forms.PictureBox pcbReporte2;
     }
 }

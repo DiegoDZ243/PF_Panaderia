@@ -41,7 +41,7 @@ namespace PuntoDeVentaPanaderia.Frontend
             //aplicarColores(); 
             AplicarEstilo_Azul();
             lblTitulo.Location=new Point((this.ClientSize.Width-lblTitulo.Width)/2,lblTitulo.Location.Y);
-            btnGenerarReporte.Location = new Point((this.ClientSize.Width - btnGenerarReporte.Width) / 2, btnGenerarReporte.Location.Y);
+
             pnlMain.Location=new Point((this.ClientSize.Width - pnlMain.Width) / 2, pnlMain.Location.Y);
             chkSeleccionarTodos.Location=new Point(pnlMain.Location.X+pnlMain.Width - chkSeleccionarTodos.Width-70,flpPanes.Location.Y-40);
             dtpMes1.Location=new Point((pnlMain.Width-dtpMes1.Width)/4,dtpMes1.Location.Y);
@@ -156,7 +156,7 @@ namespace PuntoDeVentaPanaderia.Frontend
             btnGenerarReporte.Height = 45;
             btnGenerarReporte.Width = 180;
             btnGenerarReporte.Cursor = Cursors.Hand;
-
+            btnGenerarReporte.Location = new Point((this.ClientSize.Width - btnGenerarReporte.Width) / 2, this.ClientSize.Height - 80); 
 
             btnGenerarReporte.MouseEnter += (s, e) =>
             {

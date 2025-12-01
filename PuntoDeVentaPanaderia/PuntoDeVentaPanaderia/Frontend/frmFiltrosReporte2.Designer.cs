@@ -107,20 +107,20 @@
             // lblMes1
             // 
             this.lblMes1.AutoSize = true;
-            this.lblMes1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMes1.Location = new System.Drawing.Point(251, 11);
+            this.lblMes1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMes1.Location = new System.Drawing.Point(243, 6);
             this.lblMes1.Name = "lblMes1";
-            this.lblMes1.Size = new System.Drawing.Size(53, 23);
+            this.lblMes1.Size = new System.Drawing.Size(64, 28);
             this.lblMes1.TabIndex = 7;
             this.lblMes1.Text = "Mes 1";
             // 
             // lblMes2
             // 
             this.lblMes2.AutoSize = true;
-            this.lblMes2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMes2.Location = new System.Drawing.Point(573, 11);
+            this.lblMes2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.lblMes2.Location = new System.Drawing.Point(570, 6);
             this.lblMes2.Name = "lblMes2";
-            this.lblMes2.Size = new System.Drawing.Size(53, 23);
+            this.lblMes2.Size = new System.Drawing.Size(67, 28);
             this.lblMes2.TabIndex = 8;
             this.lblMes2.Text = "Mes 2";
             // 
@@ -152,6 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(941, 740);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.lblTitulo);

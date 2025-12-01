@@ -55,9 +55,8 @@ namespace PuntoDeVentaPanaderia.Frontend
             }
 
             gridReporte.Width = anchoTotal;
-            gridReporte.Height = this.ClientSize.Height - 50 - gridReporte.Location.Y;
+            gridReporte.Height = 11*this.ClientSize.Height/12 - gridReporte.Location.Y;
 
-            this.Width = gridReporte.Width + 50;
 
 
             gridReporte.Location = new Point(
@@ -111,8 +110,10 @@ namespace PuntoDeVentaPanaderia.Frontend
                 dtpFin.Top - lblFin.Height - 5
             );
             lblTitulo.Location = new Point((this.ClientSize.Width - lblTitulo.Width) / 2 +40, lblTitulo.Location.Y);
-            pcbReporte.Location = new Point(10, gridReporte.Location.Y);
-            pcbReporte.Size = new Size(520, gridReporte.Height);
+            pcbReporte.Location = new Point(this.ClientSize.Width/24, gridReporte.Location.Y);
+            pcbReporte.Size = new Size(this.ClientSize.Width/6, this.ClientSize.Height / 5);
+            pcbReporte2.Location = new Point(19*this.ClientSize.Width / 24, gridReporte.Location.Y);
+            pcbReporte2.Size = new Size(this.ClientSize.Width / 6, this.ClientSize.Height / 5);
         }
 
         private void gridReporte_CellContentClick(object sender, DataGridViewCellEventArgs e)

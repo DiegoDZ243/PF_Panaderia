@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="flecha-correcta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\flecha-correcta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="reporte" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reporte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -129,6 +126,12 @@
   </data>
   <data name="flecha-izquierda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flecha-izquierda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="graficas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\graficas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reporte2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reporte2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="control_versiones" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\control_versiones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,19 +142,19 @@
   <data name="imagedefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagedefault.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lapiz" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lapiz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="graficas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\graficas1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lapiz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lapiz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="boton-mas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\boton-mas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="graficas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\graficas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="flecha-correcta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flecha-correcta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="reporte2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\reporte2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="reporte3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reporte3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

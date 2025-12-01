@@ -56,27 +56,25 @@ namespace PuntoDeVentaPanaderia.Frontend
 
         private void ConfigurarVentanaYGrafica()
         {
-            // === MAXIMIZAR FORM ===
+
             this.WindowState = FormWindowState.Maximized;
             this.BackColor = Color.White;
 
-            // === AJUSTAR CHART AL TAMAÑO DE LA VENTANA ===
             chartReporteVentas.Dock = DockStyle.Fill;
 
-            // === DISEÑO CLARO ===
             var chart = chartReporteVentas;
 
             chart.BackColor = Color.White;
             chart.ChartAreas[0].BackColor = Color.White;
 
-            // TITULO
+
             chart.Titles.Clear();
             Title titulo = new Title("Reporte Comparativo de Ventas Entre Meses");
             titulo.ForeColor = Color.FromArgb(40, 40, 40);
             titulo.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             chart.Titles.Add(titulo);
 
-            // EJE X
+
             chart.ChartAreas[0].AxisX.LabelStyle.ForeColor = Color.FromArgb(50, 50, 50);
             chart.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Segoe UI", 10);
             chart.ChartAreas[0].AxisX.LineColor = Color.FromArgb(160, 160, 160);
@@ -84,14 +82,14 @@ namespace PuntoDeVentaPanaderia.Frontend
             chart.ChartAreas[0].AxisX.MajorGrid.LineDashStyle = ChartDashStyle.Dot;
             chart.ChartAreas[0].AxisX.Interval = 1;
 
-            // EJE Y
+
             chart.ChartAreas[0].AxisY.LabelStyle.ForeColor = Color.FromArgb(50, 50, 50);
             chart.ChartAreas[0].AxisY.LabelStyle.Font = new Font("Segoe UI", 10);
             chart.ChartAreas[0].AxisY.LineColor = Color.FromArgb(160, 160, 160);
             chart.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.FromArgb(220, 220, 220);
             chart.ChartAreas[0].AxisY.MajorGrid.LineDashStyle = ChartDashStyle.Dot;
 
-            // LEYENDA
+
             if (chart.Legends.Count > 0)
             {
                 chart.Legends[0].BackColor = Color.White;
@@ -99,14 +97,14 @@ namespace PuntoDeVentaPanaderia.Frontend
                 chart.Legends[0].Font = new Font("Segoe UI", 10);
             }
 
-            // SERIES (colores + estilo)
+
             foreach (Series s in chart.Series)
             {
                 if (s.Name.Contains(mes1.ToString("MMMM")))
-                    s.Color = Color.FromArgb(52, 152, 219);   // Azul
+                    s.Color = Color.FromArgb(52, 152, 219);  
 
                 else
-                    s.Color = Color.FromArgb(230, 126, 34);   // Naranja
+                    s.Color = Color.FromArgb(230, 126, 34);  
 
                 s.IsValueShownAsLabel = true;
                 s.Font = new Font("Segoe UI", 10);
