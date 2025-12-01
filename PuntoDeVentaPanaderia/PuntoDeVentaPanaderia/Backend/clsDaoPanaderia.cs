@@ -320,11 +320,11 @@ namespace PuntoDeVentaPanaderia.Backend
         }
 
         /// <summary>
-        /// 
+        /// Obtiene los panes que pertenecen a una categoría específica
         /// </summary>
-        /// <param name="categoria"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        /// <param name="categoria">Categoría de la que se quieren ver los panes</param>
+        /// <returns>Lista con los panes que pertenecen a una categoría especifica</returns>
+        /// <exception cref="Exception">Se lanza si ocurré un error al recuperar los panes.</exception>
         public List<clsPanes> obtenerPanesPorCategoria(string categoria)
         {
             MySqlConnection cn = new MySqlConnection();
@@ -367,6 +367,12 @@ namespace PuntoDeVentaPanaderia.Backend
         }
 
         #region CRUD_EMPLEADOS
+
+        /// <summary>
+        /// Método que obtiene una lista de los empleados activos
+        /// </summary>
+        /// <returns>Lista con los datos de los empleados activos</returns>
+        /// <exception cref="Exception">Se lanza si ocurre un error al conectarse a la BD o al recuperar datos</exception>
         public List<clsEmpleados> obtenerEmpleados()
         {
             MySqlConnection cn = new MySqlConnection();
@@ -406,11 +412,12 @@ namespace PuntoDeVentaPanaderia.Backend
         }
 
         /// <summary>
-        /// Revisa las credenciales del empleado que utilizará el sistema
+        /// Revisa las credenciales del empleado que utilizará el sistema. Si el usuario y 
+        /// contraseña ingresados son válidos, se deja entrar al usuario al sistema.
         /// </summary>
         /// <param name="usuario">Usuario único del empleado</param>
         /// <param name="contrasena">Contraseña del empleado</param>
-        /// <returns>Retorna el id del empledo si sus credenciales son correctas; retorna -1 en caso contrario</returns>
+        /// <returns>Retorna los datos del empleado si sus credenciales son correctas; retorna null en caso contrario</returns>
         public clsEmpleados autentificarEmpleado(string usuario, string contrasena)
         {
             MySqlConnection cn = new MySqlConnection();
@@ -451,6 +458,12 @@ namespace PuntoDeVentaPanaderia.Backend
             }
         }
 
+        /// <summary>
+        /// Método que se emplea para registrar un nuevo empleado 
+        /// </summary>
+        /// <param name="empleado">Datos del empleado que se registrará</param>
+        /// <returns>Retorna "true" si se completó correctamente la operación</returns>
+        /// <exception cref="Exception">Lanza una excepción en caso de que no se logre el registro</exception>
         public bool registrarEmpleado(clsEmpleados empleado)
         {
             string connectionString = "server=localhost;database=ventasPan;uid=panes;pwd=root;";
@@ -483,6 +496,14 @@ namespace PuntoDeVentaPanaderia.Backend
             }
         }
 
+        /// <summary>
+        /// Actualiza los datos de un empleado con nuevos datos especificados en el objeto clsEmpleados.
+        /// Establece un nuevo valor de nombre, apellidos, usuario, teléfono y estatus de administrador según sea
+        /// el caso.
+        /// </summary>
+        /// <param name="empleado">Objeto con los datos actualizados del empleado</param>
+        /// <returns>Retorna "true" si fue posible terminar exitosamente la actualización</returns>
+        /// <exception cref="Exception">Lanza una excepción si hubo un error al hacer la actualización</exception>
         public bool actualizarEmpleado(clsEmpleados empleado)
         {
             MySqlConnection cn = new MySqlConnection();
@@ -514,6 +535,12 @@ namespace PuntoDeVentaPanaderia.Backend
             }
         }
 
+        /// <summary>
+        /// Método que desactiva a un empleado, elimandolo solo de manera lógica de la base de datos.
+        /// </summary>
+        /// <param name="idEmpleado">Clave del empleado que se desactivará</param>
+        /// <returns>Retorna "true" si se desactivó exitosamente el empleado</returns>
+        /// <exception cref="Exception">Lanza un excepción en caso de que no se haya desactivado exitosamente el empleado</exception>
         public bool desactivarEmpleado(int idEmpleado)
         {
             MySqlConnection cn = new MySqlConnection();
@@ -541,6 +568,11 @@ namespace PuntoDeVentaPanaderia.Backend
             }
         }
 
+        /// <summary>
+        /// Función que busca el estatus de "administrador" de un empleado.
+        /// </summary>
+        /// <param name="idEmpleado">Clave del empleado</param>
+        /// <returns>Retorna "true" si es administrador; retorna "false" en caso contrario</returns>
         public bool EsAdministrador(int idEmpleado)
         {
             bool isAdmin = false;
@@ -574,6 +606,12 @@ namespace PuntoDeVentaPanaderia.Backend
 
         #endregion
 
+        /// <summary>
+        /// Función que registra una nueva orden o venta realizada por el sistema
+        /// </summary>
+        /// <param name="productos">Es una lista de los productos que se compraron en la orden</param>
+        /// <param name="idEmpleado">Clave del empleado que realizó la venta</param>
+        /// <returns>Retorna "true" si la orden fue registrada correctamente</returns>
         public bool registrarOrden(List<clsDetalleOrden> productos, int idEmpleado)
         {
             MySqlConnection cn = new MySqlConnection();
@@ -623,6 +661,14 @@ namespace PuntoDeVentaPanaderia.Backend
             }
         }
 
+        /// <summary>
+        /// Función que permite recuperar el reporte de ventas realizadas en un perido de tiempo marcada
+        /// por una fecha de inicio y una fecha de fin. 
+        /// </summary>
+        /// <param name="fechaInicio">Fecha de inicio en la que se comenzarán a contabilizar las ventas</param>
+        /// <param name="FechaFin">Fecha de fin en la que se dejarán de contabilizar las ventas</param>
+        /// <returns>Retorna una lista con el reportado de las ventas registradas en un periodo especifico</returns>
+        /// <exception cref="Exception">Lanza una excepción si no se pueden recuperar los datos</exception>
         public List<clsReporteVenta> mostrarReporteVentas(DateTime fechaInicio, DateTime FechaFin)
         {
             MySqlConnection cn = new MySqlConnection();
@@ -666,7 +712,7 @@ namespace PuntoDeVentaPanaderia.Backend
         /// <param name="mes1">Mes 1 a comparar</param>
         /// <param name="mes2">Mes 2 a comparar</param>
         /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        /// <exception cref="Exception">Lanza un excepción si no pueden recuperar exitosamente los datos</exception>
         public List<clsReporteVentaMes> mostrarReporteVentasMeses(DateTime mes1, DateTime mes2)
         {
             MySqlConnection cn = new MySqlConnection();
@@ -711,7 +757,7 @@ namespace PuntoDeVentaPanaderia.Backend
         /// empleados.
         /// </summary>
         /// <returns>Retorna una lista con todos los movimientos realizados en la tabla de panes</returns>
-        /// <exception cref="Exception"></exception>
+        /// <exception cref="Exception">Lanza una excepción si no se pueden recuperar </exception>
         public List<clsAuditoria> obtenerAuditorias()
         {
             MySqlConnection cn = new MySqlConnection();
