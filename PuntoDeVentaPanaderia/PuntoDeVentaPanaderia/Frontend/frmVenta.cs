@@ -54,7 +54,6 @@ namespace PuntoDeVentaPanaderia.Frontend
                 lblEmpleado.Text = "Empleado: No Asignado"; //Esto no debería pasar
             }
 
-            lblNumeroVenta.Text = "N° Venta: 000001";
 
             timer1.Interval = 1000;
             timer1.Start();

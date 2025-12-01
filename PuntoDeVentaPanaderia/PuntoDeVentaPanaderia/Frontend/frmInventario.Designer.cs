@@ -120,7 +120,6 @@
             this.Controls.Add(this.dgvInventario);
             this.Name = "frmInventario";
             this.Text = "Adminitración de Inventario";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
             this.panel1.ResumeLayout(false);

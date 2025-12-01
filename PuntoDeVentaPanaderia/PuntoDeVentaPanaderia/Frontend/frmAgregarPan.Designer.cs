@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarPan));
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -48,8 +49,16 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pctImagenPan = new System.Windows.Forms.PictureBox();
+            this.errNombre = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errImagen = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errPrecio = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errStock = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagenPan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errNombre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errPrecio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errStock)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregar
@@ -287,6 +296,22 @@
             this.pctImagenPan.TabStop = false;
             this.pctImagenPan.Click += new System.EventHandler(this.pctImagenPan_Click);
             // 
+            // errNombre
+            // 
+            this.errNombre.ContainerControl = this;
+            // 
+            // errImagen
+            // 
+            this.errImagen.ContainerControl = this;
+            // 
+            // errPrecio
+            // 
+            this.errPrecio.ContainerControl = this;
+            // 
+            // errStock
+            // 
+            this.errStock.ContainerControl = this;
+            // 
             // frmAgregarPan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,6 +326,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagenPan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errNombre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errPrecio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errStock)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,5 +355,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.ErrorProvider errNombre;
+        private System.Windows.Forms.ErrorProvider errImagen;
+        private System.Windows.Forms.ErrorProvider errPrecio;
+        private System.Windows.Forms.ErrorProvider errStock;
     }
 }

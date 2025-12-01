@@ -35,7 +35,7 @@ namespace PuntoDeVentaPanaderia.Backend
                     clsPanes pan = new clsPanes();
                     pan.idPan = reader.GetInt32(0); 
                     pan.nombre = reader.GetString(1);
-                    pan.descripcion = reader.GetString(2);
+                    pan.descripcion = reader.IsDBNull(2) ? string.Empty : reader.GetString(2);
                     pan.precio = reader.GetDecimal(3);
                     pan.stock = reader.GetInt32(4);
                     pan.direccionImg = reader.GetString(5); 
@@ -407,7 +407,7 @@ namespace PuntoDeVentaPanaderia.Backend
 
         public bool registrarEmpleado(clsEmpleados empleado)
         {
-            string connectionString = "server=localhost;database=ventas;uid=root;pwd=root;";
+            string connectionString = "server=localhost;database=ventas;uid=panes;pwd=root;";
 
             using (MySqlConnection cn = new MySqlConnection(connectionString))
             {

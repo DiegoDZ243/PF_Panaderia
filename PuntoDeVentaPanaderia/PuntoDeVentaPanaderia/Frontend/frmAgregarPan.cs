@@ -134,6 +134,7 @@ namespace PuntoDeVentaPanaderia.Frontend
                     pctImagenPan.Image = Image.FromFile(rutaArchivoOrigen); //Previzualización
 
                     this.rutaImagenSeleccionada = rutaArchivoOrigen;
+                    errImagen.Clear();
 
                 }
                 catch (Exception ex)
@@ -237,6 +238,11 @@ namespace PuntoDeVentaPanaderia.Frontend
             txtPrecio.Clear();
             txtStock.Clear();
 
+            errNombre.Clear();
+            errImagen.Clear();
+            errPrecio.Clear(); 
+            errStock.Clear();
+
             rutaImagenSeleccionada = "";
             try
             {
@@ -333,34 +339,67 @@ namespace PuntoDeVentaPanaderia.Frontend
 
         private bool ValidarEntradas()
         {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
-                string.IsNullOrWhiteSpace(txtPrecio.Text) ||
-                string.IsNullOrWhiteSpace(txtStock.Text) ||
-                string.IsNullOrEmpty(rutaImagenSeleccionada) || 
-                cmbCategoria.SelectedItem == null)
+            bool isValid = true;
+            errNombre.Clear();
+            errImagen.Clear();
+            errPrecio.Clear();
+            errStock.Clear();
+
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
-                MessageBox.Show("Los campos Nombre, Precio, Stock, Categoría e Imagen son obligatorios.", "Validación",
+                errNombre.SetError(txtNombre, "El nombre del producto es obligatorio.");
+                isValid = false;
+            }
+            else if (txtNombre.Text.Length > 60)
+            {
+                errNombre.SetError(txtNombre, $"El nombre no puede exceder los 60 caracteres. Actual: {txtNombre.Text.Length}");
+                isValid = false;
+            }
+
+            if (string.IsNullOrEmpty(rutaImagenSeleccionada))
+            {
+                errImagen.SetError(pctImagenPan, "Debe seleccionar una imagen para el producto.");
+                isValid = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtPrecio.Text))
+            {
+                errPrecio.SetError(txtPrecio, "El precio es obligatorio.");
+                isValid = false;
+            }
+            else if (!decimal.TryParse(txtPrecio.Text, out decimal precio) || precio <= 0)
+            {
+                errPrecio.SetError(txtPrecio, "El precio debe ser un valor numérico positivo y válido.");
+                isValid = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtStock.Text))
+            {
+                errStock.SetError(txtStock, "El stock es obligatorio.");
+                isValid = false;
+            }
+            else if (!int.TryParse(txtStock.Text, out int stock) || stock < 0)
+            {
+                errStock.SetError(txtStock, "El stock debe ser un número entero no negativo.");
+                isValid = false;
+            }
+
+            if (cmbCategoria.SelectedItem == null && isValid)
+            {
+                MessageBox.Show("La Categoría es obligatoria.", "Validación",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            if (!decimal.TryParse(txtPrecio.Text, out decimal precio) || precio <= 0)
+            if (!isValid)
             {
-                MessageBox.Show("El precio debe ser un valor numérico positivo válido.", "Validación",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtPrecio.Focus();
-                return false;
+                if (errNombre.GetError(txtNombre) != string.Empty) txtNombre.Focus();
+                else if (errPrecio.GetError(txtPrecio) != string.Empty) txtPrecio.Focus();
+                else if (errStock.GetError(txtStock) != string.Empty) txtStock.Focus();
+
             }
 
-            if (!int.TryParse(txtStock.Text, out int stock) || stock < 0)
-            {
-                MessageBox.Show("El stock debe ser un número entero no negativo.", "Validación",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtStock.Focus();
-                return false;
-            }
-
-            return true;
+            return isValid;
         }
 
         private void label7_Click(object sender, EventArgs e)

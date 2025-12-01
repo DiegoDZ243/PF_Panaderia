@@ -116,14 +116,21 @@ namespace PuntoDeVentaPanaderia.Frontend
             {
                 return;
             }
+            if (panSeleccionado.descontinuado)
+            {
+                MessageBox.Show("No se puede editar un producto que ha sido descontinuado.",
+                                "Acción Bloqueada",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return;
+            }
+
 
             frmAgregarPan frmEditarPan = new frmAgregarPan(empleadoActual, panSeleccionado);
 
             this.Hide();
             frmEditarPan.ShowDialog();
             this.Show();
-
-            // Recargar
             CargarInventario();
         }
 
@@ -136,37 +143,45 @@ namespace PuntoDeVentaPanaderia.Frontend
                 return;
             }
 
-            DialogResult result = MessageBox.Show($"¿Está seguro que desea descontinuar el pan '{panSeleccionado.nombre}' (Clave: {panSeleccionado.idPan})?\nEsta acción es reversible.",
-                                                  "Confirmar Descontinuación",
-                                                  MessageBoxButtons.YesNo,
-                                                  MessageBoxIcon.Question);
+            if (panSeleccionado.descontinuado)
+            {
+                MessageBox.Show($"El producto '{panSeleccionado.nombre}' ya se encuentra descontinuado.",
+                                "Producto Descontinuado",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                return;
+            }
 
+            DialogResult result = MessageBox.Show($"¿Está seguro que desea descontinuar el pan '{panSeleccionado.nombre}' (Clave: {panSeleccionado.idPan})?\nEsta acción es reversible.",
+                                                 "Confirmar Descontinuación",
+                                                 MessageBoxButtons.YesNo,
+                                                 MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 clsDaoPanaderia dao = new clsDaoPanaderia();
                 try
                 {
-                    if (dao.descontinuarPan(panSeleccionado.idPan,empleadoActual.idEmpleado))
+                    if (dao.descontinuarPan(panSeleccionado.idPan, empleadoActual.idEmpleado))
                     {
                         MessageBox.Show("El producto ha sido marcado como descontinuado exitosamente.", "Éxito",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         MessageBox.Show("No se pudo descontinuar el producto.", "Error",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error al intentar descontinuar el pan: " + ex.Message, "Error de DB",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                // 3. Recargar el inventario
                 CargarInventario();
             }
         }
+        
 
         private void frmInventario_Load(object sender, EventArgs e)
         {
