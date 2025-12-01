@@ -99,7 +99,7 @@ namespace PuntoDeVentaPanaderia
                 if (empleado != null)
                 {
                     
-                    MessageBox.Show("¡Bienvenido" + empleado.nombre +"! Inicio de sesión exitoso.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("¡Bienvenido " + empleado.nombre +"! Inicio de sesión exitoso.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmMenu frmm = new frmMenu(empleado);
                     if (dao.EsAdministrador(empleado.idEmpleado))
                     {

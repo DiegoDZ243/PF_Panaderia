@@ -240,3 +240,11 @@ C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPana
 C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.ControlesUsuario.cuPanItem.resources
 C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmVenta.resources
 C:\Users\diego\OneDrive\Documentos\Mis Repos\Proyecto Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmAuditorias.resources
+C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.ControlesUsuario.cuElegirPan.resources
+C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.ControlesUsuario.cuPanItem.resources
+C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmAuditorias.resources
+C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmFiltrosReporte2.resources
+C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmGraficaReporte.resources
+C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmInventario.resources
+C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmTablaReporte2.resources
+C:\Users\salva\Source\Repos\PF_Panaderia\PuntoDeVentaPanaderia\PuntoDeVentaPanaderia\obj\Debug\PuntoDeVentaPanaderia.Frontend.frmVenta.resources

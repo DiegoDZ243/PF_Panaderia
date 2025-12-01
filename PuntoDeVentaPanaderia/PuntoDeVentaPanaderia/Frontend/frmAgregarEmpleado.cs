@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,28 +15,30 @@ namespace PuntoDeVentaPanaderia.Frontend
 {
     public partial class frmAgregarEmpleado : Form
     {
+        private int idEmpleadoEdicion = 0;
         private clsEmpleados empleadoActual; 
-        private frmMenu menu; 
+        private frmMenu menu;
+        public frmAgregarEmpleado()
+        {
+            InitializeComponent();
+            this.idEmpleadoEdicion = 0;
+            lblTitulo.Text = "Nuevo Empleado";
+        }
+
         public frmAgregarEmpleado(clsEmpleados empleado)
         {
-            empleadoActual = empleado;
             InitializeComponent();
+            this.idEmpleadoEdicion = empleado.idEmpleado;
+
             txtNombre.Text = empleado.nombre;
             txtApellidos.Text = empleado.apellidos;
             txtUser.Text = empleado.usuario;
             txtTelefono.Text = empleado.telefono;
-            
+            txtContrasena.Enabled = false;
+            txtContrasena.Text = "";
 
-            
-            if (empleado.admin)
-                rdbtnSi.Checked = true;
-            else
-                rdbtnNo.Checked = true;
-        }
-
-        public frmAgregarEmpleado()
-        {
-
+            lblTitulo.Text = "Editar Empleado";
+            btnAceptar.Text = "ACTUALIZAR DATOS";
         }
 
 
@@ -179,6 +182,20 @@ namespace PuntoDeVentaPanaderia.Frontend
             }
         }
 
+        private string CalcularSHA256(string input)
+        {
+            using (SHA256 sha = SHA256.Create())
+            {
+                byte[] bytes = sha.ComputeHash(Encoding.UTF8.GetBytes(input));
+                StringBuilder sb = new StringBuilder();
+
+                foreach (byte b in bytes)
+                    sb.Append(b.ToString("x2"));
+
+                return sb.ToString();
+            }
+        }
+
         #endregion
 
         private void txtNombre_Leave(object sender, EventArgs e)
@@ -211,9 +228,9 @@ namespace PuntoDeVentaPanaderia.Frontend
             bool nombreOk = ValidarNombreApellido(txtNombre);
             bool apellidoOk = ValidarNombreApellido(txtApellidos);
             bool usuarioOk = ValidarUsuario();
-            bool passOk = ValidarPassword();
             bool telOk = ValidarTelefono();
-            bool admin = ObtenerSeleccion();
+
+            bool passOk = (idEmpleadoEdicion > 0) ? true : ValidarPassword();
 
             if (!nombreOk || !apellidoOk || !usuarioOk || !passOk || !telOk)
             {
@@ -221,40 +238,47 @@ namespace PuntoDeVentaPanaderia.Frontend
                 return;
             }
 
-            clsEmpleados nuevoEmpleado = new clsEmpleados();
-            nuevoEmpleado.nombre = txtNombre.Text.Trim();
-            nuevoEmpleado.apellidos = txtApellidos.Text.Trim();
-            nuevoEmpleado.usuario = txtUser.Text.Trim();
-            nuevoEmpleado.contrasena = txtContrasena.Text.Trim();
-            nuevoEmpleado.telefono = txtTelefono.Text.Trim();
-            nuevoEmpleado.admin = admin;
+            clsEmpleados empleado = new clsEmpleados();
+            empleado.nombre = txtNombre.Text.Trim();
+            empleado.apellidos = txtApellidos.Text.Trim();
+            empleado.usuario = txtUser.Text.Trim();
+            empleado.telefono = txtTelefono.Text.Trim();
 
             clsDaoPanaderia dao = new clsDaoPanaderia();
 
             try
             {
-                if (dao.registrarEmpleado(nuevoEmpleado))
+                if (idEmpleadoEdicion == 0)
                 {
+                    empleado.contrasena = CalcularSHA256(txtContrasena.Text.Trim());
 
-                    MessageBox.Show("Empleado registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
-                    this.Hide(); 
-                    this.Close();
-                    this.Dispose(); 
+                    if (dao.registrarEmpleado(empleado))
+                    {
+                        MessageBox.Show("Empleado registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    empleado.idEmpleado = this.idEmpleadoEdicion;
 
+                    if (dao.actualizarEmpleado(empleado))
+                    {
+                        MessageBox.Show("Datos del empleado actualizados.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
                 }
             }
             catch (Exception ex)
             {
                 if (ex.Message.ToLower().Contains("duplicate") || ex.Message.ToLower().Contains("usuario"))
                 {
-                    MessageBox.Show("El nombre de usuario ya existe. Por favor elija otro.", "Usuario Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    errUser.SetError(txtUser, "Este usuario ya está ocupado");
-                    txtUser.Focus();
+                    MessageBox.Show("El nombre de usuario ya existe.", "Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    errUser.SetError(txtUser, "Usuario ocupado");
                 }
                 else
                 {
-                    MessageBox.Show("Error al guardar: " + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

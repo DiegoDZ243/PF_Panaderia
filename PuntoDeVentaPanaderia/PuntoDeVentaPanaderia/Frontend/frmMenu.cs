@@ -41,7 +41,7 @@ namespace PuntoDeVentaPanaderia.Frontend
         private void btnAgregarEmpleado_Click(object sender, EventArgs e)
         {
 
-            frmAgregarEmpleado frmAEmp = new frmAgregarEmpleado(empleadoActual);
+            frmAgregarEmpleado frmAEmp = new frmAgregarEmpleado();
             this.Hide();
             frmAEmp.ShowDialog();
             frmAEmp.Focus();
