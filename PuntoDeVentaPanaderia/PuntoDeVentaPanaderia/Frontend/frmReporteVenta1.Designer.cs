@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.gridReporte = new System.Windows.Forms.DataGridView();
             this.idPan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unidades = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblInicio = new System.Windows.Forms.Label();
+            this.lblFin = new System.Windows.Forms.Label();
             this.dtpFin = new System.Windows.Forms.DateTimePicker();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.pcbReporte = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridReporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbReporte)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpInicio
@@ -63,28 +66,28 @@
             this.gridReporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gridReporte.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridReporte.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridReporte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridReporte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.gridReporte.ColumnHeadersHeight = 29;
             this.gridReporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idPan,
             this.nombre,
             this.unidades,
             this.monto});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridReporte.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Symbol", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridReporte.DefaultCellStyle = dataGridViewCellStyle8;
             this.gridReporte.Location = new System.Drawing.Point(39, 134);
             this.gridReporte.Name = "gridReporte";
             this.gridReporte.ReadOnly = true;
@@ -127,29 +130,29 @@
             this.monto.ReadOnly = true;
             this.monto.Width = 111;
             // 
-            // label1
+            // lblInicio
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(157, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 29);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Fecha de Inicio:";
+            this.lblInicio.AutoSize = true;
+            this.lblInicio.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblInicio.Location = new System.Drawing.Point(157, 67);
+            this.lblInicio.Name = "lblInicio";
+            this.lblInicio.Size = new System.Drawing.Size(199, 29);
+            this.lblInicio.TabIndex = 4;
+            this.lblInicio.Text = "Fecha de Inicio:";
             // 
-            // label3
+            // lblFin
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(542, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 29);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Fecha de Fin:";
+            this.lblFin.AutoSize = true;
+            this.lblFin.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblFin.Location = new System.Drawing.Point(542, 67);
+            this.lblFin.Name = "lblFin";
+            this.lblFin.Size = new System.Drawing.Size(173, 29);
+            this.lblFin.TabIndex = 7;
+            this.lblFin.Text = "Fecha de Fin:";
             // 
             // dtpFin
             // 
@@ -162,6 +165,26 @@
             this.dtpFin.TabIndex = 6;
             this.dtpFin.ValueChanged += new System.EventHandler(this.dtpFin_ValueChanged);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(324, 9);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(250, 38);
+            this.lblTitulo.TabIndex = 8;
+            this.lblTitulo.Text = "Reporte de Ventas";
+            // 
+            // pcbReporte
+            // 
+            this.pcbReporte.Image = global::PuntoDeVentaPanaderia.Properties.Resources.reporte2;
+            this.pcbReporte.Location = new System.Drawing.Point(761, 28);
+            this.pcbReporte.Name = "pcbReporte";
+            this.pcbReporte.Size = new System.Drawing.Size(90, 90);
+            this.pcbReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbReporte.TabIndex = 14;
+            this.pcbReporte.TabStop = false;
+            // 
             // frmReporteVenta1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -170,16 +193,20 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(883, 761);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pcbReporte);
+            this.Controls.Add(this.lblTitulo);
+            this.Controls.Add(this.lblFin);
             this.Controls.Add(this.dtpFin);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblInicio);
             this.Controls.Add(this.gridReporte);
             this.Controls.Add(this.dtpInicio);
             this.Name = "frmReporteVenta1";
             this.Text = "Reporte de Ventas";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmReporteVenta1_FormClosed);
             this.Load += new System.EventHandler(this.frmReporteVenta1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridReporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbReporte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,8 +220,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn unidades;
         private System.Windows.Forms.DataGridViewTextBoxColumn monto;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblInicio;
+        private System.Windows.Forms.Label lblFin;
         private System.Windows.Forms.DateTimePicker dtpFin;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.PictureBox pcbReporte;
     }
 }

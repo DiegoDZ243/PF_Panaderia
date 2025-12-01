@@ -28,11 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridReporte = new System.Windows.Forms.DataGridView();
             this.btnGrafica = new System.Windows.Forms.Button();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.pcbReporte = new System.Windows.Forms.PictureBox();
+            this.pcbImagen = new System.Windows.Forms.PictureBox();
+            this.pcbImagen2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridReporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbReporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbImagen2)).BeginInit();
             this.SuspendLayout();
             // 
             // gridReporte
@@ -44,24 +51,24 @@
             this.gridReporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gridReporte.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridReporte.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridReporte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridReporte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridReporte.ColumnHeadersHeight = 29;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Symbol", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridReporte.DefaultCellStyle = dataGridViewCellStyle6;
-            this.gridReporte.Location = new System.Drawing.Point(23, 28);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridReporte.DefaultCellStyle = dataGridViewCellStyle2;
+            this.gridReporte.Location = new System.Drawing.Point(34, 124);
             this.gridReporte.Name = "gridReporte";
             this.gridReporte.ReadOnly = true;
             this.gridReporte.RowHeadersWidth = 51;
@@ -73,7 +80,7 @@
             // btnGrafica
             // 
             this.btnGrafica.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrafica.Location = new System.Drawing.Point(330, 633);
+            this.btnGrafica.Location = new System.Drawing.Point(329, 740);
             this.btnGrafica.Name = "btnGrafica";
             this.btnGrafica.Size = new System.Drawing.Size(163, 66);
             this.btnGrafica.TabIndex = 5;
@@ -81,18 +88,67 @@
             this.btnGrafica.UseVisualStyleBackColor = true;
             this.btnGrafica.Click += new System.EventHandler(this.btnGrafica_Click);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(185, 55);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(452, 38);
+            this.lblTitulo.TabIndex = 12;
+            this.lblTitulo.Text = "Reporte Comparativo Entre Meses";
+            // 
+            // pcbReporte
+            // 
+            this.pcbReporte.Image = global::PuntoDeVentaPanaderia.Properties.Resources.reporte;
+            this.pcbReporte.Location = new System.Drawing.Point(34, 247);
+            this.pcbReporte.Name = "pcbReporte";
+            this.pcbReporte.Size = new System.Drawing.Size(90, 90);
+            this.pcbReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbReporte.TabIndex = 13;
+            this.pcbReporte.TabStop = false;
+            // 
+            // pcbImagen
+            // 
+            this.pcbImagen.Image = global::PuntoDeVentaPanaderia.Properties.Resources.graficas1;
+            this.pcbImagen.Location = new System.Drawing.Point(698, 28);
+            this.pcbImagen.Name = "pcbImagen";
+            this.pcbImagen.Size = new System.Drawing.Size(90, 90);
+            this.pcbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbImagen.TabIndex = 11;
+            this.pcbImagen.TabStop = false;
+            // 
+            // pcbImagen2
+            // 
+            this.pcbImagen2.Image = global::PuntoDeVentaPanaderia.Properties.Resources.graficas;
+            this.pcbImagen2.Location = new System.Drawing.Point(34, 28);
+            this.pcbImagen2.Name = "pcbImagen2";
+            this.pcbImagen2.Size = new System.Drawing.Size(90, 90);
+            this.pcbImagen2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbImagen2.TabIndex = 10;
+            this.pcbImagen2.TabStop = false;
+            // 
             // frmTablaReporte2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 709);
+            this.ClientSize = new System.Drawing.Size(800, 828);
+            this.Controls.Add(this.pcbReporte);
+            this.Controls.Add(this.lblTitulo);
+            this.Controls.Add(this.pcbImagen);
+            this.Controls.Add(this.pcbImagen2);
             this.Controls.Add(this.btnGrafica);
             this.Controls.Add(this.gridReporte);
             this.Name = "frmTablaReporte2";
             this.Text = "Reporte Comparativo Entre Meses";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmTablaReporte2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridReporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbReporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbImagen2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -100,5 +156,9 @@
 
         private System.Windows.Forms.DataGridView gridReporte;
         private System.Windows.Forms.Button btnGrafica;
+        private System.Windows.Forms.PictureBox pcbImagen2;
+        private System.Windows.Forms.PictureBox pcbImagen;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.PictureBox pcbReporte;
     }
 }
