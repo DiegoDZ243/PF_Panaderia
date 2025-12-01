@@ -300,5 +300,20 @@
   <ItemGroup>
     <None Include="Resources\flecha-correcta.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\control_versiones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graficas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graficas1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reporte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reporte2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

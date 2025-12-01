@@ -30,6 +30,18 @@ namespace PuntoDeVentaPanaderia.ControlesUsuario
             return chkSeleccionar.Checked;
         }
 
+        public void setTamanosDefault()
+        {
+            
+            this.Height=227;
+            this.Width = 196;
+            this.pcbPan.Height = 150;
+            this.pcbPan.Width = 150;
+            this.pcbPan.Location = new Point((this.ClientSize.Width - pcbPan.Width) / 2, 39);
+            this.chkSeleccionar.Location=new Point((this.ClientSize.Width - chkSeleccionar.Width)/2, 195);
+            lblNombre.Location = new Point((this.ClientSize.Width - lblNombre.Width) / 2, 11);
+        }
+
         public PictureBox Imagen
         {
             get

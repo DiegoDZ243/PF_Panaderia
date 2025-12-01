@@ -407,7 +407,7 @@ namespace PuntoDeVentaPanaderia.Backend
 
         public bool registrarEmpleado(clsEmpleados empleado)
         {
-            string connectionString = "server=localhost;database=ventas;uid=root;pwd=root;";
+            string connectionString = "server=localhost;database=ventasPan;uid=panes;pwd=root;";
 
             using (MySqlConnection cn = new MySqlConnection(connectionString))
             {

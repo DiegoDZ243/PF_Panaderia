@@ -22,7 +22,7 @@ namespace PuntoDeVentaPanaderia.Frontend
             clsDaoPanaderia dao=new clsDaoPanaderia();
             reportes = dao.mostrarReporteVentas(dtpInicio.Value, dtpFin.Value);
             gridReporte.AutoSize = true;
-            estilizarTabla();
+           
             
         }
 
@@ -31,50 +31,34 @@ namespace PuntoDeVentaPanaderia.Frontend
         {
             gridReporte.Rows.Clear();
             gridReporte.RowHeadersVisible = false;
-            
+
 
             // Agregar filas
             foreach (clsReporteVenta r in reportes)
+
             {
+
                 gridReporte.Rows.Add(
                     r.clave,
                     r.nombre,
                     r.unidades,
                     "$" + r.monto
                 );
+
             }
 
-            // Ajustar altura de cada fila
-            int altoFilas = 0;
-            foreach (DataGridViewRow fila in gridReporte.Rows)
-            {
-                fila.Height = 35;
-                altoFilas += 35;
-            }
 
             int anchoTotal = 0;
-            foreach (DataGridViewColumn col in gridReporte.Columns)
+            foreach (DataGridViewColumn col in  gridReporte.Columns)
             {
                 anchoTotal += col.Width;
             }
 
+            gridReporte.Width = anchoTotal;
+            gridReporte.Height = this.ClientSize.Height - 50 - gridReporte.Location.Y;
 
+            this.Width = gridReporte.Width + 50;
 
-            int alturaTotal = altoFilas + gridReporte.ColumnHeadersHeight + 2;
-            gridReporte.Height = alturaTotal;
-            gridReporte.ClientSize = new Size(anchoTotal-50, alturaTotal+5);
-
-            gridReporte.Width = gridReporte.ClientSize.Width; 
-
-
-
-
-
-            
-            this.ClientSize = new Size(
-                Math.Max(this.ClientSize.Width, gridReporte.ClientSize.Width + 20),
-                Math.Max(this.ClientSize.Height, gridReporte.ClientSize.Height + 20)
-            );
 
             gridReporte.Location = new Point(
                 (this.ClientSize.Width - gridReporte.Width) / 2,
@@ -82,22 +66,53 @@ namespace PuntoDeVentaPanaderia.Frontend
             );
 
 
-            gridReporte.BackgroundColor = Color.FromArgb(35, 35, 35);
+            Color colorFondo = ColorTranslator.FromHtml("#E6EEF5");
+            Color colorGrid = ColorTranslator.FromHtml("#D2DFEC");
+            Color colorEncabezado = ColorTranslator.FromHtml("#4B6EA8");
+            Color colorTextoEncabezado = Color.White;
+            Color colorFilaAlterna = ColorTranslator.FromHtml("#F4F7FA");
+            Color colorTexto = ColorTranslator.FromHtml("#1C2635");
+            Color textColor = Color.FromArgb(30, 45, 60);
+
+            this.BackColor = colorFondo;
+
+
+            gridReporte.BackgroundColor = colorGrid;
             gridReporte.BorderStyle = BorderStyle.None;
 
-
-            gridReporte.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(55, 60, 68);
-            gridReporte.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            gridReporte.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 16, FontStyle.Bold);
             gridReporte.EnableHeadersVisualStyles = false;
+            gridReporte.ColumnHeadersDefaultCellStyle.BackColor = colorEncabezado;
+            gridReporte.ColumnHeadersDefaultCellStyle.ForeColor = colorTextoEncabezado;
+            gridReporte.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold);
 
-            gridReporte.DefaultCellStyle.BackColor = Color.FromArgb(80, 80, 80);
-            gridReporte.DefaultCellStyle.ForeColor = Color.White;
-            gridReporte.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(65, 65, 65);
-            gridReporte.AlternatingRowsDefaultCellStyle.ForeColor = Color.White;
-            gridReporte.DefaultCellStyle.SelectionBackColor = Color.FromArgb(70, 70, 70);
-            gridReporte.DefaultCellStyle.SelectionForeColor = Color.White;
+            gridReporte.DefaultCellStyle.BackColor = Color.White;
+            gridReporte.DefaultCellStyle.ForeColor = colorTexto;
+            gridReporte.AlternatingRowsDefaultCellStyle.BackColor = colorFilaAlterna;
+            gridReporte.DefaultCellStyle.Font = new Font("Arial", 16);
 
+            gridReporte.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            gridReporte.GridColor = ColorTranslator.FromHtml("#A8BBD1");
+
+            lblTitulo.Font = new Font("Segoe UI", 20, FontStyle.Bold);
+            lblTitulo.ForeColor = textColor;
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
+
+            dtpInicio.Location = new Point(gridReporte.Location.X, dtpInicio.Location.Y);
+            dtpFin.Location = new Point(gridReporte.Location.X+gridReporte.Width-dtpFin.Width, dtpFin.Location.Y);
+            lblInicio.Location = new Point();
+            lblFin.Location = new Point();
+            lblInicio.Location = new Point(
+                dtpInicio.Left + (dtpInicio.Width - lblInicio.Width) / 2,
+                dtpInicio.Top - lblInicio.Height - 5
+            );
+
+            lblFin.Location = new Point(
+                dtpFin.Left + (dtpFin.Width - lblFin.Width) / 2,
+                dtpFin.Top - lblFin.Height - 5
+            );
+            lblTitulo.Location = new Point((this.ClientSize.Width - lblTitulo.Width) / 2 +40, lblTitulo.Location.Y);
+            pcbReporte.Location = new Point(10, gridReporte.Location.Y);
+            pcbReporte.Size = new Size(520, gridReporte.Height);
         }
 
         private void gridReporte_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -107,7 +122,7 @@ namespace PuntoDeVentaPanaderia.Frontend
 
         private void frmReporteVenta1_Load(object sender, EventArgs e)
         {
-            
+            estilizarTabla();
         }
 
         private void dtpInicio_ValueChanged(object sender, EventArgs e)
@@ -129,7 +144,9 @@ namespace PuntoDeVentaPanaderia.Frontend
             this.Hide();
             this.Dispose(); 
         }
+
+
     }
-    
+
 
 }

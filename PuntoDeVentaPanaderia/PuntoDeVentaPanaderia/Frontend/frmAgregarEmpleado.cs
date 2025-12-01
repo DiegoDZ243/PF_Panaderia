@@ -239,8 +239,6 @@ namespace PuntoDeVentaPanaderia.Frontend
                     MessageBox.Show("Empleado registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarCampos();
                     this.Hide(); 
-                    menu.ShowDialog();
-                    menu.Focus();
                     this.Close();
                     this.Dispose(); 
 
