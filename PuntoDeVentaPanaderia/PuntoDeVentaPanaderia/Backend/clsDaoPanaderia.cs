@@ -35,7 +35,7 @@ namespace PuntoDeVentaPanaderia.Backend
                     clsPanes pan = new clsPanes();
                     pan.idPan = reader.GetInt32(0); 
                     pan.nombre = reader.GetString(1);
-                    pan.descripcion = reader.GetString(2);
+                    pan.descripcion = reader.IsDBNull(2) ? string.Empty : reader.GetString(2);
                     pan.precio = reader.GetDecimal(3);
                     pan.stock = reader.GetInt32(4);
                     pan.direccionImg = reader.GetString(5); 

@@ -54,7 +54,6 @@ namespace PuntoDeVentaPanaderia.Frontend
                 lblEmpleado.Text = "Empleado: No Asignado"; //Esto no debería pasar
             }
 
-            lblNumeroVenta.Text = "N° Venta: 000001";
 
             timer1.Interval = 1000;
             timer1.Start();
@@ -107,7 +106,7 @@ namespace PuntoDeVentaPanaderia.Frontend
 
                 if (exito)
                 {
-                    MessageBox.Show($"Venta {lblNumeroVenta.Text} confirmada con un total de {lblTotal.Text}. Se ha registrado la orden.", "Venta Confirmada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Venta confirmada con un total de {lblTotal.Text}. Se ha registrado la orden.", "Venta Confirmada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

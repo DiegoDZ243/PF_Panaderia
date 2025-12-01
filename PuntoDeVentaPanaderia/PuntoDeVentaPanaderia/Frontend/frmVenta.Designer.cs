@@ -30,23 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblCategoria = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnDerecha = new System.Windows.Forms.Button();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.btnIzquierda = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lblEmpleado = new System.Windows.Forms.Label();
-            this.lblNumeroVenta = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvCarrito = new System.Windows.Forms.DataGridView();
             this.lblTotal = new System.Windows.Forms.Label();
             this.flpPanes = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnDerecha = new System.Windows.Forms.Button();
-            this.btnIzquierda = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -77,17 +76,6 @@
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // lblCategoria
-            // 
-            this.lblCategoria.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(416, 17);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(221, 29);
-            this.lblCategoria.TabIndex = 0;
-            this.lblCategoria.Text = "Categoria: Centeno";
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.Linen;
@@ -107,9 +95,44 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1055, 64);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
-            // timer1
+            // btnDerecha
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.btnDerecha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDerecha.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnDerecha.BackgroundImage = global::PuntoDeVentaPanaderia.Properties.Resources.flecha_correcta;
+            this.btnDerecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDerecha.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDerecha.Location = new System.Drawing.Point(708, 3);
+            this.btnDerecha.Name = "btnDerecha";
+            this.btnDerecha.Size = new System.Drawing.Size(340, 58);
+            this.btnDerecha.TabIndex = 2;
+            this.btnDerecha.UseVisualStyleBackColor = false;
+            this.btnDerecha.Click += new System.EventHandler(this.btnDerecha_Click);
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Location = new System.Drawing.Point(416, 17);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(221, 29);
+            this.lblCategoria.TabIndex = 0;
+            this.lblCategoria.Text = "Categoria: Centeno";
+            // 
+            // btnIzquierda
+            // 
+            this.btnIzquierda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnIzquierda.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnIzquierda.BackgroundImage = global::PuntoDeVentaPanaderia.Properties.Resources.flecha_izquierda;
+            this.btnIzquierda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnIzquierda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnIzquierda.Location = new System.Drawing.Point(5, 3);
+            this.btnIzquierda.Name = "btnIzquierda";
+            this.btnIzquierda.Size = new System.Drawing.Size(341, 58);
+            this.btnIzquierda.TabIndex = 1;
+            this.btnIzquierda.UseVisualStyleBackColor = false;
+            this.btnIzquierda.Click += new System.EventHandler(this.btnIzquierda_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -152,13 +175,12 @@
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.BackColor = System.Drawing.Color.Bisque;
+            this.tableLayoutPanel4.BackColor = System.Drawing.Color.LemonChiffon;
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.lblNumeroVenta, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.lblEmpleado, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.btnConfirmar, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.btnCancelar, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.lblEmpleado, 0, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 73);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -177,22 +199,11 @@
             this.lblEmpleado.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblEmpleado.AutoSize = true;
             this.lblEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpleado.Location = new System.Drawing.Point(3, 119);
+            this.lblEmpleado.Location = new System.Drawing.Point(3, 207);
             this.lblEmpleado.Name = "lblEmpleado";
             this.lblEmpleado.Size = new System.Drawing.Size(114, 25);
             this.lblEmpleado.TabIndex = 0;
             this.lblEmpleado.Text = "Empleado:";
-            // 
-            // lblNumeroVenta
-            // 
-            this.lblNumeroVenta.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblNumeroVenta.AutoSize = true;
-            this.lblNumeroVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroVenta.Location = new System.Drawing.Point(3, 207);
-            this.lblNumeroVenta.Name = "lblNumeroVenta";
-            this.lblNumeroVenta.Size = new System.Drawing.Size(113, 25);
-            this.lblNumeroVenta.TabIndex = 2;
-            this.lblNumeroVenta.Text = "No. Venta:";
             // 
             // btnConfirmar
             // 
@@ -272,33 +283,9 @@
             this.flpPanes.Size = new System.Drawing.Size(1055, 588);
             this.flpPanes.TabIndex = 6;
             // 
-            // btnDerecha
+            // timer1
             // 
-            this.btnDerecha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDerecha.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnDerecha.BackgroundImage = global::PuntoDeVentaPanaderia.Properties.Resources.flecha_correcta;
-            this.btnDerecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDerecha.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDerecha.Location = new System.Drawing.Point(708, 3);
-            this.btnDerecha.Name = "btnDerecha";
-            this.btnDerecha.Size = new System.Drawing.Size(340, 58);
-            this.btnDerecha.TabIndex = 2;
-            this.btnDerecha.UseVisualStyleBackColor = false;
-            this.btnDerecha.Click += new System.EventHandler(this.btnDerecha_Click);
-            // 
-            // btnIzquierda
-            // 
-            this.btnIzquierda.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnIzquierda.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnIzquierda.BackgroundImage = global::PuntoDeVentaPanaderia.Properties.Resources.flecha_izquierda;
-            this.btnIzquierda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnIzquierda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIzquierda.Location = new System.Drawing.Point(5, 3);
-            this.btnIzquierda.Name = "btnIzquierda";
-            this.btnIzquierda.Size = new System.Drawing.Size(341, 58);
-            this.btnIzquierda.TabIndex = 1;
-            this.btnIzquierda.UseVisualStyleBackColor = false;
-            this.btnIzquierda.Click += new System.EventHandler(this.btnIzquierda_Click);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmVenta
             // 
@@ -336,7 +323,6 @@
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label lblNumeroVenta;
         private System.Windows.Forms.Label lblEmpleado;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnCancelar;
