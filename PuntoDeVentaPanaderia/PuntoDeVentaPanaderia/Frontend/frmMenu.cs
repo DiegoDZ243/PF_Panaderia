@@ -103,5 +103,14 @@ namespace PuntoDeVentaPanaderia.Frontend
             frm.Focus();
             this.Show();
         }
+
+        private void btnRealizarVenta_Click(object sender, EventArgs e)
+        {
+            frmVenta frmVender = new frmVenta(empleadoActual);
+            this.Hide();
+            frmVender.ShowDialog();
+            frmVender.Focus();
+            this.Show();
+        }
     }
 }

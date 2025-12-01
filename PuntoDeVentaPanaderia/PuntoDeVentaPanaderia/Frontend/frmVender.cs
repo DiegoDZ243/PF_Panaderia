@@ -16,5 +16,10 @@ namespace PuntoDeVentaPanaderia.Frontend
         {
             InitializeComponent();
         }
+
+        private void frmVender_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

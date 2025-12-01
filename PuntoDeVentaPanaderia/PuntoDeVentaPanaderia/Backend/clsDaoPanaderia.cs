@@ -260,11 +260,59 @@ namespace PuntoDeVentaPanaderia.Backend
             //Pregunta si el archivo existe en la ruta destino antes de copiar
             if (!File.Exists(Path.Combine("panesImg",nombreArchivo)))
             {
-                File.Copy(rutaOrigen, rutaDestinoCompleta, true);
+                try
+                {
+                    File.Copy(rutaOrigen, rutaDestinoCompleta, true);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Advertencia: No se pudo copiar la imagen de {rutaOrigen}. Error: {ex.Message}");
+                }
             }
-            // Devolvemos la ruta
-            return Path.Combine("panesImg", nombreArchivo);
+            // Devolvemos la ruta absoluta
+            return rutaDestinoCompleta;
 
+        }
+
+        public List<clsPanes> obtenerPanesPorCategoria(string categoria)
+        {
+            MySqlConnection cn = new MySqlConnection();
+            cn.ConnectionString = "server=localhost;database=ventasPan;uid=panes;pwd=root;";
+            cn.Open();
+
+            string query = "select idPan, nombre, descripcion, precio, stock, imagenPan, categoria from panes where categoria = @categoria AND (descontinuado IS NULL OR descontinuado = false);";
+            MySqlCommand cmd = new MySqlCommand(query, cn);
+            cmd.Parameters.AddWithValue("@categoria", categoria);
+
+            try
+            {
+                MySqlDataReader reader = cmd.ExecuteReader();
+                List<clsPanes> panes = new List<clsPanes>();
+                while (reader.Read())
+                {
+                    clsPanes pan = new clsPanes();
+                    pan.idPan = reader.GetInt32(0);
+                    pan.nombre = reader.GetString(1);
+                    pan.descripcion = reader.GetString(2);
+                    pan.precio = reader.GetDecimal(3);
+                    pan.stock = reader.GetInt32(4);
+                    pan.direccionImg = reader.GetString(5);
+                    pan.categoria = reader.GetString(6);
+                    panes.Add(pan);
+                }
+                return panes;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Ocurrió un error al obtener los panes de la categoría {categoria}: {ex.Message}");
+            }
+            finally
+            {
+                cmd.Dispose();
+                cn.Close();
+                cn.Dispose();
+            }
         }
 
         #region CRUD_EMPLEADOS

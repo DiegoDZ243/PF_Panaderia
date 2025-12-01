@@ -104,6 +104,12 @@
     <Compile Include="ControlesUsuario\cuElegirPan.Designer.cs">
       <DependentUpon>cuElegirPan.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlesUsuario\cuPanItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesUsuario\cuPanItem.Designer.cs">
+      <DependentUpon>cuPanItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,12 @@
     <Compile Include="Frontend\frmVender.Designer.cs">
       <DependentUpon>frmVender.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\frmVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\frmVenta.Designer.cs">
+      <DependentUpon>frmVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pojos\clsAuditoria.cs" />
     <Compile Include="Pojos\clsDetalleOrden.cs" />
     <Compile Include="Pojos\clsEmpleados.cs" />
@@ -189,6 +201,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ControlesUsuario\cuElegirPan.resx">
       <DependentUpon>cuElegirPan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesUsuario\cuPanItem.resx">
+      <DependentUpon>cuPanItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -228,6 +243,9 @@
     <EmbeddedResource Include="Frontend\frmVender.resx">
       <DependentUpon>frmVender.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\frmVenta.resx">
+      <DependentUpon>frmVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -266,6 +284,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\borrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha-izquierda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha-correcta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

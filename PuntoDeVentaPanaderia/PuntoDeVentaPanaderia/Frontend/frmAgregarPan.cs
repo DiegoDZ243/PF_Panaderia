@@ -44,7 +44,7 @@ namespace PuntoDeVentaPanaderia.Frontend
         {
             if (esEdicion)
             {
-                lblTitulo.Text = "Modificar Producto Existente";
+                lblTitulo.Text = "Modificar Producto";
                 btnAgregar.Text = "Guardar Cambios";
                 btnLimpiar.Text = "Cancelar";
             }

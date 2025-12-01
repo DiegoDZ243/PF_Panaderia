@@ -172,5 +172,15 @@ namespace PuntoDeVentaPanaderia.Frontend
         {
             CargarInventario();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
