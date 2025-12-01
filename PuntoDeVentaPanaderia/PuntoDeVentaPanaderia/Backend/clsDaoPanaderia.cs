@@ -18,6 +18,12 @@ namespace PuntoDeVentaPanaderia.Backend
     public class clsDaoPanaderia
     {
         #region CRUD_PANES  
+
+        /// <summary>
+        /// Método que recupera todos los panes registrados en la base de datos. 
+        /// </summary>
+        /// <returns>Lista con todos los datos de los panes registrados</returns>
+        /// <exception cref="Exception">Notifica sobre un error al conectarse a la base de datos</exception>
         public List<clsPanes> obtenerPanes()
         {
             MySqlConnection cn = new MySqlConnection();
@@ -59,6 +65,14 @@ namespace PuntoDeVentaPanaderia.Backend
 
         }
 
+        /// <summary>
+        /// Método que toma los datos de un nuevo pan para registrarlos en la base de datos. 
+        /// Adicionalmente, se pide el id del empleado para registrar la actualización de la
+        /// tabla de productos en la base de datos
+        /// </summary>
+        /// <param name="pan">Pan a registrar</param>
+        /// <param name="idEmpleado">Clave del empleado que realizará el registro</param>
+        /// <returns>Regresa "true" si el registro se realizó correctamente; "false" en caso contrario.</returns>
         public bool registrarPan(clsPanes pan, int idEmpleado)
         {
             MySqlConnection cn = new MySqlConnection();
@@ -109,6 +123,13 @@ namespace PuntoDeVentaPanaderia.Backend
 
         }
 
+        /// <summary>
+        /// Cambia el estado de un pan en venta a "descontinuado". Esto evita que los datos 
+        /// de los panes se pierdan mediante una eliminación permanente.
+        /// </summary>
+        /// <param name="panId">Clave del pan que será descontinuado</param>
+        /// <param name="idEmpleado">Clave del empleado que realizará la operación</param>
+        /// <returns>Regresa "true" si el cambio se realizó correctamente; "false" en caso contrario.</returns>
         public bool descontinuarPan(int panId,int idEmpleado)
         {
 
@@ -148,6 +169,13 @@ namespace PuntoDeVentaPanaderia.Backend
             }
         }
 
+        /// <summary>
+        /// Actualiza los datos de un pan dado, ya se su nombre, descripción, precio,
+        /// stock, imagen o categoria.
+        /// </summary>
+        /// <param name="pan">Objeto de tipo clsPanes que servirá para guardar los datos actualizados del pan.</param>
+        /// <param name="idEmpleado">Clave del empleado que realizará la operación</param>
+        /// <returns></returns>
         public bool actualizarPan(clsPanes pan, int idEmpleado)
         {
             MySqlConnection cn = new MySqlConnection();
@@ -204,6 +232,11 @@ namespace PuntoDeVentaPanaderia.Backend
 
         #endregion
 
+        /// <summary>
+        /// Recupera la lista de categorías de panes existentes
+        /// </summary>
+        /// <returns>Lista con las categorías de panes</returns>
+        /// <exception cref="Exception"></exception>
         public List<string> ObtenerCategoriasDesdeDB()
         {
             List<string> categorias = new List<string>();
@@ -246,6 +279,13 @@ namespace PuntoDeVentaPanaderia.Backend
             return categorias;
         }
 
+
+        /// <summary>
+        /// Este método toma el nombre de una imagen y lo copia en la carpeta dentro del proyecto llamada
+        /// "imgPanes". En caso de que la imagen ya exista, solo se recupera su dirección URL absoluta.
+        /// </summary>
+        /// <param name="rutaOrigen">Nombre del archivo que se copiará o recuperará</param>
+        /// <returns>Dirección URL absoluta de la imagen que se copió o recuperó</returns>
         public string GuardarImagenEnProyecto(string rutaOrigen)
 
         {
@@ -279,6 +319,12 @@ namespace PuntoDeVentaPanaderia.Backend
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="categoria"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public List<clsPanes> obtenerPanesPorCategoria(string categoria)
         {
             MySqlConnection cn = new MySqlConnection();
@@ -659,7 +705,7 @@ namespace PuntoDeVentaPanaderia.Backend
                 cn.Dispose();
             }
         }
-        //Todavía falta aplicar este método para mostrar las auditorias
+
         /// <summary>
         /// Función que permite mostrar los movimientos realizados en la tabla de panes por los 
         /// empleados.
