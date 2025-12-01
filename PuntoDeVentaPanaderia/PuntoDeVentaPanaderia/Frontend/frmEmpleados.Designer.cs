@@ -36,6 +36,7 @@
             this.btnDesactivar = new System.Windows.Forms.Button();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnAgregarEmpleado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEmpleados)).BeginInit();
             this.panelHeader.SuspendLayout();
             this.SuspendLayout();
@@ -72,8 +73,7 @@
             this.dtgEmpleados.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgEmpleados.EnableHeadersVisualStyles = false;
             this.dtgEmpleados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dtgEmpleados.Location = new System.Drawing.Point(17, 57);
-            this.dtgEmpleados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgEmpleados.Location = new System.Drawing.Point(26, 88);
             this.dtgEmpleados.MultiSelect = false;
             this.dtgEmpleados.Name = "dtgEmpleados";
             this.dtgEmpleados.ReadOnly = true;
@@ -90,7 +90,7 @@
             this.dtgEmpleados.RowHeadersWidth = 62;
             this.dtgEmpleados.RowTemplate.Height = 30;
             this.dtgEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgEmpleados.Size = new System.Drawing.Size(686, 268);
+            this.dtgEmpleados.Size = new System.Drawing.Size(1029, 412);
             this.dtgEmpleados.TabIndex = 0;
             // 
             // btnEditar
@@ -103,10 +103,9 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(415, 339);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditar.Location = new System.Drawing.Point(622, 522);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(141, 32);
+            this.btnEditar.Size = new System.Drawing.Size(212, 49);
             this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar Empleado";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -122,10 +121,9 @@
             this.btnDesactivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesactivar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesactivar.ForeColor = System.Drawing.Color.White;
-            this.btnDesactivar.Location = new System.Drawing.Point(563, 339);
-            this.btnDesactivar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDesactivar.Location = new System.Drawing.Point(844, 522);
             this.btnDesactivar.Name = "btnDesactivar";
-            this.btnDesactivar.Size = new System.Drawing.Size(141, 32);
+            this.btnDesactivar.Size = new System.Drawing.Size(212, 49);
             this.btnDesactivar.TabIndex = 3;
             this.btnDesactivar.Text = "Desactivar";
             this.btnDesactivar.UseVisualStyleBackColor = false;
@@ -137,9 +135,8 @@
             this.panelHeader.Controls.Add(this.lblTitulo);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(721, 39);
+            this.panelHeader.Size = new System.Drawing.Size(1082, 60);
             this.panelHeader.TabIndex = 4;
             // 
             // lblTitulo
@@ -147,24 +144,41 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(13, 6);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(20, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(243, 30);
+            this.lblTitulo.Size = new System.Drawing.Size(352, 45);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Gestión de Empleados";
             // 
+            // btnAgregarEmpleado
+            // 
+            this.btnAgregarEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnAgregarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarEmpleado.FlatAppearance.BorderSize = 0;
+            this.btnAgregarEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnAgregarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarEmpleado.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarEmpleado.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarEmpleado.Location = new System.Drawing.Point(383, 522);
+            this.btnAgregarEmpleado.Name = "btnAgregarEmpleado";
+            this.btnAgregarEmpleado.Size = new System.Drawing.Size(212, 49);
+            this.btnAgregarEmpleado.TabIndex = 5;
+            this.btnAgregarEmpleado.Text = "Agregar Empleado";
+            this.btnAgregarEmpleado.UseVisualStyleBackColor = false;
+            this.btnAgregarEmpleado.Click += new System.EventHandler(this.btnAgregarEmpleado_Click);
+            // 
             // frmEmpleados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(721, 407);
+            this.ClientSize = new System.Drawing.Size(1082, 626);
+            this.Controls.Add(this.btnAgregarEmpleado);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.btnDesactivar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dtgEmpleados);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración de Empleados";
@@ -184,5 +198,6 @@
         private System.Windows.Forms.Button btnDesactivar;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Button btnAgregarEmpleado;
     }
 }

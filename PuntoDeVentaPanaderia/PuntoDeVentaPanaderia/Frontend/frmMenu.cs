@@ -38,15 +38,6 @@ namespace PuntoDeVentaPanaderia.Frontend
 
         }
 
-        private void btnAgregarEmpleado_Click(object sender, EventArgs e)
-        {
-
-            frmAgregarEmpleado frmAEmp = new frmAgregarEmpleado();
-            this.Hide();
-            frmAEmp.ShowDialog();
-            frmAEmp.Focus();
-            this.Show();
-        }
 
         private void btnDetallesVentas_Click(object sender, EventArgs e)
         {
@@ -63,7 +54,6 @@ namespace PuntoDeVentaPanaderia.Frontend
             clsDaoPanaderia dao = new clsDaoPanaderia();
             if (!dao.EsAdministrador(empleadoActual.idEmpleado))
             {
-                btnAgregarEmpleado.Visible = false;
                 btnCompararVentas.Visible = false;
                 btnVerEmpleados.Visible = false;
                 btnCompararVentas.Visible = false;

@@ -99,5 +99,14 @@ namespace PuntoDeVentaPanaderia.Frontend
                 MessageBox.Show("Por favor, selecciona un empleado para editar.");
             }
         }
+
+        private void btnAgregarEmpleado_Click(object sender, EventArgs e)
+        {
+            frmAgregarEmpleado frmAEmp = new frmAgregarEmpleado();
+            this.Hide();
+            frmAEmp.ShowDialog();
+            frmAEmp.Focus();
+            this.Show();
+        }
     }
 }
