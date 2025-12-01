@@ -59,7 +59,7 @@ namespace PuntoDeVentaPanaderia.Frontend
                 anchoTotal += col.Width;
             }
 
-            gridReporte.Width = anchoTotal+110;
+            gridReporte.Width = anchoTotal+150;
 
             this.Width = gridReporte.Width + 50; 
 
@@ -73,25 +73,56 @@ namespace PuntoDeVentaPanaderia.Frontend
 
             gridReporte.Location = new Point(
                 (this.ClientSize.Width - gridReporte.Width) / 2,
-                gridReporte.Location.Y
+                gridReporte.Location.Y+50
             );
 
+            
 
             gridReporte.BackgroundColor = Color.FromArgb(35, 35, 35);
             gridReporte.BorderStyle = BorderStyle.None;
 
 
-            gridReporte.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(55, 60, 68);
-            gridReporte.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            gridReporte.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 16, FontStyle.Bold);
-            gridReporte.EnableHeadersVisualStyles = false;
+            Color colorFondo = ColorTranslator.FromHtml("#E6EEF5");
+            Color colorGrid = ColorTranslator.FromHtml("#D2DFEC");
+            Color colorEncabezado = ColorTranslator.FromHtml("#4B6EA8");
+            Color colorTextoEncabezado = Color.White;
+            Color colorFilaAlterna = ColorTranslator.FromHtml("#F4F7FA");
+            Color colorTexto = ColorTranslator.FromHtml("#1C2635");
+            Color botonColor = Color.FromArgb(40, 85, 140);        
 
-            gridReporte.DefaultCellStyle.BackColor = Color.FromArgb(80, 80, 80);
-            gridReporte.DefaultCellStyle.ForeColor = Color.White;
-            gridReporte.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(65, 65, 65);
-            gridReporte.AlternatingRowsDefaultCellStyle.ForeColor = Color.White;
-            gridReporte.DefaultCellStyle.SelectionBackColor = Color.FromArgb(70, 70, 70);
-            gridReporte.DefaultCellStyle.SelectionForeColor = Color.White;
+            this.BackColor = colorFondo;
+
+
+            btnGrafica.FlatStyle = FlatStyle.Flat;
+            btnGrafica.FlatAppearance.BorderSize = 0;
+            btnGrafica.BackColor = botonColor;
+            btnGrafica.ForeColor = Color.White;
+            btnGrafica.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnGrafica.Height = 45;
+            btnGrafica.Width = 180;
+            btnGrafica.Cursor = Cursors.Hand;
+            btnGrafica.Location = new Point(btnGrafica.Location.X, btnGrafica.Location.Y + 60); 
+
+            gridReporte.BackgroundColor = colorGrid;
+            gridReporte.BorderStyle = BorderStyle.None;
+
+            gridReporte.EnableHeadersVisualStyles = false;
+            gridReporte.ColumnHeadersDefaultCellStyle.BackColor = colorEncabezado;
+            gridReporte.ColumnHeadersDefaultCellStyle.ForeColor = colorTextoEncabezado;
+            gridReporte.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 18, FontStyle.Bold);
+
+            gridReporte.DefaultCellStyle.BackColor = Color.White;
+            gridReporte.DefaultCellStyle.ForeColor = colorTexto;
+            gridReporte.AlternatingRowsDefaultCellStyle.BackColor = colorFilaAlterna;
+            gridReporte.DefaultCellStyle.Font = new Font("Arial", 16);
+
+            gridReporte.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            gridReporte.GridColor = ColorTranslator.FromHtml("#A8BBD1");
+            pcbImagen.Location = new Point(gridReporte.Location.X + gridReporte.Width - pcbImagen.Width, pcbImagen.Location.Y + 50);
+            pcbImagen2.Location = new Point(gridReporte.Location.X, pcbImagen2.Location.Y+50);
+            lblTitulo.Location = new Point((this.ClientSize.Width - lblTitulo.Width) / 2, lblTitulo.Location.Y+50);
+            pcbReporte.Location = new Point(10, gridReporte.Location.Y);
+            pcbReporte.Size=new Size(340, gridReporte.Height); 
 
         }
 

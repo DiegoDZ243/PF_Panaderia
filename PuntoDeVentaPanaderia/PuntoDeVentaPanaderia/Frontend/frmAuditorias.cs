@@ -51,6 +51,7 @@ namespace PuntoDeVentaPanaderia.Frontend
             }
 
             gridAuditorias.Width = anchoTotal + 70;
+            gridAuditorias.Height = this.ClientSize.Height - 50 -gridAuditorias.Location.Y; 
 
             this.Width = gridAuditorias.Width + 50;
 
@@ -61,12 +62,12 @@ namespace PuntoDeVentaPanaderia.Frontend
             );
 
 
-            Color colorFondo = ColorTranslator.FromHtml("#E6EEF5");
-            Color colorGrid = ColorTranslator.FromHtml("#D2DFEC");
-            Color colorEncabezado = ColorTranslator.FromHtml("#4B6EA8");
-            Color colorTextoEncabezado = Color.White;
-            Color colorFilaAlterna = ColorTranslator.FromHtml("#F4F7FA");
-            Color colorTexto = ColorTranslator.FromHtml("#1C2635");
+            Color colorFondo = ColorTranslator.FromHtml("#F8E6F2"); 
+            Color colorGrid = ColorTranslator.FromHtml("#F1D9EB"); 
+            Color colorEncabezado = ColorTranslator.FromHtml("#AD1A75"); 
+            Color colorTextoEncabezado = Color.White;                         
+            Color colorFilaAlterna = ColorTranslator.FromHtml("#FCEFFC"); 
+            Color colorTexto = ColorTranslator.FromHtml("#3A0E27"); 
 
 
             this.BackColor = colorFondo;
@@ -101,6 +102,8 @@ namespace PuntoDeVentaPanaderia.Frontend
             gridAuditorias.Columns.Add("fecha", "Realizado el día");
             estilizarTabla();
             lblTitulo.Location = new Point((this.ClientSize.Width - lblTitulo.Width) / 2, lblTitulo.Location.Y);
+            pcbImagen.Location = new Point(gridAuditorias.Location.X + gridAuditorias.Width - pcbImagen.Width, pcbImagen.Location.Y);
+            pcbImagen2.Location = new Point(gridAuditorias.Location.X, pcbImagen2.Location.Y);
         }
     }
 }
