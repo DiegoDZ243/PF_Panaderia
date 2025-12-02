@@ -16,6 +16,11 @@ namespace PuntoDeVentaPanaderia.Frontend
     {
 
         private clsEmpleados empleadoActual;
+
+        /// <summary>
+        /// Inicializa los componentes, guarda el empleado actual y configura datos.
+        /// </summary>
+        /// <param name="empleado">Objeto que contiene la información del empleado, ys sabes para que apa</param>
         public frmInventario(clsEmpleados empleado)
         {
             InitializeComponent();
@@ -23,6 +28,10 @@ namespace PuntoDeVentaPanaderia.Frontend
             ConfigurarDataGridView();
         }
 
+        /// <summary>
+        /// Maneja el evento de clic del botón para abrir el formulario de 'Agregar Pan'.
+        /// Oculta la ventana actual, abre el formulario de alta y, al cerrarse, recarga el inventario.
+        /// </summary>
         private void btnAgregarPan_Click(object sender, EventArgs e)
         {
             frmAgregarPan frmAPan = new frmAgregarPan(empleadoActual);
@@ -33,6 +42,10 @@ namespace PuntoDeVentaPanaderia.Frontend
             CargarInventario();// Después de agregar un pan, recargar el inventario
         }
 
+        /// <summary>
+        /// Establece la configuración inicial
+        /// para mostrar el inventario de panes de forma legible
+        /// </summary>
         private void ConfigurarDataGridView()
         {
             dgvInventario.AutoGenerateColumns = true;
@@ -42,6 +55,9 @@ namespace PuntoDeVentaPanaderia.Frontend
             dgvInventario.MultiSelect = false;
         }
 
+        /// <summary>
+        /// Obtiene la lista completa de panes desde la base de datos y la carga en el DataGridView.
+        /// </summary>
         public void CargarInventario()
         {
             clsDaoPanaderia dao = new clsDaoPanaderia();
@@ -59,6 +75,10 @@ namespace PuntoDeVentaPanaderia.Frontend
             }
         }
 
+        /// <summary>
+        /// Se llama después de cargar los datos
+        /// Se cambia nombre de columnas y ocualtamos la imagen
+        /// </summary>
         private void RenombrarOcultarColumnas()
         {
             if (dgvInventario.Columns.Contains("idPan"))
@@ -86,6 +106,11 @@ namespace PuntoDeVentaPanaderia.Frontend
                 dgvInventario.Columns["direccionImg"].Visible = false;
         }
 
+        /// <summary>
+        /// Obtiene la información completa del pan que el usuario tiene seleccionado
+        /// Muestra una advertencia si no hay ninguna fila seleccionada.
+        /// </summary>
+        /// <returns>El pan, o null si no hay selección</returns>
         private clsPanes ObtenerPanSeleccionado()
         {
             if (dgvInventario.SelectedRows.Count == 0)
@@ -108,6 +133,9 @@ namespace PuntoDeVentaPanaderia.Frontend
             }
         }
 
+        /// <summary>
+        /// Bloquea la edición si el producto está descontinuado o si todo bien abre el formulario de edición
+        /// </summary>
         private void btnEditar_Click(object sender, EventArgs e)
         {
             clsPanes panSeleccionado = ObtenerPanSeleccionado();
@@ -134,6 +162,9 @@ namespace PuntoDeVentaPanaderia.Frontend
             CargarInventario();
         }
 
+        /// <summary>
+        /// Marca el producto como descontinuado en la base de datos, o avisa si ya lo está.
+        /// </summary>
         private void btnDescontinuar_Click(object sender, EventArgs e)
         {
             clsPanes panSeleccionado = ObtenerPanSeleccionado();
