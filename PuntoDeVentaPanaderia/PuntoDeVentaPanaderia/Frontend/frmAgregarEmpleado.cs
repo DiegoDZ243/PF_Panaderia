@@ -16,8 +16,13 @@ namespace PuntoDeVentaPanaderia.Frontend
     public partial class frmAgregarEmpleado : Form
     {
         private int idEmpleadoEdicion = 0;
-        private clsEmpleados empleadoActual; 
+        private clsEmpleados empleadoActual;
         private frmMenu menu;
+
+        /// <summary>
+        /// Constructor para crear un nuevo empleado.
+        /// Inicializa la forma en modo de "Nuevo Empleado".
+        /// </summary>
         public frmAgregarEmpleado()
         {
             InitializeComponent();
@@ -25,6 +30,11 @@ namespace PuntoDeVentaPanaderia.Frontend
             lblTitulo.Text = "Nuevo Empleado";
         }
 
+        /// <summary>
+        /// Constructor para editar un empleado existente.
+        /// Inicializa la forma con los datos del empleado proporcionado y la configura en modo de "Editar Empleado".
+        /// </summary>
+        /// <param name="empleado">El objeto clsEmpleados con los datos a cargar para la edición.</param>
         public frmAgregarEmpleado(clsEmpleados empleado)
         {
             InitializeComponent();
@@ -45,6 +55,12 @@ namespace PuntoDeVentaPanaderia.Frontend
 
         #region funciones 
 
+        /// <summary>
+        /// Valida los campos de texto de Nombre y Apellido.
+        /// Verifica que no estén vacíos, que tengan entre 3 y 50 caracteres, y que no contengan números.
+        /// </summary>
+        /// <param name="txt">El control TextBox a validar (txtNombre o txtApellidos).</param>
+        /// <returns>True si la validación es exitosa, False en caso contrario.</returns>
         private bool ValidarNombreApellido(TextBox txt)
         {
             if (string.IsNullOrWhiteSpace(txt.Text))
@@ -77,6 +93,12 @@ namespace PuntoDeVentaPanaderia.Frontend
             errNombreApellido.SetError(txt, "");
             return true;
         }
+
+        /// <summary>
+        /// Valida el campo de texto del nombre de usuario.
+        /// Verifica que no esté vacío y que tenga entre 4 y 50 caracteres.
+        /// </summary>
+        /// <returns>True si el usuario es válido, False en caso contrario.</returns>
         private bool ValidarUsuario()
         {
             if (string.IsNullOrWhiteSpace(txtUser.Text))
@@ -101,6 +123,11 @@ namespace PuntoDeVentaPanaderia.Frontend
             return true;
         }
 
+        /// <summary>
+        /// Valida el campo de texto del número de teléfono.
+        /// Verifica que no esté vacío, que tenga entre 10 y 13 caracteres, y que contenga solo números.
+        /// </summary>
+        /// <returns>True si el teléfono es válido, False en caso contrario.</returns>
         private bool ValidarTelefono()
         {
             if (string.IsNullOrWhiteSpace(txtTelefono.Text))
@@ -134,6 +161,11 @@ namespace PuntoDeVentaPanaderia.Frontend
             return true;
         }
 
+        /// <summary>
+        /// Valida el campo de texto de la contraseña.
+        /// Verifica que no esté vacío y que tenga entre 4 y 64 caracteres.
+        /// </summary>
+        /// <returns>True si la contraseña es válida, False en caso contrario.</returns>
         private bool ValidarPassword()
         {
             if (string.IsNullOrWhiteSpace(txtContrasena.Text))
@@ -158,6 +190,9 @@ namespace PuntoDeVentaPanaderia.Frontend
             return true;
         }
 
+        /// <summary>
+        /// Limpia todos los campos de texto y los indicadores de error (ErrorProvider) en la forma.
+        /// </summary>
         private void LimpiarCampos()
         {
             txtNombre.Clear();
@@ -171,6 +206,10 @@ namespace PuntoDeVentaPanaderia.Frontend
             errTelefono.Clear();
         }
 
+        /// <summary>
+        /// Obtiene el valor booleano (True/False) de la selección de administrador.
+        /// </summary>
+        /// <returns>True si el radio button 'Si' está marcado, False si 'No' está marcado.</returns>
         public bool ObtenerSeleccion()
         {
             if (rdbtnSi.Checked)
@@ -183,6 +222,12 @@ namespace PuntoDeVentaPanaderia.Frontend
             }
         }
 
+        /// <summary>
+        /// Calcula el hash SHA256 de una cadena de entrada.
+        /// Este método se utiliza para encriptar la contraseña antes de guardarla.
+        /// </summary>
+        /// <param name="input">La cadena de texto a encriptar (la contraseña sin hash).</param>
+        /// <returns>La representación en cadena del hash SHA256 de la entrada.</returns>
         private string CalcularSHA256(string input)
         {
             using (SHA256 sha = SHA256.Create())
@@ -199,31 +244,68 @@ namespace PuntoDeVentaPanaderia.Frontend
 
         #endregion
 
+        /// <summary>
+        /// Maneja el evento Leave del campo de texto txtNombre.
+        /// Llama al método de validación para el campo Nombre/Apellido.
+        /// </summary>
+        /// <param name="sender">Origen del evento.</param>
+        /// <param name="e">Datos del evento.</param>
         private void txtNombre_Leave(object sender, EventArgs e)
         {
             ValidarNombreApellido(txtNombre);
         }
 
+        /// <summary>
+        /// Maneja el evento Leave del campo de texto txtApellidos.
+        /// Llama al método de validación para el campo Nombre/Apellido.
+        /// </summary>
+        /// <param name="sender">Origen del evento.</param>
+        /// <param name="e">Datos del evento.</param>
         private void txtApellidos_Leave(object sender, EventArgs e)
         {
             ValidarNombreApellido(txtApellidos);
         }
 
+        /// <summary>
+        /// Maneja el evento Leave del campo de texto txtUsuario.
+        /// Llama al método de validación para el campo Usuario.
+        /// </summary>
+        /// <param name="sender">Origen del evento.</param>
+        /// <param name="e">Datos del evento.</param>
         private void txtUsuario_Leave(object sender, EventArgs e)
         {
             ValidarUsuario();
         }
 
+        /// <summary>
+        /// Maneja el evento Leave del campo de texto txtContrasena.
+        /// Llama al método de validación para el campo Contraseña.
+        /// </summary>
+        /// <param name="sender">Origen del evento.</param>
+        /// <param name="e">Datos del evento.</param>
         private void txtContraseña_Leave(object sender, EventArgs e)
         {
             ValidarPassword();
         }
 
+        /// <summary>
+        /// Maneja el evento Leave del campo de texto txtTelefono.
+        /// Llama al método de validación para el campo Teléfono.
+        /// </summary>
+        /// <param name="sender">Origen del evento.</param>
+        /// <param name="e">Datos del evento.</param>
         private void txtTelefono_Leave(object sender, EventArgs e)
         {
             ValidarTelefono();
         }
 
+        /// <summary>
+        /// Maneja el evento de clic del botón Aceptar (Registrar o Actualizar).
+        /// Valida todos los campos, recopila los datos del empleado y llama al método DAO 
+        /// para registrar un nuevo empleado o actualizar uno existente.
+        /// </summary>
+        /// <param name="sender">Origen del evento.</param>
+        /// <param name="e">Datos del evento.</param>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             bool nombreOk = ValidarNombreApellido(txtNombre);
@@ -231,6 +313,7 @@ namespace PuntoDeVentaPanaderia.Frontend
             bool usuarioOk = ValidarUsuario();
             bool telOk = ValidarTelefono();
 
+            // La contraseña solo es obligatoria si es un registro nuevo (idEmpleadoEdicion == 0)
             bool passOk = (idEmpleadoEdicion > 0) ? true : ValidarPassword();
 
             if (!nombreOk || !apellidoOk || !usuarioOk || !passOk || !telOk)
@@ -244,13 +327,14 @@ namespace PuntoDeVentaPanaderia.Frontend
             empleado.apellidos = txtApellidos.Text.Trim();
             empleado.usuario = txtUser.Text.Trim();
             empleado.telefono = txtTelefono.Text.Trim();
-            empleado.admin = rdbtnSi.Checked; 
+            empleado.admin = rdbtnSi.Checked;
             clsDaoPanaderia dao = new clsDaoPanaderia();
 
             try
             {
                 if (idEmpleadoEdicion == 0)
                 {
+                    // Registrar nuevo
                     empleado.contrasena = CalcularSHA256(txtContrasena.Text.Trim());
 
                     if (dao.registrarEmpleado(empleado))
@@ -261,6 +345,7 @@ namespace PuntoDeVentaPanaderia.Frontend
                 }
                 else
                 {
+                    // Actualizar
                     empleado.idEmpleado = this.idEmpleadoEdicion;
 
                     if (dao.actualizarEmpleado(empleado))
@@ -284,6 +369,12 @@ namespace PuntoDeVentaPanaderia.Frontend
             }
         }
 
+        /// <summary>
+        /// Evento que se dispara al cargar la forma frmAgregarEmpleado.
+        /// (Actualmente vacío, reservado para lógica de inicialización futura).
+        /// </summary>
+        /// <param name="sender">Origen del evento.</param>
+        /// <param name="e">Datos del evento.</param>
         private void frmAgregarEmpleado_Load(object sender, EventArgs e)
         {
 
