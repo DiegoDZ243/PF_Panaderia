@@ -35,9 +35,11 @@ namespace PuntoDeVentaPanaderia.ControlesUsuario
         private void cuPanItem_Load(object sender, EventArgs e)
         {
             lblNombre.Text = infoPan.nombre;
+            lblStock.Text ="Stock: "+infoPan.stock;
             lblPrecio.Text = infoPan.precio.ToString("C"); //Formato moneda apa
             lblNombre.Location = new Point((this.ClientSize.Width - lblNombre.Width) / 2, lblNombre.Location.Y);
-            lblPrecio.Location = new Point((this.ClientSize.Width - lblPrecio.Width) / 2, lblPrecio.Location.Y);
+            lblPrecio.Location = new Point((this.ClientSize.Width - lblPrecio.Width) / 7, lblPrecio.Location.Y);
+            lblStock.Location = new Point(5*(this.ClientSize.Width - lblPrecio.Width) / 7, lblPrecio.Location.Y);
         }
 
         private void pcbPan_Click(object sender, EventArgs e)

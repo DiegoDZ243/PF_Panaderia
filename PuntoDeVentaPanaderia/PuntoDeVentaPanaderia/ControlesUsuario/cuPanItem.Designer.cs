@@ -31,15 +31,16 @@
             this.pcbPan = new System.Windows.Forms.PictureBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
+            this.lblStock = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPan)).BeginInit();
             this.SuspendLayout();
             // 
             // pcbPan
             // 
-            this.pcbPan.Location = new System.Drawing.Point(17, 27);
-            this.pcbPan.Margin = new System.Windows.Forms.Padding(2);
+            this.pcbPan.Location = new System.Drawing.Point(23, 33);
+            this.pcbPan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pcbPan.Name = "pcbPan";
-            this.pcbPan.Size = new System.Drawing.Size(112, 122);
+            this.pcbPan.Size = new System.Drawing.Size(149, 150);
             this.pcbPan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbPan.TabIndex = 4;
             this.pcbPan.TabStop = false;
@@ -49,10 +50,9 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(48, 6);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombre.Location = new System.Drawing.Point(64, 7);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(45, 19);
+            this.lblNombre.Size = new System.Drawing.Size(53, 23);
             this.lblNombre.TabIndex = 6;
             this.lblNombre.Text = "label1";
             // 
@@ -60,22 +60,33 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(48, 151);
-            this.lblPrecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrecio.Location = new System.Drawing.Point(25, 186);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(48, 19);
+            this.lblPrecio.Size = new System.Drawing.Size(57, 23);
             this.lblPrecio.TabIndex = 7;
             this.lblPrecio.Text = "Precio";
             // 
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.Location = new System.Drawing.Point(115, 185);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(57, 23);
+            this.lblStock.TabIndex = 8;
+            this.lblStock.Text = "Precio";
+            // 
             // cuPanItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblStock);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.pcbPan);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "cuPanItem";
-            this.Size = new System.Drawing.Size(154, 177);
+            this.Size = new System.Drawing.Size(205, 218);
             this.Load += new System.EventHandler(this.cuPanItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbPan)).EndInit();
             this.ResumeLayout(false);
@@ -88,5 +99,6 @@
         private System.Windows.Forms.PictureBox pcbPan;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.Label lblStock;
     }
 }

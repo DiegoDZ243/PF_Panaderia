@@ -3,11 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|c:\\users\\diego\\onedrive\\documentos\\mis repos\\proyecto panaderia 3\\pf_panaderia\\puntodeventapanaderia\\puntodeventapanaderia\\frontend\\frmagregarempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|c:\\users\\diego\\onedrive\\documentos\\mis repos\\proyecto panaderia 3\\pf_panaderia\\puntodeventapanaderia\\puntodeventapanaderia\\controlesusuario\\cupanitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|solutionrelative:puntodeventapanaderia\\controlesusuario\\cupanitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\puntodeventapanaderia\\controlesusuario\\cupanitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|solutionrelative:puntodeventapanaderia\\controlesusuario\\cupanitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\puntodeventapanaderia\\backend\\clsdaopanaderia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|solutionrelative:puntodeventapanaderia\\backend\\clsdaopanaderia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\puntodeventapanaderia\\frontend\\frmagregarempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|solutionrelative:puntodeventapanaderia\\frontend\\frmagregarempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|c:\\users\\diego\\onedrive\\documentos\\mis repos\\proyecto panaderia 3\\pf_panaderia\\puntodeventapanaderia\\puntodeventapanaderia\\frontend\\frmagregarempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\puntodeventapanaderia\\frontend\\frmagregarempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|solutionrelative:puntodeventapanaderia\\frontend\\frmagregarempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -19,16 +31,12 @@
       "RelativeMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|solutionrelative:puntodeventapanaderia\\frontend\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|c:\\users\\diego\\onedrive\\documentos\\mis repos\\proyecto panaderia 3\\pf_panaderia\\puntodeventapanaderia\\puntodeventapanaderia\\frontend\\frmempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\puntodeventapanaderia\\frontend\\frmempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|solutionrelative:puntodeventapanaderia\\frontend\\frmempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|c:\\users\\diego\\onedrive\\documentos\\mis repos\\proyecto panaderia 3\\pf_panaderia\\puntodeventapanaderia\\puntodeventapanaderia\\frontend\\frmempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\puntodeventapanaderia\\frontend\\frmempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|solutionrelative:puntodeventapanaderia\\frontend\\frmempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|c:\\users\\diego\\onedrive\\documentos\\mis repos\\proyecto panaderia 3\\pf_panaderia\\puntodeventapanaderia\\puntodeventapanaderia\\backend\\clsdaopanaderia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C7484D3-3F74-4BEE-BAEB-723016FF37EC}|PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia.csproj|solutionrelative:puntodeventapanaderia\\backend\\clsdaopanaderia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,19 +59,42 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "cuPanItem.cs",
+              "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\ControlesUsuario\\cuPanItem.cs",
+              "RelativeDocumentMoniker": "PuntoDeVentaPanaderia\\ControlesUsuario\\cuPanItem.cs",
+              "ToolTip": "C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\ControlesUsuario\\cuPanItem.cs",
+              "RelativeToolTip": "PuntoDeVentaPanaderia\\ControlesUsuario\\cuPanItem.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T03:07:54.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "cuPanItem.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\ControlesUsuario\\cuPanItem.cs",
+              "RelativeDocumentMoniker": "PuntoDeVentaPanaderia\\ControlesUsuario\\cuPanItem.cs",
+              "ToolTip": "C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\ControlesUsuario\\cuPanItem.cs [Dise\u00F1o]",
+              "RelativeToolTip": "PuntoDeVentaPanaderia\\ControlesUsuario\\cuPanItem.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T03:07:47.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "frmAgregarEmpleado.cs",
               "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Frontend\\frmAgregarEmpleado.cs",
               "RelativeDocumentMoniker": "PuntoDeVentaPanaderia\\Frontend\\frmAgregarEmpleado.cs",
               "ToolTip": "C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Frontend\\frmAgregarEmpleado.cs",
               "RelativeToolTip": "PuntoDeVentaPanaderia\\Frontend\\frmAgregarEmpleado.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAEwCcAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAANsAAAAAAAAAAAAswCcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T02:40:25.402Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-02T02:40:25.402Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "clsDaoPanaderia.cs",
               "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Backend\\clsDaoPanaderia.cs",
               "RelativeDocumentMoniker": "PuntoDeVentaPanaderia\\Backend\\clsDaoPanaderia.cs",
@@ -71,12 +102,11 @@
               "RelativeToolTip": "PuntoDeVentaPanaderia\\Backend\\clsDaoPanaderia.cs",
               "ViewState": "AgIAABMCAAAAAAAAAAAhwB8CAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T02:34:29.055Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-02T02:34:29.055Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "frmEmpleados.cs",
               "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Frontend\\frmEmpleados.cs",
               "RelativeDocumentMoniker": "PuntoDeVentaPanaderia\\Frontend\\frmEmpleados.cs",
@@ -84,48 +114,44 @@
               "RelativeToolTip": "PuntoDeVentaPanaderia\\Frontend\\frmEmpleados.cs",
               "ViewState": "AgIAAEcAAAAAAAAAAAAtwBcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T02:32:43.879Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-02T02:32:43.879Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "frmEmpleados.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Frontend\\frmEmpleados.cs",
               "RelativeDocumentMoniker": "PuntoDeVentaPanaderia\\Frontend\\frmEmpleados.cs",
               "ToolTip": "C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Frontend\\frmEmpleados.cs [Dise\u00F1o]",
               "RelativeToolTip": "PuntoDeVentaPanaderia\\Frontend\\frmEmpleados.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T02:32:41.222Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-12-02T02:32:41.222Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "frmAgregarEmpleado.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Frontend\\frmAgregarEmpleado.cs",
               "RelativeDocumentMoniker": "PuntoDeVentaPanaderia\\Frontend\\frmAgregarEmpleado.cs",
               "ToolTip": "C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Frontend\\frmAgregarEmpleado.cs [Dise\u00F1o]",
               "RelativeToolTip": "PuntoDeVentaPanaderia\\Frontend\\frmAgregarEmpleado.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T02:32:21.04Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-12-02T02:32:21.04Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "frmMenu.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Frontend\\frmMenu.cs",
               "RelativeDocumentMoniker": "PuntoDeVentaPanaderia\\Frontend\\frmMenu.cs",
               "ToolTip": "C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Frontend\\frmMenu.cs [Dise\u00F1o]",
               "RelativeToolTip": "PuntoDeVentaPanaderia\\Frontend\\frmMenu.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T21:01:26.159Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-11-28T21:01:26.159Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "frmMenu.cs",
               "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Documentos\\Mis Repos\\Proyecto Panaderia 3\\PF_Panaderia\\PuntoDeVentaPanaderia\\PuntoDeVentaPanaderia\\Frontend\\frmMenu.cs",
               "RelativeDocumentMoniker": "PuntoDeVentaPanaderia\\Frontend\\frmMenu.cs",
@@ -133,8 +159,7 @@
               "RelativeToolTip": "PuntoDeVentaPanaderia\\Frontend\\frmMenu.cs",
               "ViewState": "AgIAADgAAAAAAAAAAAAtwD4AAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T21:01:28.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-28T21:01:28.162Z"
             }
           ]
         }
