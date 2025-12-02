@@ -19,6 +19,11 @@ namespace PuntoDeVentaPanaderia.Frontend
         private clsPanes panActual; // Para modo edición
         private string rutaImagenSeleccionada = "";
 
+        /// <summary>
+        /// Constructor principal usado para dar de alta un nuevo producto.
+        /// Inicializa el formulario en modo 'Agregar' y configura los listeners de teclado.
+        /// </summary>
+        /// <param name="empleado">Pa saber que empleado realiza modificaciones</param>
         public frmAgregarPan(clsEmpleados empleado)
         {
             this.empleadoActual = empleado;
@@ -28,6 +33,12 @@ namespace PuntoDeVentaPanaderia.Frontend
             txtStock.KeyPress += new KeyPressEventHandler(txtStock_KeyPress);
         }
 
+        /// <summary>
+        /// Constructor usado para modificar un producto existente.
+        /// Carga los datos del pan y configura el formulario en modo 'Edición'.
+        /// </summary>
+        /// <param name="empleado">Pa saber que empleado realiza modificaciones</param>
+        /// <param name="panAEditar">Objeto clsPanes con la información del producto a modificar.</param>
         public frmAgregarPan(clsEmpleados empleado, clsPanes panAEditar)
         {
             this.empleadoActual = empleado;
@@ -40,6 +51,10 @@ namespace PuntoDeVentaPanaderia.Frontend
             CargarDatosParaEdicion();
         }
 
+        /// <summary>
+        /// Ajusta el texto del título y de los botones del formulario
+        /// </summary>
+        /// <param name="esEdicion">Pa saber si estamos en modo edición o modo alta</param>
         private void ConfigurarFormulario(bool esEdicion)
         {
             if (esEdicion)
@@ -56,6 +71,10 @@ namespace PuntoDeVentaPanaderia.Frontend
             }
         }
 
+        /// <summary>
+        /// Rellena todos los campos del formulario (nombre, precio, stock, imagen, etc.)
+        /// con los datos del producto seleccionado para su edición.
+        /// </summary
         private void CargarDatosParaEdicion()
         {
             clsDaoPanaderia dao = new clsDaoPanaderia();
@@ -93,6 +112,10 @@ namespace PuntoDeVentaPanaderia.Frontend
             }
         }
 
+        /// <summary>
+        /// Consulta las categorías disponibles desde la base de datos (DB)
+        /// y las carga en el ComboBox de Categoría.
+        /// </summary>
         private void CargarCategorias()
         {
             clsDaoPanaderia dao = new clsDaoPanaderia();
@@ -123,6 +146,10 @@ namespace PuntoDeVentaPanaderia.Frontend
             }
         }
 
+        /// <summary>
+        /// Maneja el evento de clic en el botón 'Seleccionar Imagen'.
+        /// Abre el diálogo para elegir un archivo de imagen y lo previsualiza.
+        /// </summary>
         private void btnSeleccionarImagen_Click(object sender, EventArgs e)
         {
             if (ofdImage.ShowDialog() == DialogResult.OK)
@@ -153,6 +180,10 @@ namespace PuntoDeVentaPanaderia.Frontend
 
         }
 
+        /// <summary>
+        /// Agrega o guarda cambios, depende
+        /// Valida los campos, copia la imagen si es nueva y registra/actualiza el producto
+        /// </summary>
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (!ValidarEntradas())
@@ -231,6 +262,10 @@ namespace PuntoDeVentaPanaderia.Frontend
             }
         }
 
+        /// <summary>
+        /// Reinicia todos los campos del formulario y los ErrorProviders a sus valores iniciales.
+        /// Si estamos editando, cierra el formulario.
+        /// </summary>
         private void LimpiarControles()
         {
             txtNombre.Clear();
@@ -308,8 +343,10 @@ namespace PuntoDeVentaPanaderia.Frontend
                 catch (Exception) {  }
             }
         }
-            
 
+        /// <summary>
+        /// Controla la entrada de teclado en el campo de Precio,
+        /// </summary>
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar))
@@ -327,6 +364,9 @@ namespace PuntoDeVentaPanaderia.Frontend
                 e.Handled = true;
         }
 
+        /// <summary>
+        /// Controla la entrada de teclado en el campo de Stock,
+        /// </summary>
         private void txtStock_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar))
@@ -337,6 +377,10 @@ namespace PuntoDeVentaPanaderia.Frontend
                 e.Handled = true;
         }
 
+        /// <summary>
+        /// Valida todos los campos obligatorios y su rango en caso de tenr
+        /// </summary>
+        /// <returns>Verrdadero si todo esta bien,si no pues no</returns>
         private bool ValidarEntradas()
         {
             bool isValid = true;
