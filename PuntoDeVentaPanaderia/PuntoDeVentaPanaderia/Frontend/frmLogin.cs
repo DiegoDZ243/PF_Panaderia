@@ -109,6 +109,10 @@ namespace PuntoDeVentaPanaderia
                     frmm.Focus();
                     this.Hide();
                 }
+                else
+                {
+                    MessageBox.Show("Usuario y/o Contraseña incorecta, por favor de revisar los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {

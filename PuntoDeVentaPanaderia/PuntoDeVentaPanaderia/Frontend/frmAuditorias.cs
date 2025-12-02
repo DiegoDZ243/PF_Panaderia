@@ -22,6 +22,9 @@ namespace PuntoDeVentaPanaderia.Frontend
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Método empleado para llenar y estilizar el grid de auditorias
+        /// </summary>
         private void estilizarTabla()
         {
             gridAuditorias.Rows.Clear();
@@ -90,6 +93,13 @@ namespace PuntoDeVentaPanaderia.Frontend
             gridAuditorias.GridColor = ColorTranslator.FromHtml("#A8BBD1");
         }
 
+
+        /// <summary>
+        /// Evento disparado al cargarse el formulario. Se agregan las columnas que se necesitarán para el
+        /// grid y se manda llamar la función de llenado y diseño
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmAuditorias_Load(object sender, EventArgs e)
         {
             gridAuditorias.Columns.Clear();

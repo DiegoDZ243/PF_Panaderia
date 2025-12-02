@@ -29,7 +29,9 @@ namespace PuntoDeVentaPanaderia.Frontend
         }
 
 
-
+        /// <summary>
+        /// Función empleada para llenar y darle formato al grid
+        /// </summary>
         private void estilizarTabla()
         {
             gridReporte.Rows.Clear();
@@ -39,6 +41,7 @@ namespace PuntoDeVentaPanaderia.Frontend
             // Agregar filas
             foreach (clsReporteVentaMes r in reportes)
             {
+                //Se muestra el reporte solo de los panes seleccionados
                 if (panesSeleccionados.Contains(new clsPanes(r.clave)))
                 {
                     reportesMostrados.Add(r);
@@ -52,7 +55,7 @@ namespace PuntoDeVentaPanaderia.Frontend
                 }
             }
 
-
+            //Se calcula qué tan ancha será la tabla para ajustarla
             int anchoTotal = 0;
             foreach (DataGridViewColumn col in gridReporte.Columns)
             {
@@ -64,13 +67,6 @@ namespace PuntoDeVentaPanaderia.Frontend
             this.Width = gridReporte.Width + 50; 
 
 
-
-
-            //this.ClientSize = new Size(
-            //    Math.Max(this.ClientSize.Width, gridReporte.Width + 20),
-            //    Math.Max(this.ClientSize.Height, gridReporte.Height + 20)
-            //);
-
             gridReporte.Location = new Point(
                 (this.ClientSize.Width - gridReporte.Width) / 2,
                 gridReporte.Location.Y+50
@@ -81,7 +77,7 @@ namespace PuntoDeVentaPanaderia.Frontend
             gridReporte.BackgroundColor = Color.FromArgb(35, 35, 35);
             gridReporte.BorderStyle = BorderStyle.None;
 
-
+            //Colores empleados para el form
             Color colorFondo = ColorTranslator.FromHtml("#E6EEF5");
             Color colorGrid = ColorTranslator.FromHtml("#D2DFEC");
             Color colorEncabezado = ColorTranslator.FromHtml("#4B6EA8");
@@ -127,6 +123,12 @@ namespace PuntoDeVentaPanaderia.Frontend
             pcbReporte2.Location = new Point(10*this.ClientSize.Width / 12, gridReporte.Location.Y);
         }
 
+        /// <summary>
+        /// Evento disparado al hacer clic en el botón "Generar gráfica". Pasa los parametros de
+        /// este formulario a frmGraficaReporte para generar la gráfica con los datos requeridos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGrafica_Click(object sender, EventArgs e)
         {
             frmGraficaReporte frm = new frmGraficaReporte(reportesMostrados, mes1, mes2);
@@ -137,6 +139,12 @@ namespace PuntoDeVentaPanaderia.Frontend
             this.Show(); 
         }
 
+        /// <summary>
+        /// Evento que se dispara al cargar el formulario. En el se asignan las columnas que se emplearán
+        /// y se mandan llamar las funciones para darle diseño
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmTablaReporte2_Load(object sender, EventArgs e)
         {
             gridReporte.Rows.Clear();

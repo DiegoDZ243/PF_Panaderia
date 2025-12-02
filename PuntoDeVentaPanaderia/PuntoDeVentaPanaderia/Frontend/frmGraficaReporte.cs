@@ -14,8 +14,18 @@ namespace PuntoDeVentaPanaderia.Frontend
 {
     public partial class frmGraficaReporte : Form
     {
+        // Lista con los reportes generados en el form anterior (frmTablaReporte2)
         List<clsReporteVentaMes> reportesAGraficar;
+        // Meses seleccionados
         DateTime mes1, mes2; 
+
+        /// <summary>
+        /// Constructor del formulario que muestra la gráfica con el resumen del reporte de 
+        /// ventas
+        /// </summary>
+        /// <param name="reportes">Entradas del reporte de ventas</param>
+        /// <param name="mes1">Primer mes seleccionado</param>
+        /// <param name="mes2">Segundo mes seleccionado</param>
         public frmGraficaReporte(List<clsReporteVentaMes> reportes, DateTime mes1, DateTime mes2)
         {
             reportesAGraficar = reportes;
@@ -25,6 +35,11 @@ namespace PuntoDeVentaPanaderia.Frontend
         }
 
 
+        /// <summary>
+        /// Función que asigna los valores de ventas para cada producto seleccionado. Se crean
+        /// dos series una para el mes 1 y otra para el 2. La creación de dos series permite la 
+        /// comparación de ventas para cada producto en los dos meses seleccionados.
+        /// </summary>
         private void generarGraficaDeReportes()
         {
             chartReporteVentas.Series.Clear(); 
@@ -54,6 +69,9 @@ namespace PuntoDeVentaPanaderia.Frontend
 
         }
 
+        /// <summary>
+        /// Función empleada para darle un mejor formato a la gráfica generada
+        /// </summary>
         private void ConfigurarVentanaYGrafica()
         {
 
@@ -112,7 +130,12 @@ namespace PuntoDeVentaPanaderia.Frontend
             }
         }
 
-
+        /// <summary>
+        /// Evento disparado al cargar el formulario en el que se llaman las funciones para
+        /// generar la gráfica y darle formato.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmGraficaReporte_Load(object sender, EventArgs e)
         {
             generarGraficaDeReportes(); 

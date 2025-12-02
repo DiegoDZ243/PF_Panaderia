@@ -26,7 +26,9 @@ namespace PuntoDeVentaPanaderia.Frontend
             
         }
 
-
+        /// <summary>
+        /// Función empleada para darle diseño al grid y llenarlo
+        /// </summary>
         private void estilizarTabla()
         {
             gridReporte.Rows.Clear();
@@ -37,7 +39,6 @@ namespace PuntoDeVentaPanaderia.Frontend
             foreach (clsReporteVenta r in reportes)
 
             {
-
                 gridReporte.Rows.Add(
                     r.clave,
                     r.nombre,
@@ -121,11 +122,22 @@ namespace PuntoDeVentaPanaderia.Frontend
 
         }
 
+        /// <summary>
+        /// Evento disparado al cargar el formulario. Se manda llamar la función que le da formato al grid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmReporteVenta1_Load(object sender, EventArgs e)
         {
             estilizarTabla();
         }
 
+        /// <summary>
+        /// Evento disparado al cambiar la fecha del DateTime Picker. Cada vez que se hace se actualizan
+        /// las entradas del grid.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dtpInicio_ValueChanged(object sender, EventArgs e)
         {
             clsDaoPanaderia dao=new clsDaoPanaderia();
@@ -133,6 +145,8 @@ namespace PuntoDeVentaPanaderia.Frontend
             estilizarTabla(); 
         }
 
+        /// Evento disparado al cambiar la fecha del DateTime Picker. Cada vez que se hace se actualizan
+        /// las entradas del grid.
         private void dtpFin_ValueChanged(object sender, EventArgs e)
         {
             clsDaoPanaderia dao = new clsDaoPanaderia();
@@ -140,6 +154,11 @@ namespace PuntoDeVentaPanaderia.Frontend
             estilizarTabla();
         }
 
+        /// <summary>
+        /// Evento que se dispara al cerrar el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmReporteVenta1_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();

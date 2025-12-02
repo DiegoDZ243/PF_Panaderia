@@ -15,12 +15,23 @@ namespace PuntoDeVentaPanaderia.Frontend
 {
     public partial class frmFiltrosReporte2 : Form
     {
+        //Lista con los panes seleccionados para generar el reporte
         private List<clsPanes> panesSeleccionados=new List<clsPanes>(); 
+
+
+        /// <summary>
+        /// Constructor del formulario
+        /// </summary>
         public frmFiltrosReporte2()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Le da diseño a los componentes y llena el FlowLayout Panel con los panes cargados en el
+        /// sistema. También centra los componentes en el form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmFiltrosReporte2_Load(object sender, EventArgs e)
         {
             clsDaoPanaderia dao = new clsDaoPanaderia();
@@ -59,6 +70,13 @@ namespace PuntoDeVentaPanaderia.Frontend
             );
         }
 
+        /// <summary>
+        /// Evento que se dispara al marcar la casilla de "Seleccionar Todos". Al dispararse
+        /// marca todas las entradas del FlowLayOut Panel para generar el reporte de ventas. 
+        /// Si se desmarca entonces todas las casillas se desmarcarán.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void chkSeleccionarTodos_CheckedChanged(object sender, EventArgs e)
         {
             if (chkSeleccionarTodos.Checked)
@@ -79,6 +97,13 @@ namespace PuntoDeVentaPanaderia.Frontend
             }
         }
 
+        /// <summary>
+        /// Evento que se dispara al presionar el botón "Generar Reporte". Agrega todos los panes
+        /// seleccionados en una lista y los pasa al constructor de un "frmTablaReporte2" para
+        /// generar el reporte de venta para los meses seleccionados.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGenerarReporte_Click(object sender, EventArgs e)
         {
             
@@ -90,23 +115,27 @@ namespace PuntoDeVentaPanaderia.Frontend
                     panesSeleccionados.Add(control.getInfoPan()); 
                 }
             }
-
+            //Si no se ha seleccionado ningún pan, se detiene la operación
             if (panesSeleccionados.Count == 0)
             {
                 MessageBox.Show("Debe seleccionar al menos un pan", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            //Si se seleccionó al menos un pan se mostrará un reporte
             frmTablaReporte2 frm = new frmTablaReporte2(dtpMes1.Value,dtpMes2.Value, panesSeleccionados);
             this.Hide(); 
             frm.ShowDialog();
             frm.Focus();
             this.Show();
+            //Se limpia la selección luego de haber generado el reporte
             panesSeleccionados.Clear();
         }
 
-
+        /// <summary>
+        /// Función empleada para darle color y formato al FlowLayOut Panel y otros componentes 
+        /// en el formulario.
+        /// </summary>
         private void AplicarEstilo_Azul()
         {
             Color formColor = Color.FromArgb(210, 225, 240);       // Fondo form
@@ -125,7 +154,7 @@ namespace PuntoDeVentaPanaderia.Frontend
             flpPanes.BackColor = flowColor;
             flpPanes.Padding = new Padding(20);
             flpPanes.AutoScroll = true;
-            flpPanes.WrapContents = true;     // Mantener tarjetas en filas
+            flpPanes.WrapContents = true;     
             flpPanes.AutoSize = false;
             pnlMain.Width =this.ClientSize.Width-100;
             pnlMain.Height = this.ClientSize.Height - 180;
@@ -135,8 +164,6 @@ namespace PuntoDeVentaPanaderia.Frontend
             {
                 if (ctrl is cuElegirPan card)
                 {
-                    // Tamaño fijo para evitar estiramiento
-
                     card.BackColor = cardColor;
                     card.Padding = new Padding(10);
                     card.BorderStyle = BorderStyle.None;
@@ -158,14 +185,6 @@ namespace PuntoDeVentaPanaderia.Frontend
             btnGenerarReporte.Cursor = Cursors.Hand;
             btnGenerarReporte.Location = new Point((this.ClientSize.Width - btnGenerarReporte.Width) / 2, this.ClientSize.Height - 80); 
 
-            btnGenerarReporte.MouseEnter += (s, e) =>
-            {
-                btnGenerarReporte.BackColor = botonHover;
-            };
-            btnGenerarReporte.MouseLeave += (s, e) =>
-            {
-                btnGenerarReporte.BackColor = botonColor;
-            };
         }
 
 
