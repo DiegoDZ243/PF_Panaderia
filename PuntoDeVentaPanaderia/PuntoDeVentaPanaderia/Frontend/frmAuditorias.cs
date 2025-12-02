@@ -17,8 +17,16 @@ namespace PuntoDeVentaPanaderia.Frontend
         private List<clsAuditoria> auditorias;
         public frmAuditorias()
         {
-            clsDaoPanaderia dao=new clsDaoPanaderia();
-            auditorias=dao.obtenerAuditorias();
+            try
+            {
+                clsDaoPanaderia dao = new clsDaoPanaderia();
+                auditorias = dao.obtenerAuditorias();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al cargar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             InitializeComponent();
         }
 

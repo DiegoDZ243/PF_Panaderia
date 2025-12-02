@@ -17,12 +17,18 @@ namespace PuntoDeVentaPanaderia.Frontend
         List<clsReporteVenta> reportes = new List<clsReporteVenta>();
         public frmReporteVenta1()
         {
-            
+
             InitializeComponent();
-            clsDaoPanaderia dao=new clsDaoPanaderia();
-            reportes = dao.mostrarReporteVentas(dtpInicio.Value, dtpFin.Value);
-            gridReporte.AutoSize = true;
-           
+            try
+            {
+                clsDaoPanaderia dao = new clsDaoPanaderia();
+                reportes = dao.mostrarReporteVentas(dtpInicio.Value, dtpFin.Value);
+                gridReporte.AutoSize = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al cargar los datos","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
             
         }
 
@@ -140,18 +146,32 @@ namespace PuntoDeVentaPanaderia.Frontend
         /// <param name="e"></param>
         private void dtpInicio_ValueChanged(object sender, EventArgs e)
         {
-            clsDaoPanaderia dao=new clsDaoPanaderia();
-            reportes = dao.mostrarReporteVentas(dtpInicio.Value,dtpFin.Value); 
-            estilizarTabla(); 
+            try
+            {
+                clsDaoPanaderia dao = new clsDaoPanaderia();
+                reportes = dao.mostrarReporteVentas(dtpInicio.Value, dtpFin.Value);
+                estilizarTabla();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al cargar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// Evento disparado al cambiar la fecha del DateTime Picker. Cada vez que se hace se actualizan
         /// las entradas del grid.
         private void dtpFin_ValueChanged(object sender, EventArgs e)
         {
-            clsDaoPanaderia dao = new clsDaoPanaderia();
-            reportes = dao.mostrarReporteVentas(dtpInicio.Value, dtpFin.Value);
-            estilizarTabla();
+            try
+            {
+                clsDaoPanaderia dao = new clsDaoPanaderia();
+                reportes = dao.mostrarReporteVentas(dtpInicio.Value, dtpFin.Value);
+                estilizarTabla();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al cargar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>

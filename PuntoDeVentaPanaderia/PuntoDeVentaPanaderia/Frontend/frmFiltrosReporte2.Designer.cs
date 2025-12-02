@@ -136,6 +136,7 @@
             // 
             // pnlMain
             // 
+            this.pnlMain.AutoScroll = true;
             this.pnlMain.Controls.Add(this.label3);
             this.pnlMain.Controls.Add(this.lblMes2);
             this.pnlMain.Controls.Add(this.lblMes1);

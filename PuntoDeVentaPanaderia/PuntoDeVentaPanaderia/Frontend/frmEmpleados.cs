@@ -141,7 +141,9 @@ namespace PuntoDeVentaPanaderia.Frontend
             this.Hide();
             frmAEmp.ShowDialog();
             frmAEmp.Focus();
+            CargarGrid(); 
             this.Show();
+            
         }
     }
 }

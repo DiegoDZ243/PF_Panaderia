@@ -57,8 +57,6 @@ namespace PuntoDeVentaPanaderia.Frontend
             chkSeleccionarTodos.Location=new Point(pnlMain.Location.X+pnlMain.Width - chkSeleccionarTodos.Width-70,flpPanes.Location.Y-40);
             dtpMes1.Location=new Point((pnlMain.Width-dtpMes1.Width)/4,dtpMes1.Location.Y);
             dtpMes2.Location = new Point(3*(pnlMain.Width - dtpMes2.Width) / 4, dtpMes1.Location.Y);
-            lblMes1.Location = new Point();
-            lblMes2.Location = new Point();
             lblMes1.Location = new Point(
                 dtpMes1.Left + (dtpMes1.Width - lblMes1.Width) / 2,   
                 dtpMes1.Top - lblMes1.Height - 5                      
