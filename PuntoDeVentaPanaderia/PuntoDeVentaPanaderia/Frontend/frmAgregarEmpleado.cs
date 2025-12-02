@@ -36,7 +36,8 @@ namespace PuntoDeVentaPanaderia.Frontend
             txtTelefono.Text = empleado.telefono;
             txtContrasena.Enabled = false;
             txtContrasena.Text = "";
-
+            rdbtnSi.Checked = empleado.admin;
+            rdbtnNo.Checked = !empleado.admin;
             lblTitulo.Text = "Editar Empleado";
             btnAceptar.Text = "ACTUALIZAR DATOS";
         }
@@ -243,7 +244,7 @@ namespace PuntoDeVentaPanaderia.Frontend
             empleado.apellidos = txtApellidos.Text.Trim();
             empleado.usuario = txtUser.Text.Trim();
             empleado.telefono = txtTelefono.Text.Trim();
-
+            empleado.admin = rdbtnSi.Checked; 
             clsDaoPanaderia dao = new clsDaoPanaderia();
 
             try

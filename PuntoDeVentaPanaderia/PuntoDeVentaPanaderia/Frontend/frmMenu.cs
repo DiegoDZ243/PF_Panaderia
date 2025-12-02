@@ -54,10 +54,13 @@ namespace PuntoDeVentaPanaderia.Frontend
             clsDaoPanaderia dao = new clsDaoPanaderia();
             if (!dao.EsAdministrador(empleadoActual.idEmpleado))
             {
+                
                 btnCompararVentas.Visible = false;
                 btnVerEmpleados.Visible = false;
                 btnCompararVentas.Visible = false;
                 btnDetallesVentas.Visible = false;
+                btnAuditorias.Visible = false;
+                lblTitulo.Location = new Point((this.panelContenedor.Width - lblTitulo.Width) / 2, lblTitulo.Location.Y);
             }
         }
 
