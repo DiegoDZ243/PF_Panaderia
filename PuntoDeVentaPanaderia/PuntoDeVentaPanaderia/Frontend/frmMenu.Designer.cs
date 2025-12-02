@@ -49,10 +49,10 @@
             this.panelContenedor.Controls.Add(this.btnRealizarVenta);
             this.panelContenedor.Controls.Add(this.btnDetallesVentas);
             this.panelContenedor.Controls.Add(this.btnCompararVentas);
-            this.panelContenedor.Location = new System.Drawing.Point(166, 89);
-            this.panelContenedor.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.panelContenedor.Location = new System.Drawing.Point(148, 71);
+            this.panelContenedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(810, 621);
+            this.panelContenedor.Size = new System.Drawing.Size(720, 497);
             this.panelContenedor.TabIndex = 0;
             // 
             // btnAuditorias
@@ -63,11 +63,11 @@
             this.btnAuditorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAuditorias.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.btnAuditorias.ForeColor = System.Drawing.Color.White;
-            this.btnAuditorias.Location = new System.Drawing.Point(33, 369);
-            this.btnAuditorias.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnAuditorias.Location = new System.Drawing.Point(29, 295);
+            this.btnAuditorias.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAuditorias.Name = "btnAuditorias";
-            this.btnAuditorias.Size = new System.Drawing.Size(225, 171);
-            this.btnAuditorias.TabIndex = 7;
+            this.btnAuditorias.Size = new System.Drawing.Size(200, 137);
+            this.btnAuditorias.TabIndex = 3;
             this.btnAuditorias.Text = "VER AUDITORIAS";
             this.btnAuditorias.UseVisualStyleBackColor = false;
             this.btnAuditorias.Click += new System.EventHandler(this.btnAuditorias_Click);
@@ -77,9 +77,9 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(22, 12);
+            this.lblTitulo.Location = new System.Drawing.Point(20, 10);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(327, 65);
+            this.lblTitulo.Size = new System.Drawing.Size(269, 54);
             this.lblTitulo.TabIndex = 6;
             this.lblTitulo.Text = "Menú Principal";
             // 
@@ -91,10 +91,10 @@
             this.btnVerEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerEmpleados.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.btnVerEmpleados.ForeColor = System.Drawing.Color.White;
-            this.btnVerEmpleados.Location = new System.Drawing.Point(33, 118);
-            this.btnVerEmpleados.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnVerEmpleados.Location = new System.Drawing.Point(29, 94);
+            this.btnVerEmpleados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVerEmpleados.Name = "btnVerEmpleados";
-            this.btnVerEmpleados.Size = new System.Drawing.Size(225, 171);
+            this.btnVerEmpleados.Size = new System.Drawing.Size(200, 137);
             this.btnVerEmpleados.TabIndex = 0;
             this.btnVerEmpleados.Text = "VER EMPLEADOS";
             this.btnVerEmpleados.UseVisualStyleBackColor = false;
@@ -108,11 +108,11 @@
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventario.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.btnInventario.ForeColor = System.Drawing.Color.White;
-            this.btnInventario.Location = new System.Drawing.Point(287, 369);
-            this.btnInventario.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnInventario.Location = new System.Drawing.Point(255, 295);
+            this.btnInventario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Size = new System.Drawing.Size(225, 171);
-            this.btnInventario.TabIndex = 2;
+            this.btnInventario.Size = new System.Drawing.Size(200, 137);
+            this.btnInventario.TabIndex = 4;
             this.btnInventario.Text = "INVENTARIO";
             this.btnInventario.UseVisualStyleBackColor = false;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
@@ -125,11 +125,11 @@
             this.btnRealizarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRealizarVenta.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btnRealizarVenta.ForeColor = System.Drawing.Color.White;
-            this.btnRealizarVenta.Location = new System.Drawing.Point(287, 115);
-            this.btnRealizarVenta.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnRealizarVenta.Location = new System.Drawing.Point(255, 92);
+            this.btnRealizarVenta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRealizarVenta.Name = "btnRealizarVenta";
-            this.btnRealizarVenta.Size = new System.Drawing.Size(225, 171);
-            this.btnRealizarVenta.TabIndex = 3;
+            this.btnRealizarVenta.Size = new System.Drawing.Size(200, 137);
+            this.btnRealizarVenta.TabIndex = 1;
             this.btnRealizarVenta.Text = "REALIZAR VENTA";
             this.btnRealizarVenta.UseVisualStyleBackColor = false;
             this.btnRealizarVenta.Click += new System.EventHandler(this.btnRealizarVenta_Click);
@@ -142,11 +142,11 @@
             this.btnDetallesVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetallesVentas.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.btnDetallesVentas.ForeColor = System.Drawing.Color.White;
-            this.btnDetallesVentas.Location = new System.Drawing.Point(540, 115);
-            this.btnDetallesVentas.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnDetallesVentas.Location = new System.Drawing.Point(480, 92);
+            this.btnDetallesVentas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDetallesVentas.Name = "btnDetallesVentas";
-            this.btnDetallesVentas.Size = new System.Drawing.Size(225, 171);
-            this.btnDetallesVentas.TabIndex = 4;
+            this.btnDetallesVentas.Size = new System.Drawing.Size(200, 137);
+            this.btnDetallesVentas.TabIndex = 2;
             this.btnDetallesVentas.Text = "DETALLES VENTAS";
             this.btnDetallesVentas.UseVisualStyleBackColor = false;
             this.btnDetallesVentas.Click += new System.EventHandler(this.btnDetallesVentas_Click);
@@ -159,10 +159,10 @@
             this.btnCompararVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompararVentas.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.btnCompararVentas.ForeColor = System.Drawing.Color.White;
-            this.btnCompararVentas.Location = new System.Drawing.Point(540, 369);
-            this.btnCompararVentas.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnCompararVentas.Location = new System.Drawing.Point(480, 295);
+            this.btnCompararVentas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCompararVentas.Name = "btnCompararVentas";
-            this.btnCompararVentas.Size = new System.Drawing.Size(225, 171);
+            this.btnCompararVentas.Size = new System.Drawing.Size(200, 137);
             this.btnCompararVentas.TabIndex = 5;
             this.btnCompararVentas.Text = "COMPARAR VENTAS";
             this.btnCompararVentas.UseVisualStyleBackColor = false;
@@ -170,12 +170,12 @@
             // 
             // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(1152, 798);
+            this.ClientSize = new System.Drawing.Size(1024, 638);
             this.Controls.Add(this.panelContenedor);
-            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimizeBox = false;
             this.Name = "frmMenu";
             this.Text = "Sistema Panadería - Menú Principal";

@@ -47,7 +47,7 @@
             this.flpPanes.Location = new System.Drawing.Point(21, 121);
             this.flpPanes.Name = "flpPanes";
             this.flpPanes.Size = new System.Drawing.Size(850, 451);
-            this.flpPanes.TabIndex = 1;
+            this.flpPanes.TabIndex = 3;
             // 
             // dtpMes1
             // 
@@ -57,7 +57,7 @@
             this.dtpMes1.Location = new System.Drawing.Point(175, 37);
             this.dtpMes1.Name = "dtpMes1";
             this.dtpMes1.Size = new System.Drawing.Size(205, 31);
-            this.dtpMes1.TabIndex = 2;
+            this.dtpMes1.TabIndex = 0;
             this.dtpMes1.Value = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
             // 
             // dtpMes2
@@ -68,7 +68,7 @@
             this.dtpMes2.Location = new System.Drawing.Point(493, 38);
             this.dtpMes2.Name = "dtpMes2";
             this.dtpMes2.Size = new System.Drawing.Size(205, 31);
-            this.dtpMes2.TabIndex = 3;
+            this.dtpMes2.TabIndex = 1;
             this.dtpMes2.Value = new System.DateTime(2025, 2, 1, 0, 0, 0, 0);
             // 
             // btnGenerarReporte
@@ -89,7 +89,7 @@
             this.chkSeleccionarTodos.Location = new System.Drawing.Point(696, 86);
             this.chkSeleccionarTodos.Name = "chkSeleccionarTodos";
             this.chkSeleccionarTodos.Size = new System.Drawing.Size(182, 29);
-            this.chkSeleccionarTodos.TabIndex = 5;
+            this.chkSeleccionarTodos.TabIndex = 2;
             this.chkSeleccionarTodos.Text = "Seleccionar Todos";
             this.chkSeleccionarTodos.UseVisualStyleBackColor = true;
             this.chkSeleccionarTodos.CheckedChanged += new System.EventHandler(this.chkSeleccionarTodos_CheckedChanged);

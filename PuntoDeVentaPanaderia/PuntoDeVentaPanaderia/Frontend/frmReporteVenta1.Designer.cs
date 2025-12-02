@@ -98,6 +98,7 @@
             this.gridReporte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.gridReporte.Size = new System.Drawing.Size(754, 599);
             this.gridReporte.TabIndex = 3;
+            this.gridReporte.TabStop = false;
             this.gridReporte.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridReporte_CellContentClick);
             // 
             // idPan
@@ -164,7 +165,7 @@
             this.dtpFin.Location = new System.Drawing.Point(510, 96);
             this.dtpFin.Name = "dtpFin";
             this.dtpFin.Size = new System.Drawing.Size(245, 38);
-            this.dtpFin.TabIndex = 6;
+            this.dtpFin.TabIndex = 1;
             this.dtpFin.ValueChanged += new System.EventHandler(this.dtpFin_ValueChanged);
             // 
             // lblTitulo
